@@ -1,0 +1,107 @@
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var root=document.documentElement, store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* ---------- references (IEEE) ---------- */
+  var REFS={
+    AR:'AstraZeneca PLC, <i>Annual Report and Form 20-F Information 2025</i>. Cambridge, U.K.: AstraZeneca PLC, 2026. [Online]. Available: https://www.astrazeneca.com/investor-relations/annual-reports/annual-report-2025.html. [Accessed: Sep. 19, 2026].',
+    F20:'AstraZeneca PLC, “Form 20-F for the fiscal year ended December 31, 2025,” U.S. Securities and Exchange Commission, Washington, DC, USA, 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/901832/000110465926019130/azn-20251231x20f.htm. [Accessed: Sep. 19, 2026].',
+    INT:'“Introdução à Gestão,” course material, Management (Gestão), n.d. (file <i>Introducao Gestao.pdf</i>).',
+    NATURE:'AstraZeneca PLC, “Nature,” astrazeneca.com. [Online]. Available: https://www.astrazeneca.com/sustainability/nature.html. [Accessed: Sep. 19, 2026].',
+    FOREST:'AstraZeneca PLC, “AZ Forest,” astrazeneca.com. [Online]. Available: https://www.astrazeneca.com/sustainability/climate-change/az-forest.html. [Accessed: Sep. 19, 2026].',
+    LEAD:'AstraZeneca PLC, “Leadership,” astrazeneca.com. [Online]. Available: https://www.astrazeneca.com/our-company/leadership.html. [Accessed: date to be confirmed].',
+    ORG:'“Função Organização,” v1, course material, Management (Gestão), 1st semester 2025, n.d. (file <i>Função Organização_1s25_v1.pdf</i>).',
+    PLAN:'“Função Planeamento,” course material, Management (Gestão), n.d. (file <i>Função Planeamento.pdf</i>).',
+    MULLARD:'A. Mullard, “New drugs cost US$2.6 billion to develop,” <i>Nat. Rev. Drug Discov.</i>, vol. 13, no. 12, p. 877, 2014, doi: 10.1038/nrd4507.',
+    FEIN:'A. J. Fein, “The Top Pharmacy Benefit Managers of 2025: Market Share and Key Industry Developments,” <i>Drug Channels</i>, Mar. 30, 2026. [Online]. Available: https://www.drugchannels.net/2026/03/the-top-pharmacy-benefit-managers-of.html. [Accessed: Sep. 26, 2026].',
+    P50:'Drug Discovery &amp; Development, “Pharma 50: The 50 largest pharmaceutical companies in the world for 2025,” 2025. [Online]. Available: https://www.drugdiscoverytrends.com/pharma-50-the-50-largest-pharmaceutical-companies-in-the-world-for-2025/. [Accessed: Sep. 26, 2026].',
+    IQVIA:'S. Lauks, C. Ge, D. Luft, R. Perak, L. Greenwalt, and J. Cattell, “The Rules of Loss of Exclusivity are Being Rewritten,” IQVIA, Aug. 7, 2025. [Online]. Available: https://www.iqvia.com/locations/united-states/blogs/2025/07/the-rules-of-loss-of-exclusivity-are-being-rewritten. [Accessed: Sep. 26, 2026].',
+    USP:'U.S. Pharmacopeia, “Global active pharmaceutical ingredient manufacturing capacity remains concentrated despite shifting production trends,” <i>Quality Matters</i>. [Online]. Available: https://qualitymatters.usp.org/global-manufacturing-capacity-active-pharmaceutical-ingredients-remains-concentrated. [Accessed: Sep. 26, 2026].',
+    EU:'Council of the European Union, “‘Pharma package’: Council and Parliament reach a deal on new rules for a fairer and more competitive EU pharmaceutical sector,” press release, Dec. 11, 2025. [Online]. Available: https://www.consilium.europa.eu/en/press/press-releases/2025/12/11/pharma-package-council-and-parliament-reach-a-deal-on-new-rules-for-a-fairer-and-more-competitive-eu-pharmaceutical-sector/. [Accessed: Sep. 26, 2026].'
+  };
+  var order=[], main=$('#main');
+  main.innerHTML=main.innerHTML.replace(/\{([A-Z0-9]+)(?:\|([^}]*))?\}/g,function(m,k,loc){
+    if(!REFS[k]) return m;
+    var n=order.indexOf(k); if(n<0){order.push(k); n=order.length-1;}
+    n+=1; return '<a class="cite" href="#ref-'+n+'">['+n+(loc?', '+loc:'')+']</a>';
+  });
+  var rl=$('#reflist'); order.forEach(function(k,i){var li=document.createElement('li'); li.id='ref-'+(i+1); li.innerHTML=REFS[k]; rl.appendChild(li);});
+
+  /* ---------- theme + review toggle ---------- */
+  var th=store.get('theme'); if(th) root.setAttribute('data-theme',th);
+  $('#themeBtn').onclick=function(){var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'); var nx=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',nx); store.set('theme',nx);};
+  var rb=$('#revBtn'), showRev=store.get('review')==='on';
+  function applyRev(){document.body.classList.toggle('hide-review',!showRev); rb.setAttribute('aria-pressed',String(showRev));}
+  rb.onclick=function(){showRev=!showRev; store.set('review',showRev?'on':'off'); applyRev();}; applyRev();
+  var wide=function(){return innerWidth>980};
+  if(store.get('toc')==='off'&&wide()) document.body.classList.add('toc-off');
+  $('#menuBtn').onclick=function(){
+    if(wide()){var off=document.body.classList.toggle('toc-off'); store.set('toc',off?'off':'on'); setTimeout(function(){window.dispatchEvent(new Event('resize'))},300);}
+    else document.body.classList.toggle('menu');
+  };
+
+  /* ---------- table of contents + scrollspy ---------- */
+  var toc=$('#toc'), heads=$$('h1.part,h2,h3',main), links=[];
+  heads.forEach(function(h){
+    if(!h.id) return;
+    var a=document.createElement('a'); a.href='#'+h.id;
+    a.className=h.tagName==='H1'?'l1':(h.tagName==='H3'?'l3':'l2');
+    var nm=h.querySelector('.num'); a.textContent=nm?nm.textContent+'  '+h.textContent.slice(nm.textContent.length):h.textContent; a.onclick=function(){document.body.classList.remove('menu');};
+    toc.appendChild(a); links.push([h,a]);
+  });
+  function spy(){
+    var y=window.scrollY+120, cur=null;
+    links.forEach(function(p){ if(p[0].getBoundingClientRect().top+window.scrollY<=y) cur=p[1]; });
+    links.forEach(function(p){p[1].classList.toggle('on',p[1]===cur);});
+    var h=document.documentElement.scrollHeight-innerHeight;
+    $('#progress').style.width=(h>0?(scrollY/h*100):0)+'%';
+  }
+  addEventListener('scroll',spy,{passive:true}); spy();
+
+  /* ---------- reveal, bars, counters, donut ---------- */
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  $$('.bar .fi').forEach(function(b){b.style.setProperty('--w',b.dataset.w+'%');});
+  $$('.donut').forEach(function(svg){
+    var d=JSON.parse(svg.dataset.donut), tot=d.reduce(function(a,x){return a+x[1]},0), R=42, C=2*Math.PI*R, off=0;
+    d.forEach(function(x){
+      var len=x[1]/tot*C, c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',60);c.setAttribute('cy',60);c.setAttribute('r',R);c.setAttribute('stroke',x[2]);
+      c.setAttribute('transform','rotate(-90 60 60)'); c.setAttribute('stroke-dashoffset',-off);
+      c.setAttribute('stroke-dasharray','0 '+C); c.dataset.len=len; c.dataset.c=C; svg.appendChild(c); off+=len;
+      var t=document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent=x[0]+': $'+x[1]+'bn'; c.appendChild(t);
+    });
+  });
+  function run(el){
+    if(el.classList.contains('rv')) el.classList.add('in');
+    $$('.bar .fi',el).forEach(function(b){b.style.width=b.dataset.w+'%';});
+    $$('.donut circle',el).forEach(function(c){c.setAttribute('stroke-dasharray',c.dataset.len+' '+c.dataset.c);});
+  }
+  function count(n){
+    var to=parseFloat(n.dataset.count), dec=+n.dataset.dec||0, pre=n.dataset.pre||'', suf=n.dataset.suf||'', t0=null;
+    if(reduce){return;}
+    (function step(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/1200), e=1-Math.pow(1-p,3), v=to*e;
+      n.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf; if(p<1)requestAnimationFrame(step); else n.textContent=pre+(dec?to.toFixed(dec):to.toLocaleString('en-US'))+suf; })(performance.now());
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target); io.unobserve(e.target);}});},{threshold:.12});
+  $$('.rv,.chart').forEach(function(el){ if(reduce){run(el);} else io.observe(el); });
+  $$('.stat .n').forEach(count);
+  if(reduce){$$('.bar .fi').forEach(function(b){b.style.width=b.dataset.w+'%';});}
+
+  /* ---------- organisational chart ---------- */
+  var org=$('.org'), osc=$('.orgscroll');
+  function fit(){ org.style.zoom=1; var w=org.scrollWidth, c=osc.clientWidth-20; org.style.zoom=w>c?Math.max(.4,c/w):1; }
+  $('#orgFit').onclick=fit; $('#orgFull').onclick=function(){org.style.zoom=1;};
+  fit(); addEventListener('resize',fit);
+  var info=$('#orginfo'), sel=null;
+  $$('.nd[data-i]').forEach(function(n){
+    n.tabIndex=0; n.setAttribute('role','button');
+    function show(){ if(sel)sel.classList.remove('sel'); sel=n; n.classList.add('sel'); info.innerHTML='<b>'+n.dataset.t+'</b><br>'+n.dataset.i; }
+    n.addEventListener('click',show); n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
+  });
+})();
+</script>
+</body>
+</html>

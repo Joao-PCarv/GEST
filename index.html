@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AstraZeneca – Management Report</title>
+<meta name="description" content="Management course report on AstraZeneca PLC: organisation profile, structure, SWOT analysis and strategy.">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f7f5f2; --surface:#ffffff; --ink:#1d1b20; --muted:#625f68; --line:#e3dfe6;
+  --accent:#830051; --accent-2:#f0ab00; --accent-soft:#f6e6ef; --teal:#00677f; --teal-soft:#e0f0f4;
+  --ok:#2c7a4b; --ok-soft:#e4f3ea; --warn:#b36b00; --warn-soft:#fff1d6; --bad:#b3261e; --bad-soft:#fbe4e2;
+  --shadow:0 1px 2px rgba(29,27,32,.06),0 8px 24px rgba(29,27,32,.06);
+  --radius:14px; --maxw:1080px;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#141218; --surface:#1d1a22; --ink:#ece9f1; --muted:#a8a3b3; --line:#34303c;
+  --accent:#e58cc0; --accent-2:#f0ab00; --accent-soft:#3a1f30; --teal:#6cc4d8; --teal-soft:#16333b;
+  --ok:#6fcf97; --ok-soft:#1b3326; --warn:#f2b44d; --warn-soft:#3a2d12; --bad:#ff8a80; --bad-soft:#3d1a18;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#141218; --surface:#1d1a22; --ink:#ece9f1; --muted:#a8a3b3; --line:#34303c;
+    --accent:#e58cc0; --accent-soft:#3a1f30; --teal:#6cc4d8; --teal-soft:#16333b;
+    --ok:#6fcf97; --ok-soft:#1b3326; --warn:#f2b44d; --warn-soft:#3a2d12; --bad:#ff8a80; --bad-soft:#3d1a18;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.ui,nav,aside,table,figcaption,.chip,button,.stat,.tag{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));z-index:100}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 20px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+.topbar .brand{letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.topbar .sp{flex:1}
+.topbar button{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;border-radius:999px;cursor:pointer}
+.topbar button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+:root[data-theme="dark"] .topbar button[aria-pressed="true"]{color:#141218}
+.menu-btn{display:inline-block}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:84px 24px 64px;color:#fff;background:radial-gradient(1200px 500px at 80% -10%,#b0116f55,transparent),linear-gradient(135deg,#5b0038 0%,#830051 55%,#a3205f 100%)}
+.hero::after{content:"";position:absolute;inset:auto -10% -60% auto;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,#f0ab0033,transparent 65%)}
+.hero-in{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.kicker{font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f8d98a}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.04;margin:14px 0 14px;letter-spacing:-.02em;font-weight:750}
+.hero p.sub{max-width:640px;font-size:19px;color:#f5e3ee;margin:0 0 28px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;font:500 14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5e3ee}
+.meta b{color:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:44px}
+.stat{background:#ffffff14;border:1px solid #ffffff26;border-radius:var(--radius);padding:18px 18px 16px;backdrop-filter:blur(4px)}
+.stat .n{font-size:34px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .l{font-size:13px;color:#f1d3e3;margin-top:2px;line-height:1.35}
+.stat .s{font-size:11.5px;color:#e7b9d1;margin-top:8px}
+
+/* layout */
+.wrap{padding:36px 40px 120px 320px;transition:padding .25s}
+body.toc-off .wrap{padding-left:40px}
+.hero{transition:margin .25s}
+body:not(.toc-off) .hero{margin-left:290px}
+aside.toc{position:fixed;top:46px;left:0;bottom:0;width:290px;z-index:40;overflow-y:auto;overscroll-behavior:contain;font-size:13.5px;padding:22px 14px 40px 18px;background:var(--surface);border-right:1px solid var(--line);transition:transform .25s;scrollbar-width:thin}
+body.toc-off aside.toc{transform:translateX(-100%)}
+aside.toc .t{font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 10px}
+aside.toc a{display:block;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;line-height:1.35}
+aside.toc a.l1{font-weight:700;color:var(--ink);margin-top:14px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+aside.toc a.l3{padding-left:26px;font-size:12.5px}
+aside.toc a:hover{background:color-mix(in srgb,var(--accent) 7%,transparent);color:var(--accent)}
+aside.toc a.on{color:var(--accent);background:var(--accent-soft);font-weight:650}
+main{max-width:1080px;margin:0 auto;min-width:0}
+
+/* typography */
+.part-label{font:700 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:72px 0 6px}
+h1.part{font-size:34px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em;padding-bottom:14px;border-bottom:3px solid var(--accent-2);display:inline-block}
+h2{font-size:27px;line-height:1.2;margin:56px 0 12px;letter-spacing:-.01em}
+h2 .num,h3 .num{color:var(--accent);margin-right:.5em;font-variant-numeric:tabular-nums}
+h3{font-size:20px;line-height:1.3;margin:36px 0 8px}
+h4{font-size:15px;margin:22px 0 4px;letter-spacing:.02em;color:var(--accent)}
+p{margin:0 0 14px}
+ul,ol{padding-left:1.25em;margin:0 0 16px}
+li{margin:4px 0}
+.lead{font-size:19px;color:var(--ink)}
+.cite{font:600 .78em/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--accent);text-decoration:none;white-space:nowrap;padding:0 .1em;vertical-align:baseline}
+.cite:hover{text-decoration:underline}
+sup.u{font:inherit;font-size:.7em}
+
+/* cards, callouts */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;margin:20px 0}
+.callout{border-radius:var(--radius);padding:16px 20px;margin:22px 0;border:1px solid var(--line);background:var(--surface)}
+.callout .h{font:700 11.5px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.callout p:last-child,.callout ul:last-child{margin-bottom:0}
+.callout.analysis{border-left:5px solid var(--teal);background:var(--teal-soft)}
+.callout.analysis .h{color:var(--teal)}
+.callout.limit{border-left:5px solid var(--warn);background:var(--warn-soft)}
+.callout.limit .h{color:var(--warn)}
+.pending{border:2px dashed var(--line);border-radius:var(--radius);padding:22px;margin:22px 0;background:repeating-linear-gradient(135deg,transparent 0 12px,color-mix(in srgb,var(--line) 35%,transparent) 12px 13px)}
+.pending .who{display:inline-block;font:700 12px/1 -apple-system,sans-serif;padding:6px 10px;border-radius:999px;background:var(--warn-soft);color:var(--warn);margin-bottom:10px}
+.pending .who.next{background:var(--teal-soft);color:var(--teal)}
+.pending ul{margin-top:8px}
+body.hide-review .review{display:none!important}
+.review{border:1px solid var(--bad);background:var(--bad-soft);border-radius:12px;padding:12px 16px;margin:18px 0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.review::before{content:"REVIEW NOTE";display:block;font-weight:800;font-size:11px;letter-spacing:.12em;color:var(--bad);margin-bottom:4px}
+.review ul{margin:6px 0 0}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.tag.teal{background:var(--teal-soft);color:var(--teal)}
+.tag.acc{background:var(--accent-soft);color:var(--accent)}
+
+/* tables */
+.tw{overflow-x:auto;margin:18px 0 6px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.5}
+th{background:color-mix(in srgb,var(--accent) 8%,var(--surface));text-align:left;font-weight:700;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.c2,th.c2{text-align:center}
+tbody tr:hover{background:color-mix(in srgb,var(--accent) 4%,transparent)}
+.cap{font:600 13.5px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--muted);margin:0 0 22px}
+.cap b{color:var(--ink)}
+.pill{display:inline-block;min-width:26px;text-align:center;font:700 12px/1 -apple-system,sans-serif;padding:5px 7px;border-radius:7px}
+.pill.y{background:var(--ok-soft);color:var(--ok)}
+.pill.no{background:var(--bad-soft);color:var(--bad)}
+.sdg{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;color:#fff;font:800 15px/1 -apple-system,sans-serif;flex:none}
+
+/* figures */
+figure{margin:24px 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.45}
+figcaption b{color:var(--ink)}
+details.fold{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin:14px 0;padding:0}
+details.fold summary{cursor:pointer;padding:12px 16px;font:600 14px/1.3 -apple-system,sans-serif;list-style:none}
+details.fold summary::before{content:"＋";color:var(--accent);margin-right:8px}
+details.fold[open] summary::before{content:"－"}
+details.fold>.in{padding:0 16px 16px}
+
+/* bars + donut */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 12px;margin:18px 0 6px}
+.chart h4{margin:0 0 12px;color:var(--ink);font-size:14px}
+.bar{display:grid;grid-template-columns:150px 1fr 96px;gap:12px;align-items:center;margin:9px 0;font:13.5px/1.2 -apple-system,sans-serif}
+.bar .tr{height:16px;background:color-mix(in srgb,var(--line) 70%,transparent);border-radius:99px;overflow:hidden}
+.bar .fi{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),#c2338a);transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.bar .fi.alt{background:linear-gradient(90deg,var(--teal),#3aa6bf)}
+.bar .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:650}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.donut-wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.donut{width:190px;height:190px;flex:none}
+.donut circle{fill:none;stroke-width:26;transition:stroke-dasharray 1.2s cubic-bezier(.2,.8,.2,1)}
+.legend{font:13.5px/1.4 -apple-system,sans-serif;display:grid;gap:8px;flex:1;min-width:190px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+.legend b{font-variant-numeric:tabular-nums}
+
+/* timeline */
+.timeline{position:relative;margin:22px 0 10px;padding-left:26px;border-left:3px solid var(--accent-soft)}
+.tl{position:relative;margin:0 0 18px;padding-left:6px}
+.tl::before{content:"";position:absolute;left:-36px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl .y{font:800 15px/1 -apple-system,sans-serif;color:var(--accent)}
+.tl .d{font-size:15.5px;margin-top:3px}
+
+/* org chart */
+.orgbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 10px 14px;margin:18px 0 8px}
+.orgscroll{overflow-x:auto;padding:6px 10px 14px}
+.org{width:max-content;min-width:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+.org ul{display:flex;justify-content:center;padding:22px 0 0;margin:0;position:relative;list-style:none}
+.org li{position:relative;padding:22px 7px 0;text-align:center;list-style:none;margin:0}
+.org li::before,.org li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:22px;border-top:2px solid var(--line)}
+.org li::after{right:auto;left:50%;border-left:2px solid var(--line)}
+.org li:only-child::before,.org li:only-child::after{display:none}
+.org li:only-child{padding-top:0}
+.org li:first-child::before,.org li:last-child::after{border:0 none}
+.org li:last-child::before{border-right:2px solid var(--line);border-radius:0 8px 0 0}
+.org li:first-child::after{border-radius:8px 0 0 0}
+.org ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:2px solid var(--line);height:22px}
+.org ul.root{padding-top:0}
+.org ul.stack{display:block;padding-top:10px}
+.org ul.stack li{padding:6px 0 0}
+.org ul.stack li::before,.org ul.stack li::after{display:none}
+.org ul.stack::before{height:10px}
+.org ul.stack .nd{display:block;width:150px;margin:0 auto}
+.nd{display:inline-block;max-width:176px;min-width:96px;padding:8px 10px;border-radius:10px;font-size:12px;line-height:1.3;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.nd:hover,.nd.sel{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.nd b{display:block;font-size:12.5px}
+.nd small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.nd.ok{border-color:var(--ok);background:var(--ok-soft)}
+.nd.grp{border-color:var(--teal);background:var(--teal-soft);border-style:dashed}
+.nd.diff{border-color:var(--bad);background:var(--bad-soft)}
+.nd.top{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nd.top small{color:#f4d3e5}
+.nd.na{border-color:var(--warn);background:var(--warn-soft)}
+.boardbox{display:flex;flex-direction:column;align-items:center}
+.vline{width:2px;height:22px;background:var(--line)}
+.org ul.root{padding-top:0}
+.board{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:760px;margin:10px auto 0}
+.board .nd{min-width:0;max-width:none;font-size:11.5px;padding:5px 9px}
+.orgleg{display:flex;flex-wrap:wrap;gap:8px 16px;font:12.5px/1 -apple-system,sans-serif;color:var(--muted);padding:6px 14px 2px}
+.orgleg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:1.5px solid}
+#orgctl{display:flex;gap:8px;justify-content:flex-end;padding:0 14px 6px}
+#orgctl button{font:600 12px/1 -apple-system,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 10px;border-radius:999px;cursor:pointer}
+#orginfo{margin:6px 14px 10px;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,var(--accent) 6%,var(--surface));font:14px/1.5 -apple-system,sans-serif;min-height:48px}
+
+/* swot, tows, porter, value chain */
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.sq{border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.sq h4{margin:0 0 4px;font-size:15px;color:inherit}
+.sq .sub{font:12px/1.3 -apple-system,sans-serif;color:var(--muted);margin-bottom:10px}
+.sq.S{border-top:5px solid var(--ok)} .sq.S h4{color:var(--ok)}
+.sq.W{border-top:5px solid var(--warn)} .sq.W h4{color:var(--warn)}
+.sq.O{border-top:5px solid var(--teal)} .sq.O h4{color:var(--teal)}
+.sq.T{border-top:5px solid var(--bad)} .sq.T h4{color:var(--bad)}
+.sq ul{list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5}
+.sq li{margin:0 0 10px;padding-left:34px;position:relative}
+.sq li b.k{position:absolute;left:0;top:0;font:800 12px/1 -apple-system,sans-serif;padding:4px 6px;border-radius:6px;background:color-mix(in srgb,currentColor 12%,transparent)}
+.sq li em{display:block;font:12px/1.4 -apple-system,sans-serif;color:var(--muted);font-style:normal;margin-top:2px}
+.sq.S li b.k{color:var(--ok)} .sq.W li b.k{color:var(--warn)} .sq.O li b.k{color:var(--teal)} .sq.T li b.k{color:var(--bad)}
+.tows{display:grid;grid-template-columns:110px 1fr 1fr;gap:10px;margin:18px 0;font:14px/1.5 -apple-system,sans-serif}
+.tows>div{padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.tows .hd{background:color-mix(in srgb,var(--accent) 8%,var(--surface));font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center}
+.tows .q b{display:block;color:var(--accent);margin-bottom:4px}
+.porter{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.pf{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;font:13.5px/1.45 -apple-system,sans-serif;box-shadow:var(--shadow)}
+.pf h4{margin:0 0 6px;font-size:14px;color:var(--ink)}
+.pf.c{grid-column:2;grid-row:2;border:2px solid var(--accent);text-align:center;display:flex;flex-direction:column;justify-content:center}
+.pf.a{grid-column:2;grid-row:1}.pf.b{grid-column:1;grid-row:2}.pf.d{grid-column:3;grid-row:2}.pf.e{grid-column:2;grid-row:3}
+.meter{display:flex;gap:4px;margin:8px 0}
+.meter i{flex:1;height:7px;border-radius:5px;background:var(--line)}
+.meter.s3 i{background:var(--bad)} .meter.s2 i:nth-child(-n+2){background:var(--warn)} .meter.s1 i:nth-child(1){background:var(--ok)}
+.meter.s2 i:nth-child(3),.meter.s1 i:nth-child(n+2){background:var(--line)}
+.vc{display:flex;flex-direction:column;gap:8px;margin:18px 0;font:13px/1.4 -apple-system,sans-serif}
+.vc .sup{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.vc .pri{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.vc .st{padding:12px 12px 14px;background:var(--surface);border:1px solid var(--line)}
+.vc .sup .st{border-radius:10px;background:color-mix(in srgb,var(--teal) 7%,var(--surface))}
+.vc .pri .st{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%,14px 50%);padding:14px 22px;background:color-mix(in srgb,var(--accent) 7%,var(--surface));border:0;margin-right:-6px;min-height:92px}
+.vc .pri .st:first-child{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%)}
+.vc b{display:block;font-size:13px;margin-bottom:3px}
+.vc .row-l{font:700 11px/1 -apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:4px 0 0}
+.flow{display:flex;align-items:stretch;flex-wrap:wrap;gap:8px;margin:14px 0;font:13.5px/1.4 -apple-system,sans-serif}
+.flow .f{flex:1 1 150px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);position:relative}
+.flow .f.g{background:linear-gradient(135deg,var(--accent),#a3205f);color:#fff;border:0}
+.flow .ar{align-self:center;color:var(--accent);font-weight:800}
+.flow .f small{display:block;color:var(--muted);margin-top:3px}
+.flow .f.g small{color:#f4d3e5}
+.sdgrow{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;align-items:start}
+
+/* footer / refs */
+ol.refs{font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-left:0;list-style:none;counter-reset:r}
+ol.refs li{counter-increment:r;position:relative;padding:8px 0 8px 46px;border-bottom:1px solid var(--line)}
+ol.refs li::before{content:"[" counter(r) "]";position:absolute;left:0;font-weight:700;color:var(--accent)}
+ol.refs li:target{background:var(--accent-soft)}
+footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font:13px/1.5 -apple-system,sans-serif}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bar .fi,.donut circle{transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:980px){
+  body:not(.toc-off) .hero{margin-left:0}
+  .wrap,body.toc-off .wrap{padding:24px 16px 80px}
+  aside.toc{width:min(320px,86vw);transform:translateX(-100%);box-shadow:var(--shadow)}
+  body.menu aside.toc{transform:none}
+  .two,.swot{grid-template-columns:1fr}
+  .porter{grid-template-columns:1fr}
+  .pf.a,.pf.b,.pf.c,.pf.d,.pf.e{grid-column:1;grid-row:auto}
+  .tows{grid-template-columns:1fr}
+  .vc .pri{grid-template-columns:1fr}.vc .pri .st{clip-path:none;margin:0;min-height:0;border:1px solid var(--line);border-radius:10px}
+  .vc .sup{grid-template-columns:1fr 1fr}
+  .bar{grid-template-columns:110px 1fr 78px}
+  .hero{padding:56px 18px 44px}
+}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .topbar,aside.toc,#progress,.review,.menu-btn,#orgctl,#orginfo{display:none!important}
+  body:not(.toc-off) .hero{margin-left:0}
+  .wrap,body.toc-off .wrap{display:block;padding:0}
+  .hero{background:#830051!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:36px 24px}
+  .rv{opacity:1!important;transform:none!important}
+  .bar .fi{width:var(--w)!important}
+  h1.part,h2{break-after:avoid} .card,.callout,figure,.tw,.chart{break-inside:avoid}
+  .part-label{margin-top:28px}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Open contents">☰ Contents</button>
+  <span class="brand">AstraZeneca · Management Report</span><span class="sp"></span>
+  <button id="revBtn" aria-pressed="false" title="Show or hide the review notes for the group">Review notes</button>
+  <button id="themeBtn" aria-label="Toggle dark mode">◐ Theme</button>
+</div>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="kicker">Management · Group work · Draft v0.1</div>
+    <h1>AstraZeneca PLC</h1>
+    <p class="sub">Organisation profile, structure and strategic analysis of a global pharmaceutical company.</p>
+    <div class="meta">
+      <span><b>Group:</b> NB · DC · SN · JC</span>
+      <span><b>Course:</b> Management (Gestão), 2026/27 1st semester</span>
+      <span><b>Date:</b> 10 October 2026</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="58.7" data-dec="1" data-pre="$" data-suf="bn">$58.7bn</div><div class="l">Total Revenue in 2025 (+9%)</div><div class="s">AR 2025, p. 125</div></div>
+      <div class="stat"><div class="n" data-count="96100">96,100</div><div class="l">Employees at the end of 2025</div><div class="s">AR 2025, p. 27</div></div>
+      <div class="stat"><div class="n" data-count="80" data-pre=">">&gt;80</div><div class="l">Countries with an active presence; sales in &gt;125</div><div class="s">AR 2025, p. 32</div></div>
+      <div class="stat"><div class="n" data-count="197">197</div><div class="l">Projects in the development pipeline</div><div class="s">AR 2025, p. 2</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<aside class="toc" id="toc"><div class="t">Contents</div></aside>
+<main id="main">
+
+<!-- ============ DRAFT CONTROL (review layer) ============ -->
+<div class="review rv">
+  <b>Draft control.</b> This is a working draft. Everything below is traceable to the group's folders and to the Annual Report (AR) {AR}. Red boxes like this one list what the group must decide or fix and can be hidden with the <i>Review notes</i> button (top right).
+  <div class="tw" style="margin-top:10px"><table>
+    <thead><tr><th>Section</th><th>Owner</th><th>Status in this draft</th></tr></thead>
+    <tbody>
+      <tr><td>1 Introduction (profile, SDGs)</td><td>NB</td><td><span class="tag ok">Written</span> from his notes and slides, corrected against the AR</td></tr>
+      <tr><td>2 Organisation</td><td>DC</td><td><span class="tag ok">Written</span> only with what the AR, the chart and the course material support</td></tr>
+      <tr><td>3.1–3.2 Values, mission, vision; objectives per level</td><td>SN</td><td><span class="tag bad">Pending</span> nothing delivered yet</td></tr>
+      <tr><td>3.3 SWOT and strategy</td><td>JC</td><td><span class="tag ok">Written</span> translated, with factual corrections</td></tr>
+    </tbody></table></div>
+</div>
+
+<div class="part-label">Part I</div>
+<h1 class="part" id="part1">Introduction and structure of the report</h1>
+
+<h2 id="s1"><span class="num">1</span>Introduction</h2>
+
+<h3 id="s1-1"><span class="num">1.1</span>Scope of the report</h3>
+<p class="lead rv">This report analyses AstraZeneca PLC (“AstraZeneca” or “the Group”) as part of the Management course. It follows the group's work plan: Part I presents the organisation and Part II develops the functions of management.</p>
+<!-- Next delivery (hidden): Part II sections on control and information systems, HR, marketing, finance and operations, and Part III conclusion. -->
+<p class="rv">This first version covers the presentation of the organisation, its contribution to the UN Sustainable Development Goals (SDGs), its organisational structure, and the SWOT analysis with the strategy that follows from it. The sections that have no content yet are marked as <span class="tag warn">Pending</span>.</p>
+<p class="rv">Unless stated otherwise, the data come from AstraZeneca's <i>Annual Report and Form 20-F Information 2025</i> {AR}, cited by the page printed on the page itself. Values are in US dollars: “$m” means millions and “$bn” means billions. Analytical judgements by the group are labelled <span class="tag teal">Analysis</span> and kept apart from the facts.</p>
+
+<h3 id="s1-2"><span class="num">1.2</span>Type of organisation</h3>
+<p class="rv">AstraZeneca PLC is a public limited company, limited by shares, incorporated and domiciled in England and Wales {AR|p. 199}. It was incorporated on 17 June 1992 under the Companies Act 1985, and its registered office and corporate headquarters are in Cambridge, United Kingdom {F20|Item 4.A}{AR|p. 230}. In Portuguese terms it corresponds to a listed <i>sociedade anónima</i>, a legal form the course material cites among private companies {INT|p. 5}.</p>
+
+<div class="timeline rv">
+  <div class="tl"><div class="y">1992–1993</div><div class="d">Company incorporated in 1992. In 1993 the pharmaceutical, agrochemical and specialty chemical businesses of Imperial Chemical Industries PLC were demerged; the company was called Zeneca Group PLC until April 1999. {F20|Item 4.A}</div></div>
+  <div class="tl"><div class="y">1999</div><div class="d">Merger with Astra of Sweden; the company changed its name to AstraZeneca PLC. {F20|Item 4.A}</div></div>
+  <div class="tl"><div class="y">2000</div><div class="d">The agrochemical business was demerged and merged with a similar business of Novartis to form Syngenta AG. {F20|Item 4.A}</div></div>
+  <div class="tl"><div class="y">2007</div><div class="d">Acquisition of MedImmune, a biologics and vaccines business based in the United States. {F20|Item 4.A}</div></div>
+  <div class="tl"><div class="y">2021</div><div class="d">Acquisition of Alexion, a rare disease business based in the United States. {F20|Item 4.A}</div></div>
+</div>
+
+<p class="rv">The course material classifies organisations by who benefits from them. AstraZeneca falls under the <b>commercial-interest</b> type, which is usually a private firm whose main benefit goes to its owners {INT|pp. 4–5}, and under the <b>private</b> type when classified by who holds the capital {INT|p. 6}. It is a <b>for-profit</b> company: in 2025 it made a profit for the period of $10,233m and paid dividends of $4,846m {AR|p. 125}, corresponding to a full-year dividend of $3.20 per share {AR|p. 3}.</p>
+<p class="rv">Its shares are listed on the London Stock Exchange, Nasdaq Stockholm and the New York Stock Exchange {AR|p. 71}. Since 2 February 2026 the ordinary shares are listed directly on the NYSE, replacing the earlier US listing of American Depositary Shares on Nasdaq {AR|p. 50}.</p>
+
+<div class="review rv"><ul>
+  <li>NB's notes say “minimum share capital of £50,000”. No source in the folders supports it, so it was left out. Keep it only with a legal source.</li>
+  <li>NB's slide 3 says “pharmaceutical and <i>biotechnological</i>”. The AR only says “pharmaceutical” {AR|p. 8}. This draft follows the AR.</li>
+  <li>The Blau &amp; Scott classification is taken from the course material, not from the book [Lisboa et al.] listed on his slide. Cite the book only after confirming the page where it says this.</li>
+</ul></div>
+
+<h3 id="s1-3"><span class="num">1.3</span>Capital holders</h3>
+<p class="rv">On 31 December 2025 the share capital comprised 1,550,907,927 ordinary shares of $0.25 each, plus 50,000 redeemable preference shares {AR|p. 224}. The AR states that major shareholders do not have different voting rights {AR|p. 225} and describes a geographically diverse shareholder base {AR|p. 76}. Four groups held 3% or more.</p>
+<div class="tw rv"><table>
+  <thead><tr><th>Shareholder</th><th class="n">Shares at last disclosure</th><th class="n">% at last disclosure</th><th class="n">% at 31 Dec 2025</th></tr></thead>
+  <tbody>
+    <tr><td>BlackRock</td><td class="n">100,885,181</td><td class="n">6.96</td><td class="n"><b>6.50</b></td></tr>
+    <tr><td>The Capital Group Companies</td><td class="n">77,125,348</td><td class="n">4.97</td><td class="n"><b>4.97</b></td></tr>
+    <tr><td>Wellington Management Group LLP</td><td class="n">65,120,892</td><td class="n">4.96</td><td class="n"><b>4.20</b></td></tr>
+    <tr><td>Investor AB</td><td class="n">51,587,810</td><td class="n">3.93</td><td class="n"><b>3.33</b></td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 1.</b> Shareholders with 3% or more of the voting rights. Wellington Management Company LLP, a subsidiary, is included in the Wellington Management Group figure. Source: {AR|p. 225}.</p>
+<p class="rv">The largest notified holding is therefore 6.50%, and no other holder reported a notifiable interest above these four.</p>
+<details class="fold"><summary>Original capture from the AR (p. 225), as collected by NB</summary><div class="in"><figure><img loading="lazy" src="assets/shareholdings-ar-p225.png" alt="Table of major shareholdings in the AstraZeneca Annual Report 2025"><figcaption><b>Source:</b> {AR|p. 225}.</figcaption></figure></div></details>
+<div class="review rv"><ul>
+  <li><b>Wellington Management Group LLP (4.20%) was missing</b> from NB's slide 2, which listed BlackRock, Capital Group and Investor AB only. It ranks above Investor AB, so it is included here.</li>
+  <li>The slide says “no majority or controlling shareholder”. The AR does not use that wording, so the text above only states the facts (largest holding 6.50%; same voting rights).</li>
+  <li>Investor AB is described as Swedish in NB's notes. The AR table does not give nationality, so it is not stated here.</li>
+</ul></div>
+
+<h3 id="s1-4"><span class="num">1.4</span>Activities and scope</h3>
+<p class="rv">AstraZeneca describes itself as a global, science-led and patient-focused pharmaceutical business, committed to excellence in the research, development, manufacturing and commercialisation of prescription medicines across primary care, specialty care and rare diseases {AR|p. 8}.</p>
+<p class="rv">The commercial organisation is split into three regions: the US, Europe-Canada and International, which includes Australia, New Zealand and the Emerging Markets (China among them). Japan reports separately {AR|p. 32}. Products reach the market through wholly-owned local marketing companies, distributors and local representative offices {AR|p. 32}.</p>
+<div class="two rv">
+  <div class="card" style="margin:0"><div class="ui" style="font-size:13px;color:var(--muted)">Research and development</div><div class="ui" style="font-size:30px;font-weight:750">16,100</div><div class="ui" style="font-size:13px">employees in R&amp;D, working in 6 strategic R&amp;D centres {AR|p. 27}</div></div>
+  <div class="card" style="margin:0"><div class="ui" style="font-size:13px;color:var(--muted)">Commercial</div><div class="ui" style="font-size:30px;font-weight:750">47,400</div><div class="ui" style="font-size:13px">commercial employees, shown under the 10 global hubs {AR|p. 27}</div></div>
+  <div class="card" style="margin:0"><div class="ui" style="font-size:13px;color:var(--muted)">Manufacturing</div><div class="ui" style="font-size:30px;font-weight:750">16,900</div><div class="ui" style="font-size:13px">employees in manufacturing, in 31 operations sites in 15 countries {AR|p. 27}</div></div>
+  <div class="card" style="margin:0"><div class="ui" style="font-size:13px;color:var(--muted)">Total</div><div class="ui" style="font-size:30px;font-weight:750">96,100</div><div class="ui" style="font-size:13px">employees (2024: 94,300) {AR|p. 27}</div></div>
+</div>
+
+<h3 id="s1-5"><span class="num">1.5</span>Main products</h3>
+<p class="rv">Revenue is organised in three therapy areas. Oncology is the largest, followed by BioPharmaceuticals, which groups cardiovascular, renal and metabolism, respiratory and immunology, and vaccines and immune therapies {AR|p. 2}{AR|p. 4}. Rare Disease comes third.</p>
+<div class="chart rv">
+  <h4>Total Revenue 2025 by therapy area ($bn)</h4>
+  <div class="donut-wrap">
+    <svg class="donut" viewBox="0 0 120 120" role="img" aria-label="Revenue by therapy area" data-donut='[["Oncology",25.6,"#830051"],["BioPharmaceuticals",23.0,"#00677f"],["Rare Disease",9.1,"#f0ab00"],["Other Medicines",1.0,"#9a96a3"]]'></svg>
+    <div class="legend">
+      <div><i style="background:#830051"></i>Oncology <b>$25.6bn · 44%</b></div>
+      <div><i style="background:#00677f"></i>BioPharmaceuticals <b>$23.0bn · 39%</b></div>
+      <div><i style="background:#f0ab00"></i>Rare Disease <b>$9.1bn · 16%</b></div>
+      <div><i style="background:#9a96a3"></i>Other Medicines <b>$1.0bn · 2%</b></div>
+    </div>
+  </div>
+</div>
+<p class="cap"><b>Figure 1.</b> Total Revenue by therapy area in 2025. Percentages add to 101% because of rounding. Source: {AR|p. 2}.</p>
+
+<p class="rv">The AR gives the sales of the best-selling brands. Together, the five largest products brought in $30,045m, which is 51.1% of Total Revenue (the percentage is the group's own calculation: 30,045 ÷ 58,739). The Group counts 16 products above $1bn in annual sales {AR|p. 50}.</p>
+<div class="two">
+  <div class="chart rv"><h4>Five largest-selling products, 2025 ($m)</h4>
+    <div class="bar"><span>Farxiga</span><div class="tr"><div class="fi" data-w="100"></div></div><span class="v">8,492</span></div>
+    <div class="bar"><span>Tagrisso</span><div class="tr"><div class="fi" data-w="85.4"></div></div><span class="v">7,254</span></div>
+    <div class="bar"><span>Imfinzi</span><div class="tr"><div class="fi" data-w="71.4"></div></div><span class="v">6,063</span></div>
+    <div class="bar"><span>Ultomiris</span><div class="tr"><div class="fi" data-w="55.6"></div></div><span class="v">4,718</span></div>
+    <div class="bar"><span>Calquence</span><div class="tr"><div class="fi" data-w="41.4"></div></div><span class="v">3,518</span></div>
+    <p class="cap" style="margin:8px 0 6px"><b>Source:</b> {AR|p. 56}</p>
+  </div>
+  <div class="tw rv" style="margin:18px 0 6px"><table>
+    <thead><tr><th>Area</th><th>Product</th><th class="n">$m</th><th class="n">Change</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">Oncology {AR|p. 13}</td><td>Tagrisso</td><td class="n">7,254</td><td class="n">+10%</td></tr>
+      <tr><td>Imfinzi</td><td class="n">6,063</td><td class="n">+29%</td></tr>
+      <tr><td>Calquence</td><td class="n">3,518</td><td class="n">+12%</td></tr>
+      <tr><td>Lynparza</td><td class="n">3,279</td><td class="n">−11%</td></tr>
+      <tr><td rowspan="4">Rare Disease {AR|p. 23}</td><td>Ultomiris</td><td class="n">4,718</td><td class="n">+20%</td></tr>
+      <tr><td>Soliris</td><td class="n">1,837</td><td class="n">−29%</td></tr>
+      <tr><td>Strensiq</td><td class="n">1,678</td><td class="n">+19%</td></tr>
+      <tr><td>Koselugo</td><td class="n">662</td><td class="n">+5%</td></tr>
+    </tbody></table></div>
+</div>
+<p class="cap"><b>Figure 2 and Table 2.</b> Best-selling products. The AR links the fall in Soliris to patients switching to Ultomiris {AR|pp. 24, 56}.</p>
+<div class="review rv"><ul>
+  <li>NB's notes list therapy areas only. Brands and values were added from the AR so that “main products” is answered.</li>
+  <li>“Other Medicines (2%)” was missing from the notes and is now shown.</li>
+</ul></div>
+
+<h3 id="s1-6"><span class="num">1.6</span>Main markets</h3>
+<p class="rv">The United States and Europe together account for 65% of Total Revenue {AR|p. 2}. The Emerging Markets are the second-largest region and the fastest growing. “Established RoW” covers Japan, Canada, Australia and New Zealand {AR|p. 33}.</p>
+<div class="chart rv">
+  <h4>Total Revenue 2025 by region ($m, growth at actual exchange rates)</h4>
+  <div class="bar"><span>United States</span><div class="tr"><div class="fi" data-w="100"></div></div><span class="v">25,450 · +10%</span></div>
+  <div class="bar"><span>Emerging Markets</span><div class="tr"><div class="fi alt" data-w="60.1"></div></div><span class="v">15,303 · +12%</span></div>
+  <div class="bar"><span>Europe</span><div class="tr"><div class="fi" data-w="50.1"></div></div><span class="v">12,739 · +5%</span></div>
+  <div class="bar"><span>Established RoW</span><div class="tr"><div class="fi alt" data-w="20.6"></div></div><span class="v">5,247 · +5%</span></div>
+</div>
+<p class="cap"><b>Figure 3.</b> Total Revenue by region. The shares are 43%, 26%, 22% and 9% {AR|p. 2}; the values come from {AR|p. 32}, and they add to $58,739m.</p>
+
+<h3 id="s1-7"><span class="num">1.7</span>Countries of presence</h3>
+<p class="rv">AstraZeneca has an active presence in more than 80 countries and sells its products in more than 125 {AR|p. 32}. Its network includes six strategic R&amp;D centres (Boston, Gaithersburg, Cambridge, Gothenburg, Shanghai and Beijing, the latter opened in 2025), ten global hubs, and 31 operations sites in 15 countries {AR|p. 27}.</p>
+<figure class="rv"><img loading="lazy" src="assets/global-reach-ar-p27.png" alt="World map of AstraZeneca R&D centres, global hubs and operations sites"><figcaption><b>Figure 4.</b> Global reach and presence: R&amp;D centres, global hubs, operations sites and employees by reporting region. Source: {AR|p. 27}.</figcaption></figure>
+<div class="chart rv">
+  <h4>Employees by reporting region (total 96,100)</h4>
+  <div class="bar"><span>Emerging Markets</span><div class="tr"><div class="fi alt" data-w="100"></div></div><span class="v">36,800 · 38%</span></div>
+  <div class="bar"><span>Europe</span><div class="tr"><div class="fi alt" data-w="92.4"></div></div><span class="v">34,000 · 35%</span></div>
+  <div class="bar"><span>United States</span><div class="tr"><div class="fi alt" data-w="48.6"></div></div><span class="v">17,900 · 19%</span></div>
+  <div class="bar"><span>Established RoW</span><div class="tr"><div class="fi alt" data-w="20.1"></div></div><span class="v">7,400 · 8%</span></div>
+</div>
+<p class="cap"><b>Figure 5.</b> Employees by reporting region. Source: {AR|p. 27}.</p>
+<div class="review rv"><ul>
+  <li>NB's slide 6 credits “more than 80 countries” to AR p. 27. The sentence is on p. 32 (and in the Form 20-F, Item 3.D). The slide also needs the correct page in its map caption.</li>
+  <li>NB assigns each R&amp;D centre to a country (US, UK, Sweden, China). The AR map shows only cities, so countries are not written here.</li>
+</ul></div>
+
+<h3 id="s1-8"><span class="num">1.8</span>Key indicators</h3>
+<div class="two">
+  <div class="tw rv" style="margin:18px 0 6px"><table>
+    <thead><tr><th>Indicator (2025)</th><th class="n">Value</th></tr></thead>
+    <tbody>
+      <tr><td>Total Revenue</td><td class="n"><b>$58,739m</b> (+9%)</td></tr>
+      <tr><td>&nbsp;&nbsp;Product Sales</td><td class="n">$55,573m</td></tr>
+      <tr><td>&nbsp;&nbsp;Alliance Revenue</td><td class="n">$3,067m</td></tr>
+      <tr><td>&nbsp;&nbsp;Collaboration Revenue</td><td class="n">$99m</td></tr>
+      <tr><td>R&amp;D expense</td><td class="n">$14,232m</td></tr>
+      <tr><td>Operating profit (reported)</td><td class="n">$13,743m</td></tr>
+      <tr><td>Profit for the period</td><td class="n">$10,233m</td></tr>
+      <tr><td>Dividends declared and paid</td><td class="n">$4,846m</td></tr>
+      <tr><td>Employees</td><td class="n">96,100</td></tr>
+    </tbody></table></div>
+  <div class="chart rv"><h4>Total Revenue 2023–2025 ($bn)</h4>
+    <div class="bar"><span>2023</span><div class="tr"><div class="fi" data-w="78"></div></div><span class="v">45.8</span></div>
+    <div class="bar"><span>2024</span><div class="tr"><div class="fi" data-w="92"></div></div><span class="v">54.1</span></div>
+    <div class="bar"><span>2025</span><div class="tr"><div class="fi" data-w="100"></div></div><span class="v">58.7</span></div>
+    <p class="cap" style="margin:8px 0 6px"><b>Source:</b> {AR|p. 11}</p></div>
+</div>
+<p class="cap"><b>Table 3.</b> Key indicators. Sources: {AR|p. 1}; {AR|p. 125}; {AR|p. 27}.</p>
+<div class="review rv"><ul>
+  <li><b>Terminology.</b> NB's notes call $58,739m “sales”. In the AR this is <i>Total Revenue</i>; <i>Product Sales</i> are $55,573m. His screenshot of the income statement highlights the <i>Product Revenue</i> line ($58,640m) instead of <i>Total Revenue</i>, so it was not reused.</li>
+</ul></div>
+
+<h3 id="s1-9"><span class="num">1.9</span>Contribution to the UN Sustainable Development Goals</h3>
+<p class="rv">The AR mentions the UN SDGs once, when it says that partnerships with multilateral organisations and NGOs support them {AR|p. 76}. It does not map actions to individual goals. The mapping below is therefore <span class="tag teal">Analysis</span> by the group: each goal is linked to the actions and targets the Group reports.</p>
+
+<h4>What the Group already does</h4>
+<div class="tw rv"><table>
+  <thead><tr><th style="width:56px">SDG</th><th>Action and evidence</th><th>Why it contributes</th></tr></thead>
+  <tbody>
+    <tr><td><span class="sdg" style="background:#4C9F38">3</span></td><td><b>Good health and well-being.</b> 320 million people positively impacted since 2024, 156 million of them from underserved groups. Ambition for 2030: one billion people, 400 million from underserved communities. A global tiered pricing policy with four tiers based on gross national income, and Patient Assistance Programmes. {AR|p. 41}{AR|p. 5}</td><td>The core business is to discover and supply medicines, and these programmes widen access to treatment.</td></tr>
+    <tr><td><span class="sdg" style="background:#3F7E44">13</span></td><td><b>Climate action.</b> Scope 1 and 2 emissions are down 88.1% since 2015, against a target of 98% by 2026. Targets: −50% of Scope 3 by 2030 and −90% by 2045 (2019 baseline), and net zero by 2045. {AR|p. 2}{AR|p. 42}</td><td>It sets measurable reduction targets, verified under the Science Based Targets initiative {AR|p. 42}.</td></tr>
+    <tr><td><span class="sdg" style="background:#26BDE2">6</span></td><td><b>Clean water and sanitation.</b> The Group's website reports a 23% reduction in water withdrawal against 2015 {NATURE}. The AR gives a 24% reduction in water use for the Operations function alone {AR|p. 33}.</td><td>It reduces the use of a shared resource in its own operations.</td></tr>
+    <tr><td><span class="sdg" style="background:#BF8B2E">12</span></td><td><b>Responsible consumption and production.</b> Waste is down 23% since 2015, with a goal of a 50% waste circularity rate by 2030 {NATURE}. The AR also gives −23% waste for Operations {AR|p. 33}.</td><td>It cuts waste at source and sets a circularity goal.</td></tr>
+    <tr><td><span class="sdg" style="background:#56C02B">15</span></td><td><b>Life on land.</b> AZ Forest, a reforestation and biodiversity programme: 66 million trees planted on six continents since 2020 (at the end of 2025). The website states a target of more than 100 million by 2030 and that the target was revised in 2026 {FOREST}.</td><td>It restores ecosystems and biodiversity.</td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 4.</b> SDGs already supported by the Group (SDGs 3, 13, 6, 12 and 15 come from NB's notes).</p>
+
+<h4>Additional goals supported by AR evidence</h4>
+<div class="tw rv"><table>
+  <thead><tr><th style="width:56px">SDG</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td><span class="sdg" style="background:#FF3A21">5</span></td><td><b>Gender equality.</b> Women are 54% of the workforce, there are seven women on the Board (50%), and five of the ten members of the Senior Executive Team are women {AR|p. 39}.</td></tr>
+    <tr><td><span class="sdg" style="background:#19486A">17</span></td><td><b>Partnerships for the goals.</b> More than 1,000 collaborations worldwide {AR|p. 37}, and partnerships with multilateral organisations and NGOs in support of the SDGs {AR|p. 76}.</td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 5.</b> Proposed additions to NB's list.</p>
+
+<h4>What the Group could do</h4>
+<p class="rv">The AR itself shows where the biggest gaps are. The three proposals below start from those gaps and are the group's suggestions.</p>
+<div class="callout analysis rv"><div class="h">Analysis · suggestions</div>
+<ul>
+  <li><b>SDG 13: focus on suppliers.</b> More than 95% of the Group's greenhouse-gas emissions are in the upstream and downstream value chain, and it already engages suppliers on science-based targets {AR|p. 42}. Strengthening supplier decarbonisation would act where most emissions are.</li>
+  <li><b>SDG 3: close the equity gap.</b> The ambition is to reach 400 million people from underserved communities by 2030, and 156 million had been reached since 2024 {AR|pp. 5, 41}. Concentrating access programmes on underserved groups would accelerate progress towards that target.</li>
+  <li><b>SDG 6, 12 and 15: environmental impact of medicines.</b> The AR states that pharmaceutical residues entering the environment are currently an unavoidable result of patient use of medicines, and reports measures such as environmental risk assessments {AR|p. 45}. Extending those measures along the supply chain is a possible next step.</li>
+</ul></div>
+<div class="review rv"><ul>
+  <li>NB's notes have only images and links for the SDGs, with no justification, and nothing on “could do”. Both were added here from AR facts. <b>NB should confirm or replace the three suggestions.</b></li>
+  <li>Water: the website says “withdrawal” (−23%), the AR says “use” (−24%, Operations only). Choose one metric.</li>
+  <li>AZ Forest: the target was revised in 2026. Check the current figure before submitting.</li>
+  <li>The “impacted people” count (320 million) starts in 2024. It is not an all-time total.</li>
+  <li>The website (“Climate change”) page was never captured in the folders, so the climate data are cited from the AR.</li>
+</ul></div>
+
+<div class="part-label">Part II</div>
+<h1 class="part" id="part2">Development</h1>
+
+<h2 id="s2"><span class="num">2</span>Organisation</h2>
+
+<h3 id="s2-1"><span class="num">2.1</span>Organisational chart</h3>
+<p class="rv">The chart below was drawn by the group from the leadership page of AstraZeneca {LEAD}. It shows the Board of Directors, the Chief Executive Officer (CEO) and the Senior Executive Team (SET). Click on any box to see what the sources say about it.</p>
+
+<div class="orgbox rv">
+  <div id="orgctl"><button type="button" id="orgFit">Fit to width</button><button type="button" id="orgFull">Full size</button></div>
+  <div class="orgscroll"><div class="org">
+    <div class="boardbox">
+      <span class="nd top" data-k="ok" data-t="Board of Directors" data-i="The Board has 14 directors and five committees (Audit, Remuneration, Nomination and Governance, Science, Sustainability). Matters not reserved to the Board are delegated to the CEO or to one of the committees. [AR p. 67–68]">
+        <b>Board of Directors</b><small>14 directors · 5 committees</small></span>
+      <div class="board">
+        <span class="nd ok" data-t="Michel Demaré" data-i="Non-Executive Chair of the Board. [AR p. 68]">M. Demaré<small>Chair</small></span>
+        <span class="nd ok" data-t="Philip Broadley" data-i="Senior Independent Non-Executive Director. [AR p. 68]">P. Broadley<small>Senior Independent</small></span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Euan Ashley, Birgit Conix, Karen Knudsen, Diana Layfield, Anna Manz, Sheri McCoy, Tony Mok and Marcus Wallenberg are listed as Non-Executive Directors in the AR. [AR p. 68–69]">E. Ashley</span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">B. Conix</span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">K. Knudsen</span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">D. Layfield</span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">A. Manz</span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">S. McCoy</span>
+        <span class="nd ok" data-t="Non-Executive Directors confirmed" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">T. Mok</span>
+        <span class="nd ok" data-t="Marcus Wallenberg" data-i="Listed as Non-Executive Director in the AR. [AR p. 68–69]">M. Wallenberg</span>
+        <span class="nd diff" data-t="Wan Ling Martello" data-i="Appears in the group's chart but does NOT appear in the AR's Board list (checked by text search). The AR also lists Rene Haas and Nazneen Rahman as Non-Executive Directors, who are missing from the chart. [AR p. 67–69]">W. L. Martello<small>not in AR</small></span>
+      </div>
+      <div class="vline"></div>
+    </div>
+    <ul class="root"><li>
+        <span class="nd ok" data-t="Pascal Soriot, CEO" data-i="Executive Director and Chief Executive Officer; member of the SET. [AR p. 68, 70]"><b>Pascal Soriot</b><small>Chief Executive Officer</small></span>
+        <ul><li>
+          <span class="nd ok" data-t="Senior Executive Team (SET)" data-i="The SET is the body through which the CEO exercises the authority delegated by the Board. It has 10 members, five of them women. [AR p. 39, 70]"><b>Senior Executive Team</b><small>10 members</small></span>
+          <ul>
+            <li><span class="nd na" data-t="“Financial” box" data-i="Box with no holder in the group's chart. The CFO, Aradhana Sarin, is an Executive Director and a SET member [AR p. 68, 70], and in the chart she is linked to the Board and the SET."><b>Financial</b><small>CFO: Aradhana Sarin</small></span></li>
+            <li><span class="nd grp" data-t="“R&amp;D Therapeuticals” (grouping box)" data-i="Grouping box created by the group (the chart spells it “Therepeuticals”). The AR describes three therapy-area R&amp;D organisations (Oncology, BioPharmaceuticals, Rare Disease) [AR p. 26] but does not show this box as a unit."><b>R&amp;D Therapeuticals</b><small>grouping box</small></span>
+              <ul>
+                <li><span class="nd grp" data-t="Oncology" data-i="The AR lists Oncology as one of three R&amp;D organisations [AR p. 26]. In the chart both Oncology leaders sit under this box."><b>Oncology</b></span>
+                  <ul class="stack">
+                    <li><span class="nd diff" data-t="David Fredrickson" data-i="AR title: EVP, Oncology Haematology Business Unit. The chart omits “Haematology”. [AR p. 70]"><b>D. Fredrickson</b><small>EVP, Oncology Business Unit</small></span></li>
+                    <li><span class="nd diff" data-t="Susan Galbraith" data-i="AR title: EVP, Oncology Haematology R&amp;D. The chart omits “Haematology”. [AR p. 70]"><b>S. Galbraith</b><small>EVP, Oncology R&amp;D</small></span></li>
+                  </ul></li>
+                <li><span class="nd grp" data-t="BioPharma" data-i="BioPharmaceuticals is one of the three R&amp;D organisations. [AR p. 26]"><b>BioPharma</b></span>
+                  <ul class="stack">
+                    <li><span class="nd ok" data-t="Sharon Barr" data-i="EVP, BioPharmaceuticals R&amp;D. [AR p. 70]"><b>S. Barr</b><small>EVP, BioPharma R&amp;D</small></span></li>
+                    <li><span class="nd ok" data-t="Ruud Dobber" data-i="EVP, BioPharmaceuticals Business Unit, responsible for CVRM, R&amp;I and Vaccines &amp; Immune Therapies. This explains why the chart links him to both boxes. One person covering two areas is not dual reporting. [AR p. 70]"><b>R. Dobber</b><small>EVP, BioPharma BU</small></span></li>
+                  </ul></li>
+                <li><span class="nd grp" data-t="Rare Diseases" data-i="Rare Disease is one of the three R&amp;D organisations. [AR p. 26]"><b>Rare Diseases</b></span>
+                  <ul><li><span class="nd ok" data-t="Marc Dunoyer" data-i="CEO of Alexion and Chief Strategy Officer of AstraZeneca, a SET member. Two official posts held by one person. [AR p. 70]"><b>M. Dunoyer</b><small>CEO Alexion &amp; Chief Strategy Officer</small></span></li></ul></li>
+                <li><span class="nd diff" data-t="Vaccines &amp; Immune Therapies" data-i="In the AR this is part of BioPharmaceuticals (Ruud Dobber's remit), not a separate R&amp;D organisation. [AR p. 26, 70]"><b>Vaccines &amp; Immune Therapies</b></span>
+                  <ul><li><span class="nd ok" data-t="Ruud Dobber (second link)" data-i="Same person as under BioPharma. [AR p. 70]"><b>R. Dobber</b><small>(also under BioPharma)</small></span></li></ul></li>
+              </ul></li>
+            <li><span class="nd grp" data-t="“Comercial” (grouping box)" data-i="Grouping box created by the group. The AR describes three commercial regions: US, Europe-Canada and International; Japan reports separately. Only International appears in the chart. [AR p. 32]"><b>Commercial</b><small>grouping box</small></span>
+              <ul><li><span class="nd ok" data-t="Iskra Reic" data-i="EVP, International: China, Asian and Eurasian markets, Middle East &amp; Africa, Latin America, Australia and NZ. [AR p. 70]"><b>I. Reic</b><small>EVP, International</small></span>
+                <ul class="stack">
+                  <li><span class="nd na" data-t="Global Marketing" data-i="Not found in the AR. It probably comes from a third-party chart in DC's research file."><b>Global Marketing</b></span></li>
+                  <li><span class="nd na" data-t="UK" data-i="Not shown as a unit in the AR."><b>UK</b></span></li>
+                  <li><span class="nd na" data-t="Southern Cone" data-i="Does not appear in the AR."><b>Southern Cone</b></span></li>
+                </ul></li></ul></li>
+            <li><span class="nd grp" data-t="Operations (grouping box)" data-i="Grouping box created by the group. In the AR, Pam Cheng and Jeff Pott are separate SET members. [AR p. 70]"><b>Operations</b><small>grouping box</small></span>
+              <ul class="stack">
+                <li><span class="nd ok" data-t="Pam Cheng" data-i="EVP, Global Operations, IT and Chief Sustainability Officer. [AR p. 70]"><b>P. Cheng</b><small>EVP Global Operations, IT &amp; CSO</small></span></li>
+                <li><span class="nd ok" data-t="Jeff Pott" data-i="Chief Human Resources Officer, Chief Compliance Officer and General Counsel (the AR also lists IP). [AR p. 70]"><b>J. Pott</b><small>CHRO, Compliance &amp; General Counsel</small></span></li>
+              </ul></li>
+          </ul></li></ul></li></ul>
+  </div></div>
+  <div class="orgleg">
+    <span><i style="border-color:var(--ok);background:var(--ok-soft)"></i>Matches the AR</span>
+    <span><i style="border-color:var(--teal);background:var(--teal-soft);border-style:dashed"></i>Grouping created by the group</span>
+    <span><i style="border-color:var(--bad);background:var(--bad-soft)"></i>Differs from the AR</span>
+    <span><i style="border-color:var(--warn);background:var(--warn-soft)"></i>Not verifiable in the AR</span>
+  </div>
+  <div id="orginfo">Click on a box to see its source.</div>
+</div>
+<p class="cap"><b>Figure 6.</b> AstraZeneca organisational chart, redrawn from the group's chart. Source: authors' elaboration, based on {LEAD}. Colours show how each box compares with the AR {AR|pp. 67–70}.</p>
+
+<details class="fold"><summary>See the group's original chart (DC's file)</summary><div class="in"><figure><img loading="lazy" src="assets/organogram-original.png" alt="Original organisational chart drawn by the group"><figcaption><b>Original figure.</b> Org_Final_Astra.drawio.svg, converted without changes.</figcaption></figure></div></details>
+
+<p class="rv">The AR confirms three things: the chain Board → CEO → SET, the ten SET members with their titles {AR|p. 70}, and the existence of three therapy-area R&amp;D organisations and three commercial regions {AR|pp. 26, 32}. The boxes “R&amp;D Therapeuticals”, “Commercial”, “Operations” and “Financial” are groupings added by the group, and the AR does not present them as units. They are kept because they help to read the structure, but conclusions below rely on the AR wherever they can.</p>
+
+<div class="review rv"><ul>
+  <li><b>Board:</b> Wan Ling Martello is in the chart but not in the AR. Rene Haas and Nazneen Rahman are in the AR but not in the chart. The Board has 14 directors {AR|p. 68}.</li>
+  <li><b>Titles:</b> Fredrickson and Galbraith are “Oncology Haematology” in the AR. “Vaccines &amp; Immune Therapies” is not a separate R&amp;D organisation in the AR.</li>
+  <li><b>Chart fixes:</b> typo “Therepeuticals”; “Comercial” and “Austrália” are in Portuguese; the “Financial” box has no holder; Global Marketing, UK and Southern Cone are not in the AR; the file is in dark mode and has no caption.</li>
+  <li><b>DC's notes</b> say Galbraith and Fredrickson have “no formal link”. In his own chart both sit under the same Oncology box.</li>
+  <li>The leadership page URL in the chart footer has no access date yet. Add it to the reference.</li>
+</ul></div>
+
+<h3 id="s2-2"><span class="num">2.2</span>Analysis of the structure</h3>
+<p class="rv">The criteria below come from the course material on the organising function {ORG}. Each statement is limited to what the AR, the chart or the course material support, and each analysis ends with what cannot be concluded from the sources.</p>
+
+<h4>Type of departmentalisation</h4>
+<p class="rv">Departmentalisation means grouping activities into logical units to carry out the strategy {ORG|p. 14}. The course material distinguishes functional grouping {ORG|p. 15}, divisional grouping by product, area, customer or project {ORG|pp. 16–19}, multiple (mixed) grouping when large organisations cannot rely on one criterion {ORG|p. 20}, and matrix structures, which combine two criteria and have dual authority, with employees reporting to two managers {ORG|pp. 21–22}.</p>
+<p class="rv">AstraZeneca uses several criteria at the same time:</p>
+<ul class="rv">
+  <li><b>By therapy area (product):</b> three R&amp;D organisations, Oncology, BioPharmaceuticals and Rare Disease {AR|p. 26}, with a separate EVP for R&amp;D and for the business unit in Oncology and in BioPharmaceuticals {AR|p. 70}.</li>
+  <li><b>By geography:</b> three commercial regions (US, Europe-Canada, International), with Japan reporting separately {AR|p. 32}.</li>
+  <li><b>By function:</b> Operations (manufacturing and supply, IT), finance, and human resources, compliance and legal are led by separate SET members {AR|p. 70}.</li>
+</ul>
+<div class="callout analysis rv"><div class="h">Analysis</div>
+<p>The structure is best described as <b>multiple (mixed) departmentalisation</b>, combining the functional, therapy-area and geographic criteria {ORG|p. 20}.</p></div>
+<div class="callout limit rv"><div class="h">What the sources do not show</div>
+<p>It cannot be called a matrix. A matrix requires dual authority {ORG|pp. 21–22}, and neither the chart nor the AR documents anyone reporting to two managers. The only double link in the chart, Ruud Dobber under BioPharma and under Vaccines &amp; Immune Therapies, is one person covering two areas {AR|p. 70}. The AR also says the Group has one reportable segment and that discovery, development, manufacturing and commercialisation are managed globally on a highly integrated basis {AR|p. 147}.</p></div>
+
+<h4>Capacity to adapt to change</h4>
+<p class="rv">The course material links the organising function to change management {ORG|pp. 4–5}, says that structures with few levels and delegation respond faster than those with many levels and centralisation {ORG|p. 7}, and that functional structures are rigid and hard to restructure {ORG|p. 16}.</p>
+<p class="rv">The AR documents deliberate, long-running change:</p>
+<ul class="rv">
+  <li>After acquiring Alexion in 2021, the Group launched the Post Alexion Acquisition Group Review, a global restructuring programme to integrate systems, structure and processes. It cost $237m in 2025 and $3,414m cumulatively {AR|p. 142}, with expected total costs of $4.0bn {AR|p. 59}.</li>
+  <li>“Enable an agile organisation” is one of the strategic focus areas, alongside “Transform R&amp;D ways of working” {AR|p. 11}.</li>
+  <li>In December 2025 the Group created a dedicated Enterprise AI unit to accelerate Ambition 2030 {AR|p. 36}.</li>
+  <li>Marc Dunoyer leads Alexion within the SET {AR|p. 70}, and Sharon Barr and the CFO, Aradhana Sarin, previously worked at Alexion {AR|pp. 68, 70}.</li>
+</ul>
+<div class="callout analysis rv"><div class="h">Analysis</div><p>The Group has shown it can absorb a large acquisition and reorganise on purpose, and it names agility as a goal. This points to a <b>reasonable capacity to adapt</b>.</p></div>
+<div class="callout limit rv"><div class="h">What the sources do not show</div><p>The AR gives no decision times, so the <i>speed</i> of response cannot be assessed. Career moves of individual executives (for example Iskra Reic) and a “2024 reorganisation” appear only in third-party notes in DC's file and are not in the AR, so they are not used.</p></div>
+
+<h4>Formal and informal organisation</h4>
+<p class="rv">The formal organisation is designed by management, has rules and procedures, and can be drawn in an organisational chart. The informal organisation emerges from social interaction, is not and cannot be in the chart, and can speed communication or resist change {ORG|pp. 12–13}.</p>
+<p class="rv"><b>Formal:</b> the Board keeps certain matters reserved and delegates the rest to the CEO or to its five committees {AR|p. 67}; the SET is the body through which the CEO exercises delegated authority {AR|p. 70}; there is a Code of Ethics and a global compliance programme {AR|p. 34}; and cross-functional sub-committees and product committees allocate resources {AR|p. 147}. Marc Dunoyer holding two posts, CEO of Alexion and Chief Strategy Officer, is also <i>formal</i>, because both are official positions {AR|p. 70}.</p>
+<p class="rv"><b>Closest documented link to informal organisation:</b> the Employee Resource Groups, which are voluntary, employee-led groups open to all employees {AR|p. 39}, and the Pulse survey of employees {AR|p. 39}.</p>
+<div class="callout limit rv"><div class="h">What the sources do not show</div><p>No document describes the real informal organisation (networks, communities of practice, informal leaders). By definition the chart does not show it {ORG|p. 12}. The report therefore only explains the concept and the organised channels that exist.</p></div>
+
+<h4>Flexibility or rigidity</h4>
+<p class="rv">According to the course material, large organisations tend to be more specialised, centralised and formalised {ORG|p. 11}, and rigidity grows with formalisation {ORG|p. 9} and centralisation {ORG|p. 7}.</p>
+<ul class="rv">
+  <li>All significant operating decisions are taken at SET level, and resources are allocated Group-wide by product committees {AR|p. 147}. This indicates <b>centralisation</b> at the top.</li>
+  <li>Governance is documented in detail: reserved matters, delegations, committees and their roles {AR|pp. 67, 71}.</li>
+  <li>Commercial presence is organised through wholly-owned local marketing companies in most markets {AR|p. 32}, and the Group states a focus on an agile organisation {AR|p. 11}.</li>
+</ul>
+<div class="callout analysis rv"><div class="h">Analysis</div><p>The evidence points to a structure that is <b>formalised and centralised at the SET</b>, with specialisation by therapy area and region, and with agility as a declared goal. It leans towards rigidity in decision-making and towards flexibility only in the stated intention.</p></div>
+<div class="callout limit rv"><div class="h">What the sources do not show</div><p>The AR does not describe autonomy for units below the SET, nor regional pricing autonomy. The idea that Alexion works as an “autonomous company” is not supported: the AR says the Group has a single reportable segment and that functional areas are not managed separately {AR|p. 147}.</p></div>
+<div class="review rv"><ul><li>DC's draft says the structure is “decentralised below the SET” and that Alexion is “autonomous”. The AR p. 147 contradicts both, so this draft does not use them. Confirm with DC.</li></ul></div>
+
+<h4>Number of hierarchical levels</h4>
+<p class="rv">The course material relates levels to span of control: the wider the span, the fewer the levels and the flatter the structure; narrower spans give more levels and a tall structure {ORG|pp. 8–9}. It also names three management levels: strategic, tactical and operational {ORG|p. 7}.</p>
+<div class="two rv">
+  <div class="card" style="margin:0"><div class="ui" style="font-size:13px;color:var(--muted)">Operations branch</div><div class="ui" style="font-size:34px;font-weight:750;color:var(--accent)">5 levels</div><div class="ui" style="font-size:13px">Board → CEO → SET → Operations → executive (4 below the Board)</div></div>
+  <div class="card" style="margin:0"><div class="ui" style="font-size:13px;color:var(--muted)">R&amp;D and Commercial branches</div><div class="ui" style="font-size:34px;font-weight:750;color:var(--accent)">6 levels</div><div class="ui" style="font-size:13px">One more, because of the R&amp;D Therapeuticals and Commercial grouping boxes (5 below the Board)</div></div>
+</div>
+<p class="cap"><b>Count in Figure 6</b>, including the Board as level 1.</p>
+<div class="callout limit rv"><div class="h">What the sources do not show</div><p>The count refers to the <b>chart analysed</b>, which covers only the top of the company. The AR does not disclose levels below the SET nor spans of control, so it cannot be concluded whether the whole structure is tall or flat. Other level counts that appear in the research file (6 to 9 levels) have no source in the AR and are not used.</p></div>
+
+<h4>Line and staff positions</h4>
+<p class="rv">A <b>line</b> manager has decision power and authority over the workers who report to him or her, within the chain of command. A <b>staff</b> unit or person supports, advises or assists line managers. In the course material's example, directors of marketing, finance and production are line positions, while the board's secretariat and legal advice are staff {ORG|p. 8}.</p>
+<div class="tw rv"><table>
+  <thead><tr><th>Position</th><th>Responsibility according to the AR</th><th>Classification</th></tr></thead>
+  <tbody>
+    <tr><td>EVPs of R&amp;D and business units: Fredrickson, Galbraith, Barr, Dobber</td><td>Run the R&amp;D and commercial performance of their therapy areas {AR|p. 70}</td><td><span class="tag ok">Line</span></td></tr>
+    <tr><td>Iskra Reic, EVP International</td><td>Strategy and growth in the International region {AR|p. 70}</td><td><span class="tag ok">Line</span></td></tr>
+    <tr><td>Pam Cheng, EVP Global Operations, IT and CSO</td><td>Operations, IT and sustainability {AR|p. 70}</td><td><span class="tag warn">Mixed</span> manufacturing is line; IT and sustainability support other areas</td></tr>
+    <tr><td>Jeff Pott, CHRO, Compliance and General Counsel</td><td>HR, compliance, legal and IP {AR|p. 70}</td><td><span class="tag acc">Staff</span> legal advice is staff in the course example</td></tr>
+    <tr><td>Aradhana Sarin (CFO); Marc Dunoyer (Alexion, Chief Strategy Officer)</td><td>Finance; Alexion and strategy {AR|p. 70}</td><td><span class="tag">Not classified</span> the AR does not say who reports to them</td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 6.</b> Line and staff positions in the Senior Executive Team. Classification: authors' analysis using {ORG|p. 8}.</p>
+<div class="review rv"><ul><li>DC's draft classifies line/staff by “generates revenue”. That is not the criterion of the course material, which is authority over workers {ORG|p. 8}. This draft uses the course criterion. The AR does not label any post as line or staff.</li></ul></div>
+
+<h3 id="s2-3"><span class="num">2.3</span>Proposed changes to the structure</h3>
+<p class="rv">The proposals below come from DC's ideas, rebuilt so that each one rests on a fact in the AR and on the trade-offs described in the course material. They are the group's proposals.</p>
+
+<div class="card rv">
+  <h4 style="margin-top:0">Proposal 1 · Stronger coordination between R&amp;D and the business unit in each therapy area</h4>
+  <p><b>Basis.</b> In Oncology and in BioPharmaceuticals, R&amp;D and the business unit are led by different SET members {AR|p. 70}. The AR states that cross-functional sub-committees and product committees already exist {AR|p. 147}.</p>
+  <p><b>Proposal.</b> Make the coordination at therapy-area level permanent and visible, with one joint forum per area where R&amp;D and the business unit share priorities and resources.</p>
+  <p><b>Advantage.</b> Faster decisions and fewer gaps between research and commercial plans. <b>Risk.</b> More meetings and slower decisions if the forum has no clear authority. The course material warns that, with product-based units, each unit's interests can come before the organisation's and units may compete instead of cooperating {ORG|p. 17}; a joint forum is meant to counter that.</p>
+</div>
+<div class="card rv">
+  <h4 style="margin-top:0">Proposal 2 · More local autonomy in access and pricing</h4>
+  <p><b>Basis.</b> Pricing pressure from payers is a main commercial concern in several regions {AR|p. 32}. Today the Group applies a global tiered pricing policy with four tiers based on gross national income {AR|p. 41}, and operating decisions are taken at SET level {AR|p. 147}.</p>
+  <p><b>Proposal.</b> Give regional commercial teams more room to adapt access and pricing, within limits set centrally by the SET.</p>
+  <p><b>Advantage.</b> Delegation brings decisions closer to the market and speeds the response {ORG|p. 7}, and when units are far apart it is more suitable to assign management to a manager located in the region {ORG|p. 17}. <b>Risk.</b> Less consistency between countries; the limits must be clear. The AR does not report how much autonomy regions have today, so this proposal needs that information to be tested.</p>
+</div>
+<div class="review rv"><ul>
+  <li>DC's first idea (“flatten the R&amp;D Therapeuticals and Commercial boxes”) was dropped because those boxes are groupings of the chart and not units in the AR.</li>
+  <li>His supporting numbers (“$400bn patent cliff”), the CFO's public statement on pricing, and the “2024 reorganisation” have no source in the folders. Add a source before using them.</li>
+  <li><b>DC should confirm</b> or rewrite both proposals.</li>
+</ul></div>
+
+<h2 id="s3"><span class="num">3</span>Planning</h2>
+
+<h3 id="s3-1"><span class="num">3.1</span>Values, mission and vision</h3>
+<div class="pending rv"><span class="who">Pending · SN</span>
+<p><b>Task:</b> identify and comment, from a management point of view, on the values, the vision and the mission of the organisation.</p>
+<p>Nothing has been delivered yet, so no text was written for this section. It will be added when SN finishes.</p></div>
+<div class="review rv"><b>Source material already checked for SN</b><ul>
+  <li>The AR has no formal <i>mission</i> or <i>vision</i> statement. It has a <b>Purpose</b> (“We push the boundaries of science to deliver life-changing medicines”), five <b>Values</b> and the <b>Ambition 2030</b> {AR|p. 8}{AR|p. 10}. The word “vision” appears once, in the CEO's review {AR|p. 5}.</li>
+  <li>Values: we follow the science; we put patients first; we play to win; we do the right thing; we are entrepreneurial {AR|p. 8}.</li>
+  <li>Course definitions to use: values {PLAN|p. 15}, vision {PLAN|pp. 15–16}, mission {PLAN|p. 16}.</li>
+  <li>Full list with quotes and pages: <code>_analise/planeamento.md</code>, section D.</li>
+</ul></div>
+
+<h3 id="s3-2"><span class="num">3.2</span>Objectives at the three management levels</h3>
+<div class="pending rv"><span class="who">Pending · SN</span>
+<p><b>Task:</b> give one objective for each of the three management levels (top, middle and first-line), and justify why each suits its level.</p>
+<p>Nothing has been delivered yet.</p></div>
+<div class="review rv"><ul>
+  <li>The AR does not classify objectives as strategic, tactical or operational. SN must make that classification himself using the course definitions {PLAN|pp. 5–7}.</li>
+  <li>Candidate sources in the AR: Ambition 2030 and climate targets (long term) {AR|pp. 10, 42}; the 2026 guidance {AR|p. 64} and the Group scorecard {AR|p. 99} (medium term); operating results such as on-time launches and supply {AR|pp. 4, 27} (short term).</li>
+</ul></div>
+
+<h3 id="s3-3"><span class="num">3.3</span>SWOT analysis and strategy</h3>
+<h4>Approach</h4>
+<p class="rv">The method follows the course material {PLAN}. The general external environment is studied with PESTEL, and the specific external environment with Porter's five forces. The internal environment is studied with the value chain and VRIO. Strengths and weaknesses come from the internal analysis and opportunities and threats from the external one. The TOWS cross-matrix then leads to a strategy.</p>
+<div class="flow rv">
+  <div class="f">PESTEL<small>general environment</small></div><div class="ar">+</div>
+  <div class="f">Five forces<small>sector</small></div><div class="ar">→</div>
+  <div class="f">Opportunities &amp; Threats<small>external, future</small></div><div class="ar">→</div>
+  <div class="f g">SWOT matrix</div>
+</div>
+<div class="flow rv" style="margin-top:-4px">
+  <div class="f">Value chain<small>activities</small></div><div class="ar">+</div>
+  <div class="f">VRIO<small>resources</small></div><div class="ar">→</div>
+  <div class="f">Strengths &amp; Weaknesses<small>internal, present</small></div><div class="ar">→</div>
+  <div class="f g">TOWS → Strategy</div>
+</div>
+<p class="cap"><b>Figure 7.</b> Analysis path from the environment to the strategy.</p>
+<p class="rv">Facts come with a reference and, where possible, the page. Classifications (opportunity or threat, intensity of a force, VRIO answers) are <span class="tag teal">Analysis</span> by the group.</p>
+
+<h4 id="s3-3-1">PESTEL: general external environment</h4>
+<div class="tw rv"><table>
+  <thead><tr><th>Factor</th><th>Evidence</th><th>Class</th></tr></thead>
+  <tbody>
+    <tr><td><b>P</b> Political</td><td>Geopolitical tension and strategic rivalry between the US and China; rise of economic nationalism {AR|p. 6}</td><td><span class="tag bad">Threat</span></td></tr>
+    <tr><td><b>P</b> Political</td><td>Governments encourage companies to localise operations, presented as an opportunity for those investing locally. AstraZeneca obtained a three-year tariff exemption in the US {AR|pp. 4, 7}</td><td><span class="tag ok">Opportunity</span></td></tr>
+    <tr><td><b>E</b> Economic</td><td>Healthcare budgets are under pressure, leading to downward pressure on pricing {AR|p. 7}</td><td><span class="tag bad">Threat</span></td></tr>
+    <tr><td><b>E</b> Economic</td><td>Global healthcare spending is expected to grow 7.1% a year in 2025–2029; global pharmaceutical sales grew 10.0% in 2025 {AR|p. 6}</td><td><span class="tag ok">Opportunity</span></td></tr>
+    <tr><td><b>E</b> Economic</td><td>Economic power is shifting from the G7 to large emerging markets (China, India, Indonesia) {AR|p. 6}</td><td><span class="tag ok">Opportunity</span></td></tr>
+    <tr><td><b>S</b> Social</td><td>Ageing: the population aged 65+ is set to triple by 2100, which raises demand for care {AR|pp. 6–7}</td><td><span class="tag ok">Opportunity</span></td></tr>
+    <tr><td><b>S</b> Social</td><td>Non-communicable diseases are 75% of non-pandemic deaths; about 1.4 billion people have hypertension; over 30 million new cancer diagnoses are estimated by 2040 {AR|pp. 7, 13, 17}</td><td><span class="tag ok">Opportunity</span></td></tr>
+    <tr><td><b>T</b> Technological</td><td>Generative AI is estimated to create $4–7bn of value a year for pharma; the AR notes it “will unlock value and bring new risks” {AR|p. 7}</td><td><span class="tag ok">Opportunity</span> with risk</td></tr>
+    <tr><td><b>E</b> Environmental</td><td>The climate crisis worsens health inequalities and pressures health systems; decarbonisation demands grow, including net zero by 2045 {AR|pp. 7, 42}</td><td><span class="tag bad">Threat</span> (cost, reputation)</td></tr>
+    <tr><td><b>L</b> Legal</td><td>In the US, the Inflation Reduction Act subjects medicines to Medicare-negotiated prices. Farxiga was selected and Calquence takes effect in 2027. The AR expects the impact on Farxiga to be manageable {AR|p. 33}</td><td><span class="tag bad">Threat</span></td></tr>
+    <tr><td><b>L</b> Legal</td><td>Governments and payers press to limit intellectual-property protection {AR|p. 49}</td><td><span class="tag bad">Threat</span></td></tr>
+    <tr><td><b>L</b> Legal</td><td>EU pharmaceutical reform (agreement of December 2025): 8 years of data protection, and generics can enter “day one” after IP expiry {EU}</td><td><span class="tag bad">Threat</span></td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 7.</b> PESTEL analysis. The “Class” column is the group's analysis.</p>
+<div class="callout analysis rv"><div class="h">Analysis</div><p>Forces pull in opposite directions. On <b>demand</b> the pressure is favourable: ageing, chronic disease, cancer and rising healthcare spending. On <b>price and regulation</b> it is unfavourable: tight budgets, price negotiation in the US and limits on intellectual property. Political factors are ambivalent: geopolitics raises risk but rewards local investment, as AstraZeneca is doing in the US {AR|p. 4}.</p></div>
+
+<h4 id="s3-3-2">Porter's five forces: specific external environment</h4>
+<p class="rv">The sector analysed is innovative prescription medicines. The intensity of each force is the group's analysis.</p>
+<div class="porter rv">
+  <div class="pf a"><h4>Threat of new entrants <span class="tag ok">Weak</span></h4><div class="meter s1"><i></i><i></i><i></i></div>High barriers: developing a medicine is estimated to cost $2.6bn (a 2014 estimate) {MULLARD}, R&amp;D takes 5–15 years and needs regulatory approval and patents {AR|p. 9}. Biotechs enter niches but are often bought or licensed by large groups, for example the acquisition of EsoBiotec {AR|p. 37}.</div>
+  <div class="pf b"><h4>Bargaining power of suppliers <span class="tag warn">Moderate</span></h4><div class="meter s2"><i></i><i></i><i></i></div>Most active pharmaceutical ingredients (APIs) are bought from external suppliers {AR|p. 33}. Global API capacity is concentrated in India (48% of active API filings in 2023) and China (16%) {USP}. The Group uses multiple sources and keeps stocks {AR|p. 48}.</div>
+  <div class="pf c"><h4>Rivalry among competitors</h4><div class="meter s3"><i></i><i></i><i></i></div><span class="tag bad" style="align-self:center">Strong</span><p style="margin:8px 0 0">Several large groups of similar size. In 2024 the top 10 earned between about $44bn and $64bn, and AstraZeneca was 5th ($54.07bn), behind Merck &amp; Co., Pfizer, J&amp;J and AbbVie {P50}. Competition is based on innovation: over 100 phase III studies are ongoing at AstraZeneca alone {AR|p. 3}.</p></div>
+  <div class="pf d"><h4>Bargaining power of buyers <span class="tag bad">Strong</span></h4><div class="meter s3"><i></i><i></i><i></i></div>Payers are mainly insurers and national health budgets. In the US, payers are consolidating: 3 pharmacy benefit managers process 80% of prescriptions {FEIN}. Prices are also negotiated (IRA) and differ by country {AR|pp. 32, 33, 41, 52}.</div>
+  <div class="pf e"><h4>Threat of substitutes <span class="tag bad">Strong</span> <small>over time, by product</small></h4><div class="meter s3"><i></i><i></i><i></i></div>When patents expire, generics and biosimilars enter. Brilinta sales fell 38% after generic entry in the US and Europe, and Symbicort eroded in the EU and Japan {AR|pp. 20, 56}. More than $90bn of sales is estimated to lose exclusivity in 2025–2029 {IQVIA}.</div>
+</div>
+<p class="cap"><b>Figure 8.</b> The five forces in the innovative pharmaceutical sector.</p>
+<div class="callout analysis rv"><div class="h">Analysis</div><p>The sector is attractive for incumbents because entry barriers are very high, but the profitability of each product is temporary. While protected, buyer power weighs most; after the patent expires, generics and biosimilars do. Success therefore depends on <b>continuously renewing the portfolio</b>. Some authors count generics as new entrants; here they are treated as substitutes because they replace the branded product with the same active ingredient at a lower price.</p></div>
+
+<h4 id="s3-3-3">Value chain: internal environment</h4>
+<div class="vc rv">
+  <div class="row-l">Support activities</div>
+  <div class="sup">
+    <div class="st"><b>R&amp;D and technology <span class="tag ok">Strength</span></b>$14.2bn invested (≈24% of revenue); 197 pipeline projects; 90% of small-molecule discovery AI-assisted {AR|pp. 5, 28, 30, 55}</div>
+    <div class="st"><b>Human resources <span class="tag ok">Strength</span></b>86% see it as a great place to work; over 50,000 employees took part in the AI programme {AR|pp. 5, 38–39}</div>
+    <div class="st"><b>Procurement <span class="tag">Neutral</span></b>Dual sourcing and multiple suppliers to limit supply risk {AR|p. 48}</div>
+    <div class="st"><b>Infrastructure <span class="tag ok">Strength</span></b>Each SET function reviews risk quarterly, feeding the Group Risk Report; operating cash flow $14,575m (+23%) {AR|pp. 10, 47}</div>
+  </div>
+  <div class="row-l">Primary activities</div>
+  <div class="pri">
+    <div class="st"><b>Inbound logistics</b><span class="tag warn">Neutral / risk</span><br>Most APIs from external suppliers; supply chain finance {AR|p. 33}</div>
+    <div class="st"><b>Operations</b><span class="tag ok">Strength</span><br>31 sites in 15 countries; &gt;99% supply fulfilment {AR|pp. 4, 27}</div>
+    <div class="st"><b>Outbound logistics</b><span class="tag ok">Strength</span><br>217 on-time launches {AR|p. 27}</div>
+    <div class="st"><b>Marketing and sales</b><span class="tag ok">Strength</span><br>47,400 commercial staff; 16 products above $1bn {AR|pp. 27, 32, 50}</div>
+    <div class="st"><b>After-sales</b><span class="tag ok">Strength</span><br>Pharmacovigilance; patient support; &gt;200 partnerships with health systems {AR|pp. 4, 31, 41}</div>
+  </div>
+</div>
+<p class="cap"><b>Figure 9.</b> Value chain of AstraZeneca. Ratings are the group's analysis. Operations also reported zero patient-level recalls and zero critical findings in 42 external inspections {AR|p. 4}; the AR also records 10 product recalls {AR|p. 31}.</p>
+
+<h4 id="s3-3-4">VRIO: internal resources</h4>
+<div class="tw rv"><table>
+  <thead><tr><th>Resource or capability</th><th>Evidence</th><th class="c2">V</th><th class="c2">R</th><th class="c2">I</th><th class="c2">O</th><th>Result</th></tr></thead>
+  <tbody>
+    <tr><td>Pipeline and R&amp;D capacity</td><td>197 projects; 20 NMEs in pivotal trials or regulatory review; 43 NME and major life-cycle approvals in 2025 {AR|pp. 28, 30}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag ok">Sustained advantage</span></td></tr>
+    <tr><td>Leadership in oncology</td><td>$25.6bn (+15%); five multi-blockbuster medicines {AR|pp. 4, 13}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag ok">Sustained advantage</span></td></tr>
+    <tr><td>Operational excellence and supply chain</td><td>&gt;99% supply fulfilment; 217 on-time launches {AR|pp. 4, 27}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag warn">Temporary advantage</span></td></tr>
+    <tr><td>Global presence and commercial network</td><td>Sales in over 125 countries; strong position in emerging markets {AR|pp. 32–33}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">Parity</span></td></tr>
+    <tr><td>AI and data capabilities</td><td>90% of small-molecule discovery AI-assisted; Enterprise AI unit {AR|pp. 5, 36}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag warn">Temporary advantage</span></td></tr>
+    <tr><td>Partnership network</td><td>More than 1,000 collaborations worldwide {AR|p. 37}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">Parity</span></td></tr>
+    <tr><td>Patents on current products</td><td>Temporary protection; US exclusivity loss for Farxiga expected in 2026 {AR|pp. 9, 33}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N*</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag warn">Temporary advantage</span></td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 8.</b> VRIO analysis: Value, Rarity, Imitability, Organisation. Answers are the group's analysis. * Protected by law while the patent lasts, but imitable once it expires.</p>
+<div class="callout analysis rv"><div class="h">Analysis</div><p>The <b>sustained</b> advantages lie in the <b>ability to innovate</b>: the pipeline, R&amp;D and leadership in oncology. They do not lie in any single product, because patents expire. This agrees with the Porter result.</p></div>
+
+<h4 id="s3-3-5">SWOT matrix</h4>
+<p class="rv">The <i>origin</i> of each point is the tool it came from: PESTEL, Porter, value chain (VC), VRIO, or AR data when it comes straight from the financial review. The choice and wording of the points are the group's analysis.</p>
+<div class="swot rv">
+  <div class="sq S"><h4>Strengths</h4><div class="sub">internal · present</div><ul>
+    <li><b class="k">S1</b>Robust pipeline and high R&amp;D investment: $14.2bn and 197 projects. {AR|pp. 28, 30}<em>Origin: VRIO, VC</em></li>
+    <li><b class="k">S2</b>Leadership in oncology: 44% of revenue and 15% growth. {AR|pp. 2, 4}<em>Origin: VRIO</em></li>
+    <li><b class="k">S3</b>Diversified portfolio and geography: 3 therapy areas, 4 regions, sales in over 125 countries. {AR|pp. 2, 32}<em>Origin: VC, VRIO</em></li>
+    <li><b class="k">S4</b>Operational excellence: &gt;99% supply fulfilment, zero patient-level recalls, zero critical findings in 42 inspections. {AR|p. 4}<em>Origin: VC, VRIO</em></li>
+    <li><b class="k">S5</b>Financial strength: revenue $58.7bn (+9%), operating cash flow $14.6bn (+23%). {AR|pp. 10, 51}<em>Origin: VC</em></li>
+    <li><b class="k">S6</b>Advanced use of AI; 86% of employees see it as a great place to work. {AR|pp. 5, 38}<em>Origin: VRIO, VC</em></li>
+  </ul></div>
+  <div class="sq W"><h4>Weaknesses</h4><div class="sub">internal · present</div><ul>
+    <li><b class="k">W1</b>Revenue concentration: the five largest products add up to about 51% of Total Revenue (Farxiga, Tagrisso, Imfinzi, Ultomiris, Calquence). {AR|p. 56}<em>Origin: AR data (group calculation: 30,045 ÷ 58,739)</em></li>
+    <li><b class="k">W2</b>Mature products losing sales or exclusivity: Brilinta −38% after generic entry; Farxiga expected to lose US exclusivity in 2026. {AR|pp. 33, 56}<em>Origin: AR data, Porter</em></li>
+    <li><b class="k">W3</b>Dependence on partners for growth products: Enhertu and Datroway are co-developed with Daiichi Sankyo; Enhertu brought $1.8bn of Alliance Revenue. {AR|pp. 13, 50}<em>Origin: AR data</em></li>
+    <li><b class="k">W4</b>Weak or negative growth in some areas: Vaccines &amp; Immune Therapies −13%; Europe +1% at constant exchange rates. {AR|pp. 17, 33}<em>Origin: AR data</em></li>
+    <li><b class="k">W5</b>Dependence on external suppliers of APIs. {AR|p. 33}<em>Origin: VC, Porter</em></li>
+    <li><b class="k">W6</b>Risk of missing the 2026 climate target (−98% in Scope 1 and 2; −88.1% reached). The AR cites transition risks such as limited access to renewable energy. {AR|p. 42}<em>Origin: AR data</em></li>
+  </ul></div>
+  <div class="sq O"><h4>Opportunities</h4><div class="sub">external · future</div><ul>
+    <li><b class="k">O1</b>Rising demand: ageing and chronic disease. {AR|pp. 6–7}<em>Origin: PESTEL (S)</em></li>
+    <li><b class="k">O2</b>Healthcare spending +7.1% a year; pharma market +10% in 2025. {AR|p. 6}<em>Origin: PESTEL (E)</em></li>
+    <li><b class="k">O3</b>Growth of emerging markets and shift of economic power. {AR|pp. 6, 33}<em>Origin: PESTEL (E)</em></li>
+    <li><b class="k">O4</b>AI as a productivity lever in R&amp;D ($4–7bn a year for the sector). {AR|p. 7}<em>Origin: PESTEL (T)</em></li>
+    <li><b class="k">O5</b>Large unmet medical needs: hypertension, cancer and rare diseases (fewer than 10% have an approved treatment). {AR|pp. 13, 17, 23}<em>Origin: PESTEL (S)</em></li>
+    <li><b class="k">O6</b>Incentives for local production, such as the three-year tariff exemption in the US. {AR|pp. 4, 7}<em>Origin: PESTEL (P)</em></li>
+  </ul></div>
+  <div class="sq T"><h4>Threats</h4><div class="sub">external · future</div><ul>
+    <li><b class="k">T1</b>Price pressure: health budgets, IRA and payer consolidation. {AR|pp. 7, 32–33}{FEIN}<em>Origin: PESTEL (E, L), Porter (buyers)</em></li>
+    <li><b class="k">T2</b>Wave of exclusivity losses (over $90bn in the sector in 2025–2029) and erosion by generics and biosimilars. {IQVIA}{AR|p. 56}<em>Origin: Porter (substitutes)</em></li>
+    <li><b class="k">T3</b>Geopolitics, tariffs and US–China rivalry. {AR|pp. 6, 49}<em>Origin: PESTEL (P)</em></li>
+    <li><b class="k">T4</b>Intense rivalry among large pharma companies of similar size. {P50}<em>Origin: Porter (rivalry)</em></li>
+    <li><b class="k">T5</b>Pressure to limit intellectual property and EU regulatory reform. {AR|p. 49}{EU}<em>Origin: PESTEL (L)</em></li>
+    <li><b class="k">T6</b>Supply disruptions and API concentration in India and China. {AR|p. 33}{USP}<em>Origin: Porter (suppliers), PESTEL (P)</em></li>
+  </ul></div>
+</div>
+<p class="cap"><b>Figure 10.</b> SWOT matrix of AstraZeneca.</p>
+
+<h4 id="s3-3-6">Most important internal and external aspects</h4>
+<div class="callout analysis rv"><div class="h">Analysis</div>
+<ul>
+  <li><b>Internal situation.</b> The decisive point is the combination of <b>S1 (pipeline)</b> with <b>W1 and W2 (concentration and loss of exclusivity)</b>. The Group has a strong innovation machine and needs it: about half of revenue depends on five products and part of the mature portfolio is already losing sales to generics.</li>
+  <li><b>External situation.</b> The decisive point is the contrast between <b>O1 and O2 (growing demand)</b> and <b>T1 and T2 (price pressure and expiring patents)</b>. The market grows in volume, but the value of each product is increasingly limited in time and in price.</li>
+  <li><b>Link between the two.</b> Launching new medicines faster than old ones lose exclusivity is the critical success factor. The AR says the success of its R&amp;D is crucial over the longer term {AR|p. 52}.</li>
+</ul></div>
+
+<h4 id="s3-3-7">TOWS cross-matrix</h4>
+<p class="rv">The course material links internal and external factors with four questions: how can strengths seize opportunities (SO), how can strengths face threats (ST), how do weaknesses prevent seizing opportunities (WO), and how do weaknesses worsen threats (WT) {PLAN|pp. 27–28}.</p>
+<div class="tows rv">
+  <div></div><div class="hd">Opportunities</div><div class="hd">Threats</div>
+  <div class="hd">Strengths</div>
+  <div class="q"><b>SO · grow</b>Use the pipeline and oncology leadership (S1, S2) to answer growing demand and unmet needs (O1, O5). Use AI (S6) to speed up R&amp;D (O4).</div>
+  <div class="q"><b>ST · defend</b>Use diversification (S3) and local production (S4, O6) to cut the impact of tariffs and geopolitics (T3). Renew the portfolio (S1) before exclusivity is lost (T2).</div>
+  <div class="hd">Weaknesses</div>
+  <div class="q"><b>WO · correct</b>Reduce revenue concentration (W1) by betting on emerging markets (O3) and on new areas with large needs, such as hypertension (O5).</div>
+  <div class="q"><b>WT · avoid</b>Concentration (W1) and mature products (W2), added to price pressure and generics (T1, T2), are the most dangerous combination. They call for active life-cycle management and diversification.</div>
+</div>
+<p class="cap"><b>Figure 11.</b> TOWS matrix (group's analysis).</p>
+
+<h4 id="s3-3-8">Proposed strategy</h4>
+<div class="callout analysis rv"><div class="h">Analysis · strategy proposed by the group</div>
+<p><b>Growth through innovation, with accelerated renewal of the portfolio and geographic diversification.</b> It combines the SO (grow) and ST (defend) quadrants:</p>
+<ol>
+  <li><b>Concentrate R&amp;D investment on the areas of leadership and greatest need</b> (oncology, cardiovascular, renal and metabolic, and rare diseases), using AI to cut development time and cost. <i>Basis:</i> S1, S2, S6 → O1, O4, O5.</li>
+  <li><b>Replace the revenue that will lose exclusivity</b> with new medicines and new indications of current ones. <i>Basis:</i> S1 → T2, W1, W2.</li>
+  <li><b>Reinforce the presence in emerging markets</b> and keep local production in markets that encourage it, such as the US. <i>Basis:</i> S3, S4 → O3, O6, T3.</li>
+  <li><b>Demonstrate the economic value of the medicines</b> to payers, with tiered pricing and outcome-based agreements. <i>Basis:</i> answer to T1.</li>
+</ol></div>
+<div class="flow rv">
+  <div class="f">Pipeline + R&amp;D + AI<small>S1, S6</small></div><div class="ar">→</div>
+  <div class="f">New medicines and indications</div><div class="ar">→</div>
+  <div class="f">Replace revenue losing exclusivity<small>T2, W2</small></div><div class="ar">→</div>
+  <div class="f g">Ambition 2030<small>≥20 new medicines · $80bn</small></div>
+</div>
+<div class="flow rv" style="margin-top:-4px">
+  <div class="f">Global presence + local production<small>S3, S4</small></div><div class="ar">→</div>
+  <div class="f">Emerging markets and resilience to tariffs<small>O3, T3</small></div><div class="ar">→</div>
+  <div class="f">Value for payers<small>T1</small></div><div class="ar">→</div>
+  <div class="f g">Sustainable growth</div>
+</div>
+<p class="cap"><b>Figure 12.</b> How the four actions lead to the Ambition 2030.</p>
+<p class="rv">The proposal is consistent with the strategy the Group declares, <i>Growth Through Innovation</i> {AR|p. 10}, and with the mitigations the AR lists for its main risks: strengthen the pipeline through acquisitions, licensing and collaborations; use the global footprint and diversified portfolio; and implement innovative value-based agreements focused on patient outcomes {AR|p. 48}. Actions 1 and 2 are close to the declared priorities; actions 3 and 4 are the group's own emphasis.</p>
+<div class="tw rv"><table>
+  <thead><tr><th>Objective</th><th>Indicator</th><th class="n">Starting point</th><th class="n">Declared target</th></tr></thead>
+  <tbody>
+    <tr><td>Renew the portfolio</td><td>New molecular entities launched since Oct 2022</td><td class="n">9</td><td class="n">≥ 20 by 2030 {AR|p. 10}</td></tr>
+    <tr><td>Grow</td><td>Total Revenue</td><td class="n">$58.7bn (2025)</td><td class="n">$80bn by 2030 {AR|p. 10}</td></tr>
+    <tr><td>R&amp;D productivity</td><td>Regulatory events per year</td><td class="n">97 (2025)</td><td class="n">none declared {AR|p. 11}</td></tr>
+    <tr><td>Sustainability</td><td>Scope 1 and 2 reduction vs 2015</td><td class="n">−88.1%</td><td class="n">−98% by 2026 {AR|p. 42}</td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 9.</b> Suggested monitoring indicators. The targets are declared by the Group; the choice of indicators is the group's analysis.</p>
+
+<div class="review rv"><b>What was changed in JC's text, and what is still open</b><ul>
+  <li><b>Soliris −29%</b> was removed from W2. The AR attributes the fall to patients switching to Ultomiris {AR|pp. 24, 56}, which is an internal switch, not a loss of exclusivity.</li>
+  <li><b>W1 (≈51%)</b> is the group's own calculation, now shown as such. W1, W2, W3, W4 and W6 said “origin: value chain”, but Table 3 of his file has no such lines. They now say “AR data”. Alternatively, add those lines to the value chain.</li>
+  <li><b>“Zero recalls”</b> only holds at patient level {AR|p. 4}; the AR also records 10 product recalls {AR|p. 31}. The AI figure is “took part in the programme”, not “were trained” {AR|p. 39}.</li>
+  <li><b>IRA:</b> the AR calls the Farxiga impact manageable {AR|p. 33}. Added to the PESTEL row.</li>
+  <li><b>Action 3</b> originally linked emerging markets to local production. In the AR the production incentives are about the US, so the text now separates the two.</li>
+  <li><b>Sources [Mullard], [Fein], [Pharma 50], [IQVIA], [USP], [EU Council]</b> are outside the folders and were not checked. The Mullard figure dates from 2014.</li>
+  <li><b>Reference to the course material:</b> JC's file says “ISEP, Porto”. The PDF does not name the institution, so it is not stated here.</li>
+  <li>The “key aspects” and TOWS paragraphs are untouched, apart from translation.</li>
+</ul></div>
+
+<!-- ===== NEXT DELIVERY (hidden): sections 3.4 and 4 to 9. To show them again, delete this line and the matching 'END NEXT DELIVERY' line below. =====
+<h3 id="s3-4"><span class="num">3.4</span>Complementary themes</h3>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li><b>Productivity:</b> give examples, with justification, of productivity-promotion practices in the organisation.</li>
+  <li><b>Circular economy:</b> give examples, with justification, of circular-economy practices, relating each to the ReSOLVE strategies.</li>
+</ul></div>
+
+<h2 id="s4"><span class="num">4</span>Management control and information systems</h2>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li>Describe the main management control instruments of the organisation and their characteristics.</li>
+  <li>Give examples of KPIs used at each management level, justifying their fit with each level.</li>
+  <li>Identify whether the organisation uses information systems (ERP or others) and the implications of that use.</li>
+</ul></div>
+<h2 id="s5"><span class="num">5</span>Direction and human resources management</h2>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li>Describe the leadership approaches and styles used and their implications.</li>
+  <li>Identify the motivation practices, from the point of view of need satisfaction and rewards, and their implications.</li>
+  <li>Identify the main people-management practices: HR policy, recruitment and selection, induction programmes, training and performance appraisal.</li>
+</ul></div>
+<h2 id="s6"><span class="num">6</span>Marketing</h2>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li>Identify the market segment(s) of one of the products and their characteristics.</li>
+  <li>Develop the marketing mix for one of the products (good and/or service).</li>
+</ul></div>
+<h2 id="s7"><span class="num">7</span>Finance</h2>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li>Obtain the balance sheet and income statement from the annual report and analyse the evolution of the main items between year <i>n</i> and <i>n−1</i>.</li>
+  <li>Use the ratio method to assess the economic and financial performance.</li>
+</ul></div>
+<h2 id="s8"><span class="num">8</span>Production operations and supply chain management</h2>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li>Identify the type of production operations: goods and/or services.</li>
+  <li>Characterise the production system of one good or service (by order or to stock; unit, batch, and so on; or the service-delivery approach).</li>
+  <li>Identify the main elements of the supply chain, from suppliers to final customers.</li>
+  <li>Give examples of Industry 4.0 technologies in operations and supply chain.</li>
+</ul></div>
+
+<div class="part-label">Part III</div>
+<h1 class="part" id="part3">Conclusion</h1>
+<h2 id="s9"><span class="num">9</span>Conclusion</h2>
+<div class="pending rv"><span class="who next">Next delivery</span>
+<ul>
+  <li><b>Work process:</b> describe how the work was developed (model used, good teamwork practices, how presentations were prepared), with a brief evaluation of the methods and lessons learned.</li>
+  <li><b>Summary of the analysis:</b> reflect on management quality and internal organisation, profitability, fit of the strategy to the sector, competitiveness in the main products and markets, people and knowledge management, the transition to the circular economy and Industry 4.0, and alignment with the SDGs.</li>
+  <li><b>Suggestions or recommendations</b> for improving the organisation.</li>
+  <li><b>Final review</b> before submission: spelling, uniform formatting and references.</li>
+</ul></div>
+
+===== END NEXT DELIVERY ===== -->
+
+<h2 id="refs">References</h2>
+<ol class="refs" id="reflist"></ol>
+
+<footer>Draft v0.1 · 10 October 2026 · All figures come from the sources listed above. Sections marked Pending have no content yet.</footer>
+</main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var root=document.documentElement, store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* ---------- references (IEEE) ---------- */
+  var REFS={
+    AR:'AstraZeneca PLC, <i>Annual Report and Form 20-F Information 2025</i>. Cambridge, U.K.: AstraZeneca PLC, 2026. [Online]. Available: https://www.astrazeneca.com/investor-relations/annual-reports/annual-report-2025.html. [Accessed: Sep. 19, 2026].',
+    F20:'AstraZeneca PLC, “Form 20-F for the fiscal year ended December 31, 2025,” U.S. Securities and Exchange Commission, Washington, DC, USA, 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/901832/000110465926019130/azn-20251231x20f.htm. [Accessed: Sep. 19, 2026].',
+    INT:'“Introdução à Gestão,” course material, Management (Gestão), n.d. (file <i>Introducao Gestao.pdf</i>).',
+    NATURE:'AstraZeneca PLC, “Nature,” astrazeneca.com. [Online]. Available: https://www.astrazeneca.com/sustainability/nature.html. [Accessed: Sep. 19, 2026].',
+    FOREST:'AstraZeneca PLC, “AZ Forest,” astrazeneca.com. [Online]. Available: https://www.astrazeneca.com/sustainability/climate-change/az-forest.html. [Accessed: Sep. 19, 2026].',
+    LEAD:'AstraZeneca PLC, “Leadership,” astrazeneca.com. [Online]. Available: https://www.astrazeneca.com/our-company/leadership.html. [Accessed: date to be confirmed].',
+    ORG:'“Função Organização,” v1, course material, Management (Gestão), 1st semester 2025, n.d. (file <i>Função Organização_1s25_v1.pdf</i>).',
+    PLAN:'“Função Planeamento,” course material, Management (Gestão), n.d. (file <i>Função Planeamento.pdf</i>).',
+    MULLARD:'A. Mullard, “New drugs cost US$2.6 billion to develop,” <i>Nat. Rev. Drug Discov.</i>, vol. 13, no. 12, p. 877, 2014, doi: 10.1038/nrd4507.',
+    FEIN:'A. J. Fein, “The Top Pharmacy Benefit Managers of 2025: Market Share and Key Industry Developments,” <i>Drug Channels</i>, Mar. 30, 2026. [Online]. Available: https://www.drugchannels.net/2026/03/the-top-pharmacy-benefit-managers-of.html. [Accessed: Sep. 26, 2026].',
+    P50:'Drug Discovery &amp; Development, “Pharma 50: The 50 largest pharmaceutical companies in the world for 2025,” 2025. [Online]. Available: https://www.drugdiscoverytrends.com/pharma-50-the-50-largest-pharmaceutical-companies-in-the-world-for-2025/. [Accessed: Sep. 26, 2026].',
+    IQVIA:'S. Lauks, C. Ge, D. Luft, R. Perak, L. Greenwalt, and J. Cattell, “The Rules of Loss of Exclusivity are Being Rewritten,” IQVIA, Aug. 7, 2025. [Online]. Available: https://www.iqvia.com/locations/united-states/blogs/2025/07/the-rules-of-loss-of-exclusivity-are-being-rewritten. [Accessed: Sep. 26, 2026].',
+    USP:'U.S. Pharmacopeia, “Global active pharmaceutical ingredient manufacturing capacity remains concentrated despite shifting production trends,” <i>Quality Matters</i>. [Online]. Available: https://qualitymatters.usp.org/global-manufacturing-capacity-active-pharmaceutical-ingredients-remains-concentrated. [Accessed: Sep. 26, 2026].',
+    EU:'Council of the European Union, “‘Pharma package’: Council and Parliament reach a deal on new rules for a fairer and more competitive EU pharmaceutical sector,” press release, Dec. 11, 2025. [Online]. Available: https://www.consilium.europa.eu/en/press/press-releases/2025/12/11/pharma-package-council-and-parliament-reach-a-deal-on-new-rules-for-a-fairer-and-more-competitive-eu-pharmaceutical-sector/. [Accessed: Sep. 26, 2026].'
+  };
+  var order=[], main=$('#main');
+  main.innerHTML=main.innerHTML.replace(/\{([A-Z0-9]+)(?:\|([^}]*))?\}/g,function(m,k,loc){
+    if(!REFS[k]) return m;
+    var n=order.indexOf(k); if(n<0){order.push(k); n=order.length-1;}
+    n+=1; return '<a class="cite" href="#ref-'+n+'">['+n+(loc?', '+loc:'')+']</a>';
+  });
+  var rl=$('#reflist'); order.forEach(function(k,i){var li=document.createElement('li'); li.id='ref-'+(i+1); li.innerHTML=REFS[k]; rl.appendChild(li);});
+
+  /* ---------- theme + review toggle ---------- */
+  var th=store.get('theme'); if(th) root.setAttribute('data-theme',th);
+  $('#themeBtn').onclick=function(){var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'); var nx=cur==='dark'?'light':'dark'; root.setAttribute('data-theme',nx); store.set('theme',nx);};
+  var rb=$('#revBtn'), showRev=store.get('review')==='on';
+  function applyRev(){document.body.classList.toggle('hide-review',!showRev); rb.setAttribute('aria-pressed',String(showRev));}
+  rb.onclick=function(){showRev=!showRev; store.set('review',showRev?'on':'off'); applyRev();}; applyRev();
+  var wide=function(){return innerWidth>980};
+  if(store.get('toc')==='off'&&wide()) document.body.classList.add('toc-off');
+  $('#menuBtn').onclick=function(){
+    if(wide()){var off=document.body.classList.toggle('toc-off'); store.set('toc',off?'off':'on'); setTimeout(function(){window.dispatchEvent(new Event('resize'))},300);}
+    else document.body.classList.toggle('menu');
+  };
+
+  /* ---------- table of contents + scrollspy ---------- */
+  var toc=$('#toc'), heads=$$('h1.part,h2,h3',main), links=[];
+  heads.forEach(function(h){
+    if(!h.id) return;
+    var a=document.createElement('a'); a.href='#'+h.id;
+    a.className=h.tagName==='H1'?'l1':(h.tagName==='H3'?'l3':'l2');
+    var nm=h.querySelector('.num'); a.textContent=nm?nm.textContent+'  '+h.textContent.slice(nm.textContent.length):h.textContent; a.onclick=function(){document.body.classList.remove('menu');};
+    toc.appendChild(a); links.push([h,a]);
+  });
+  function spy(){
+    var y=window.scrollY+120, cur=null;
+    links.forEach(function(p){ if(p[0].getBoundingClientRect().top+window.scrollY<=y) cur=p[1]; });
+    links.forEach(function(p){p[1].classList.toggle('on',p[1]===cur);});
+    var h=document.documentElement.scrollHeight-innerHeight;
+    $('#progress').style.width=(h>0?(scrollY/h*100):0)+'%';
+  }
+  addEventListener('scroll',spy,{passive:true}); spy();
+
+  /* ---------- reveal, bars, counters, donut ---------- */
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  $$('.bar .fi').forEach(function(b){b.style.setProperty('--w',b.dataset.w+'%');});
+  $$('.donut').forEach(function(svg){
+    var d=JSON.parse(svg.dataset.donut), tot=d.reduce(function(a,x){return a+x[1]},0), R=42, C=2*Math.PI*R, off=0;
+    d.forEach(function(x){
+      var len=x[1]/tot*C, c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',60);c.setAttribute('cy',60);c.setAttribute('r',R);c.setAttribute('stroke',x[2]);
+      c.setAttribute('transform','rotate(-90 60 60)'); c.setAttribute('stroke-dashoffset',-off);
+      c.setAttribute('stroke-dasharray','0 '+C); c.dataset.len=len; c.dataset.c=C; svg.appendChild(c); off+=len;
+      var t=document.createElementNS('http://www.w3.org/2000/svg','title'); t.textContent=x[0]+': $'+x[1]+'bn'; c.appendChild(t);
+    });
+  });
+  function run(el){
+    if(el.classList.contains('rv')) el.classList.add('in');
+    $$('.bar .fi',el).forEach(function(b){b.style.width=b.dataset.w+'%';});
+    $$('.donut circle',el).forEach(function(c){c.setAttribute('stroke-dasharray',c.dataset.len+' '+c.dataset.c);});
+  }
+  function count(n){
+    var to=parseFloat(n.dataset.count), dec=+n.dataset.dec||0, pre=n.dataset.pre||'', suf=n.dataset.suf||'', t0=null;
+    if(reduce){return;}
+    (function step(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/1200), e=1-Math.pow(1-p,3), v=to*e;
+      n.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf; if(p<1)requestAnimationFrame(step); else n.textContent=pre+(dec?to.toFixed(dec):to.toLocaleString('en-US'))+suf; })(performance.now());
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target); io.unobserve(e.target);}});},{threshold:.12});
+  $$('.rv,.chart').forEach(function(el){ if(reduce){run(el);} else io.observe(el); });
+  $$('.stat .n').forEach(count);
+  if(reduce){$$('.bar .fi').forEach(function(b){b.style.width=b.dataset.w+'%';});}
+
+  /* ---------- organisational chart ---------- */
+  var org=$('.org'), osc=$('.orgscroll');
+  function fit(){ org.style.zoom=1; var w=org.scrollWidth, c=osc.clientWidth-20; org.style.zoom=w>c?Math.max(.4,c/w):1; }
+  $('#orgFit').onclick=fit; $('#orgFull').onclick=function(){org.style.zoom=1;};
+  fit(); addEventListener('resize',fit);
+  var info=$('#orginfo'), sel=null;
+  $$('.nd[data-i]').forEach(function(n){
+    n.tabIndex=0; n.setAttribute('role','button');
+    function show(){ if(sel)sel.classList.remove('sel'); sel=n; n.classList.add('sel'); info.innerHTML='<b>'+n.dataset.t+'</b><br>'+n.dataset.i; }
+    n.addEventListener('click',show); n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
+  });
+})();
+</script>
+</body>
+</html>
