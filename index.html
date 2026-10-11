@@ -262,7 +262,58 @@ footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px sol
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bar .fi,.donut circle{transition:none}html{scroll-behavior:auto}}
 
+/* ---- JC section 3.3: readable visuals ---- */
+.takeaway{border-left:4px solid var(--accent);padding:4px 0 4px 16px;margin:18px 0 22px;font-size:16.5px}
+.takeaway b.t{display:block;font:700 11.5px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.pest{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 8px}
+.pt{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;font:13.5px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.pt h5{margin:0 0 8px;font-size:14px;display:flex;align-items:center;gap:8px}
+.pt h5 .L{display:inline-flex;width:26px;height:26px;border-radius:8px;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:800}
+.pt ul{list-style:none;padding:0;margin:0}
+.pt li{margin:0 0 9px;padding-left:12px;border-left:3px solid var(--line)}
+.pt li.o{border-left-color:var(--ok)} .pt li.t{border-left-color:var(--bad)} .pt li.n{border-left-color:var(--muted)}
+.pt li b{display:block;font-size:13.5px}
+.imp{letter-spacing:2px;color:var(--accent);font-size:11px;white-space:nowrap}
+.imp i{font-style:normal;color:var(--line)}
+.legend-s{font:12.5px/1.4 -apple-system,sans-serif;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 6px}
+.legend-s span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.pf .kf{display:block;font-size:20px;font-weight:800;color:var(--accent);margin:6px 0 2px;letter-spacing:-.01em}
+.pf ul{margin:6px 0 0;padding-left:16px}
+.pf li{margin:3px 0}
+.vc .st .kf{display:block;font-size:17px;font-weight:800;color:var(--accent);margin:4px 0 2px}
+.vc .st .wk{display:block;color:var(--bad);font-size:12px;margin-top:4px}
+.orig{display:inline-block;font:600 11px/1 -apple-system,sans-serif;padding:4px 7px;border-radius:999px;background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--muted);margin:4px 4px 0 0;white-space:nowrap}
+table.swotT{border-collapse:separate;border-spacing:12px;margin:6px -12px;width:calc(100% + 24px);background:transparent;font-size:14px}
+table.swotT th{background:transparent;border:0;padding:0 4px;font:700 11.5px/1 -apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;white-space:normal}
+table.swotT td{width:50%;vertical-align:top;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px}
+table.swotT td h5{margin:0 0 2px;font-size:15px} table.swotT td .sub{font:12px/1.3 -apple-system,sans-serif;color:var(--muted);margin-bottom:10px}
+table.swotT td.S{border-top:5px solid var(--ok)} table.swotT td.S h5{color:var(--ok)}
+table.swotT td.W{border-top:5px solid var(--warn)} table.swotT td.W h5{color:var(--warn)}
+table.swotT td.O{border-top:5px solid var(--teal)} table.swotT td.O h5{color:var(--teal)}
+table.swotT td.T{border-top:5px solid var(--bad)} table.swotT td.T h5{color:var(--bad)}
+table.swotT ul{list-style:none;padding:0;margin:0}
+table.swotT li{margin:0 0 12px;padding-left:34px;position:relative;line-height:1.45}
+table.swotT li .k{position:absolute;left:0;top:1px;font:800 12px/1 -apple-system,sans-serif;padding:4px 6px;border-radius:6px;background:color-mix(in srgb,currentColor 10%,transparent)}
+table.swotT td.S .k{color:var(--ok)} table.swotT td.W .k{color:var(--warn)} table.swotT td.O .k{color:var(--teal)} table.swotT td.T .k{color:var(--bad)}
+table.swotT li b{display:block}
+table.swotT tbody tr:hover{background:transparent}
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.kcol h5{margin:0 0 8px;font:700 12px/1 -apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kitem{display:grid;grid-template-columns:34px 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;box-shadow:var(--shadow);font:14px/1.45 -apple-system,sans-serif}
+.kitem .n{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+.kitem .big{font-size:18px;font-weight:800;color:var(--accent)}
+.alts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 8px}
+.alt{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);font:13.5px/1.45 -apple-system,sans-serif}
+.alt.core{border-top:5px solid var(--ok)} .alt.comp{border-top:5px solid var(--teal)} .alt.keep{border-top:5px solid var(--muted)}
+.alt h5{margin:6px 0 6px;font-size:14.5px}
+.acts{counter-reset:a;display:grid;gap:10px;margin:16px 0}
+.act{display:grid;grid-template-columns:40px 1fr;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);font:14.5px/1.5 -apple-system,sans-serif}
+.act::before{counter-increment:a;content:counter(a);width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#a3205f);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.act b.h{display:block;font-size:15px;margin-bottom:2px}
 @media (max-width:980px){
+  .pest,.alts,.kgrid{grid-template-columns:1fr}
+  table.swotT,table.swotT tbody,table.swotT tr,table.swotT td,table.swotT th{display:block;width:auto}
+  table.swotT{margin:6px 0;border-spacing:0} table.swotT td{margin-bottom:12px} table.swotT thead{display:none}
   body:not(.toc-off) .hero{margin-left:0}
   .wrap,body.toc-off .wrap{padding:24px 16px 80px}
   aside.toc{width:min(320px,86vw);transform:translateX(-100%);box-shadow:var(--shadow)}
@@ -727,310 +778,344 @@ footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px sol
 <p class="rv">Each unit therefore receives its own direction, aligned with the Group’s vision.</p>
 
 <h4>Values</h4>
-<div class="tw rv"><table>
-  <thead><tr><th>Value</th><th>Meaning</th></tr></thead>
-  <tbody>
+<div class="tw rv">
+  <table>
+    <thead><tr><th>Value</th><th>Meaning</th></tr></thead>
+    <tbody>
     <tr><td>We follow the science</td><td>Push the boundaries of science and work creatively with partners</td></tr>
     <tr><td>We put patients first</td><td>Understand patients’ needs and consider them in every decision</td></tr>
     <tr><td>We play to win</td><td>Build high-performing, inclusive and diverse teams and make the right choices to win</td></tr>
     <tr><td>We do the right thing</td><td>Apply high ethical standards in all aspects of the business</td></tr>
     <tr><td>We are entrepreneurial</td><td>Act with urgency, bravery and resilience, taking smart risks</td></tr>
-  </tbody></table></div>
+    </tbody>
+  </table>
+</div>
 <p class="cap"><b>Table 7.</b> AstraZeneca’s values. Source: {AR|p. 8}.</p>
+
 <p class="rv">The focus on science and patients is directly linked to the research and development of medicines, while integrity and entrepreneurship support responsible conduct and the search for new opportunities. The values guide the company’s culture and decisions and are measured in the internal Pulse survey: 88% of employees see the company as patient-oriented {AR|p. 38}. Measuring them is a form of control, because it allows the company to check whether the culture matches what is intended.</p>
+
 <div class="callout analysis rv"><div class="h">Analysis</div><p>Mission, vision and values are consistent with each other and share the same central idea: science in the service of the patient. The main challenge for management is to reconcile <em>play to win</em> with <em>put patients first</em>, that is, to balance the profitability required by shareholders with patients’ access to medicines, in a context of pressure on prices {AR|pp. 32–33}.</p></div>
 
 <h3 id="s3-2"><span class="num">3.2</span>Objectives at the three management levels</h3>
 <p class="rv">Strategic objectives set the overall long-term results, tactical objectives translate the strategy into departmental plans, and operational objectives guide concrete day-to-day activities {PLAN|pp. 5–9}. AstraZeneca discloses only its strategic objectives. The tactical and operational objectives below are the group’s proposals, designed so that each one contributes to the level above. The Ambition 2030 is pursued through the <i>Growth Through Innovation</i> strategy, which has three priorities: Science and Innovation, Growth and Therapy Area Leadership, and People and Sustainability {AR|p. 10}. The tactical objective below falls under the second priority and the operational objective supports the first.</p>
-<div class="tw rv"><table>
-  <thead><tr><th>Level</th><th>Objective</th><th>Horizon</th></tr></thead>
-  <tbody>
+
+<div class="tw rv">
+  <table>
+    <thead><tr><th>Level</th><th>Objective</th><th>Horizon</th></tr></thead>
+    <tbody>
     <tr><td><b>Strategic</b><br>CEO and SET</td><td>Launch at least 20 new medicines and reach $80bn in Total Revenue by 2030 {AR|p. 10}</td><td>Long</td></tr>
     <tr><td><b>Tactical</b><br>Head of oncology clinical development</td><td>Submit at least three new oncology medicines for regulatory approval by the end of 2027</td><td>Medium</td></tr>
     <tr><td><b>Operational</b><br>Team leader of a clinical trial</td><td>Review at least 98% of the trial’s documents within the deadline, with no critical findings, by the end of the next quarter</td><td>Short</td></tr>
-  </tbody></table></div>
+    </tbody>
+  </table>
+</div>
 <p class="cap"><b>Table 8.</b> One objective for each management level. Only the strategic objective is declared by the Group.</p>
+
 <p class="rv"><b>Strategic.</b> It covers the whole company, has a long horizon and requires decisions only top management can take, such as investment in R&amp;D, which areas to prioritise and acquisitions.</p>
+
 <p class="rv"><b>Tactical.</b> It turns the strategic target into a result for one specific unit, Oncology, which is the largest area (44% of revenue) {AR|p. 2} and had 10 positive Phase III readouts in 2025 {AR|p. 13}. It belongs to a middle manager, who coordinates teams but does not set the Group’s strategy.</p>
+
 <p class="rv"><b>Operational.</b> It focuses on a concrete task, has a short horizon and a precise indicator. The quality of documentation is essential for regulatory approval, and the Group already reports zero critical observations in 42 external inspections {AR|p. 4}.</p>
+
 <div class="callout analysis rv"><div class="h">Analysis</div><p>The three objectives are SMART and form a cascade. Reliable documentation (operational) enables regulatory submissions (tactical), and approved submissions become new medicines and revenue (strategic).</p></div>
 
+
 <h3 id="s3-3"><span class="num">3.3</span>SWOT analysis and strategy</h3>
-<h4>Approach</h4>
-<p class="rv">The method follows the course material {PLAN|pp. 17–29}. The general external environment is studied with PESTEL {PLAN|pp. 19–21}, and the specific external environment with Porter's five forces {PLAN|pp. 21–24}. The internal environment is studied with the value chain {PLAN|p. 25} and VRIO {PLAN|p. 26}. Strengths and weaknesses are internal and refer to the present; opportunities and threats are external and refer to the future {PLAN|p. 27}. The TOWS cross-matrix then leads to a strategy {PLAN|pp. 27–29}.</p>
+<p class="rv">To build the SWOT we first looked outside the company and then inside it, following the course material {PLAN|pp. 17–29}. Outside, PESTEL covers the wider environment {PLAN|pp. 19–21} and Porter's five forces cover the pharmaceutical sector {PLAN|pp. 21–24}. Inside, the value chain shows what the company does {PLAN|p. 25} and VRIO shows which resources give it an edge {PLAN|p. 26}. Strengths and weaknesses describe the company today; opportunities and threats describe what is coming {PLAN|p. 27}. The facts come from the Annual Report and other cited sources, while ratings and classifications are our own reading of them.</p>
 <div class="flow rv">
-  <div class="f">PESTEL<small>general environment</small></div><div class="ar">+</div>
-  <div class="f">Five forces<small>sector</small></div><div class="ar">→</div>
-  <div class="f">Opportunities &amp; Threats<small>external, future</small></div><div class="ar">→</div>
-  <div class="f g">SWOT matrix</div>
+  <div class="f">PESTEL<small>wider environment</small></div><div class="ar">+</div>
+  <div class="f">Five forces<small>the sector</small></div><div class="ar">→</div>
+  <div class="f">Opportunities &amp; Threats<small>outside, future</small></div><div class="ar">→</div>
+  <div class="f g">SWOT</div>
 </div>
 <div class="flow rv" style="margin-top:-4px">
   <div class="f">Value chain<small>activities</small></div><div class="ar">+</div>
   <div class="f">VRIO<small>resources</small></div><div class="ar">→</div>
-  <div class="f">Strengths &amp; Weaknesses<small>internal, present</small></div><div class="ar">→</div>
+  <div class="f">Strengths &amp; Weaknesses<small>inside, today</small></div><div class="ar">→</div>
   <div class="f g">TOWS → Strategy</div>
 </div>
-<p class="cap"><b>Figure 7.</b> Analysis path from the environment to the strategy.</p>
-<p class="rv">Facts come with a reference and, where possible, the page. Classifications, ratings and the choice of points are <span class="tag teal">Analysis</span> by the group. Figures marked “calculated” are the group's own arithmetic on numbers from the Annual Report. Each SWOT point names the table line it comes from (for example Eco1 or VC-F), which is how the origin of the information is identified.</p>
+<p class="cap"><b>Figure 7.</b> From the environment to the strategy.</p>
 
-<h4 id="s3-3-1">PESTEL: general external environment</h4>
-<p class="rv">The course material asks for the impact of each factor on the business, the interaction between factors and medium-term trends {PLAN|p. 19}. The “Impact” column is the group's judgement, except where the Annual Report itself gives an assessment (marked †).</p>
-<div class="tw rv"><table>
-  <thead><tr><th>ID</th><th>Factor</th><th>Evidence</th><th>Class</th><th>Impact</th></tr></thead>
-  <tbody>
-    <tr><td>Pol1</td><td><b>P</b> Geopolitics</td><td>Tension and strategic rivalry between the US and China, and rising economic nationalism {AR|p. 6}. Trade controls, tariffs and taxes may raise costs or reduce revenue {AR|p. 49}.</td><td><span class="tag bad">Threat</span></td><td>High</td></tr>
-    <tr><td>Pol2</td><td><b>P</b> Localisation and tariffs</td><td>Governments encourage companies to localise operations to reduce supply-chain risk {AR|p. 7}. The Group obtained a three-year exemption from Section 232 tariffs and plans to invest $50bn in US manufacturing and R&amp;D {AR|pp. 4, 32–33}.</td><td><span class="tag ok">Opportunity</span></td><td>Medium</td></tr>
-    <tr><td>Pol3</td><td><b>P</b> Taxation</td><td>The Group paid $2,845m of income tax in 2025. The Core tax rate was 18% and is guided to 18–22% in 2026 {AR|pp. 59, 64}.</td><td><span class="tag">Neutral</span></td><td>Low</td></tr>
-    <tr><td>Eco1</td><td><b>E</b> Budgets and pricing</td><td>Healthcare budgets are under pressure, leading to downward pressure on pricing {AR|p. 7}. Payer consolidation and restrictive reimbursement drive significant pricing pressure {AR|p. 32}.</td><td><span class="tag bad">Threat</span></td><td>High</td></tr>
-    <tr><td>Eco2</td><td><b>E</b> Market growth</td><td>Global healthcare spending is expected to grow 7.1% a year in 2025–2029, and global pharmaceutical sales grew 10.0% in 2025 {AR|p. 6}. Global GDP growth is forecast at 3.3% in 2026 and 3.2% in 2027 {AR|p. 7}.</td><td><span class="tag ok">Opportunity</span></td><td>High</td></tr>
-    <tr><td>Eco3</td><td><b>E</b> Shift to emerging markets</td><td>Economic power is shifting from the G7 to large emerging markets such as China, India and Indonesia {AR|p. 6}.</td><td><span class="tag ok">Opportunity</span></td><td>Medium</td></tr>
-    <tr><td>Eco4</td><td><b>E</b> Interest rates and capital</td><td>Borrowing under committed facilities is priced on SOFR plus a margin, and treasury manages interest-rate, currency and credit risk {AR|pp. 61, 64}. The Group holds $4,875m of undrawn committed facilities with no covenants {AR|p. 61}.</td><td><span class="tag">Neutral</span></td><td>Low</td></tr>
-    <tr><td>Eco5</td><td><b>E</b> Currency</td><td>Significant changes in exchange rates may adversely affect the business {AR|p. 49}. At January 2026 rates, 2026 Total Revenue would gain a low single-digit percentage {AR|p. 64}.</td><td><span class="tag warn">Risk</span></td><td>Favourable in 2026 †</td></tr>
-    <tr><td>Soc1</td><td><b>S</b> Ageing</td><td>The population aged 65 and over is set to triple by 2100, which raises demand for care {AR|pp. 6–7}.</td><td><span class="tag ok">Opportunity</span></td><td>High</td></tr>
-    <tr><td>Soc2</td><td><b>S</b> Disease burden</td><td>Non-communicable diseases are 75% of non-pandemic deaths. About 1.4 billion people have hypertension, over 30 million new cancer diagnoses are estimated by 2040, and fewer than 10% of rare diseases have an approved treatment {AR|pp. 7, 13, 17, 23}.</td><td><span class="tag ok">Opportunity</span></td><td>High</td></tr>
-    <tr><td>Soc3</td><td><b>S</b> Talent</td><td>The Group builds talent internally: 5,100 promotions and 2,760 external hires in its global hubs in 2025 {AR|p. 39}. The Annual Report does not assess national education levels.</td><td><span class="tag">Neutral</span></td><td>Low</td></tr>
-    <tr><td>Tec1</td><td><b>T</b> Artificial intelligence</td><td>Generative AI is estimated to create $4–7bn of value a year for pharma, and the AR notes that AI “will unlock value and bring new risks” {AR|p. 7}.</td><td><span class="tag ok">Opportunity</span> with risk</td><td>Medium</td></tr>
-    <tr><td>Tec2</td><td><b>T</b> R&amp;D capacity and collaboration</td><td>R&amp;D expense was $14,232m and more than 100 Phase III studies are ongoing {AR|pp. 3, 55}. More than 1,000 collaborations give access to technology {AR|p. 37}.</td><td><span class="tag ok">Opportunity</span></td><td>Medium</td></tr>
-    <tr><td>Env1</td><td><b>E</b> Climate</td><td>The climate crisis worsens health inequities and strains health systems {AR|p. 7}. The Group has its own science-based targets, including net zero by 2045 {AR|p. 42}. Extreme weather threatens sites, suppliers and distribution routes {AR|p. 44}.</td><td><span class="tag bad">Threat</span></td><td>Medium</td></tr>
-    <tr><td>Env2</td><td><b>E</b> Water, waste and nature</td><td>Operations cut water use by 24% and waste by 23% against 2015 {AR|p. 33}. The Group recognises the active ingredients in its products as its most material water-pollution impact {AR|p. 45}.</td><td><span class="tag bad">Threat</span></td><td>Low</td></tr>
-    <tr><td>Leg1</td><td><b>L</b> Price regulation (IRA)</td><td>In the US, the Inflation Reduction Act subjects medicines to Medicare-negotiated prices. Farxiga was selected and Calquence takes effect in 2027. The AR expects the impact on Farxiga to be manageable {AR|p. 33}.</td><td><span class="tag bad">Threat</span></td><td>Manageable †</td></tr>
-    <tr><td>Leg2</td><td><b>L</b> Intellectual property</td><td>Governments and payers press to limit intellectual-property protection {AR|p. 49}.</td><td><span class="tag bad">Threat</span></td><td>High</td></tr>
-    <tr><td>Leg3</td><td><b>L</b> EU pharmaceutical reform</td><td>The December 2025 provisional agreement sets eight years of data protection plus one year of market protection (extendable by one year if two of three conditions are met), and a Bolar exemption so that generics can be available on day one after intellectual-property expiry {EU}.</td><td><span class="tag bad">Threat</span></td><td>Medium</td></tr>
-    <tr><td>Leg4</td><td><b>L</b> Sector regulation</td><td>Delays in regulatory approvals could delay marketing and reduce revenue {AR|p. 48}. Products need approval from authorities such as the FDA and the EMA {AR|p. 20}.</td><td><span class="tag bad">Threat</span></td><td>Medium</td></tr>
-    <tr><td>Leg5</td><td><b>L</b> Data and AI rules</td><td>A growing range of legislative and regulatory requirements covers data and AI {AR|p. 48}.</td><td><span class="tag bad">Threat</span></td><td>Low</td></tr>
-  </tbody></table></div>
-<p class="cap"><b>Table 9.</b> PESTEL analysis. “Class” and “Impact” are the group's analysis; † marks an assessment given by the Annual Report. Inflation, education levels and government stability are not included because the Annual Report does not treat them as business factors.</p>
-<div class="callout analysis rv"><div class="h">Analysis · interactions and trends</div>
-<p>Factors interact. US tariffs, the pricing agreement and local manufacturing form one package: a three-year tariff exemption {AR|p. 4}, prices aligned with other wealthy countries {AR|p. 32}, and substantially all medicines sold in the US made in the US {AR|p. 33}. In 2026 the IRA price cap on Farxiga coincides with the loss of US exclusivity, yet the AR expects the impact to be manageable {AR|p. 33}. Ageing raises demand {AR|p. 6} while tight budgets cap prices {AR|p. 7}, which the Group answers with tiered pricing {AR|p. 41}. Geopolitics, climate and trade raise supply-chain risk, which dual sourcing and local capacity mitigate {AR|pp. 7, 44, 48}.</p>
-<p>Medium-term trends: healthcare spending grows 7.1% a year to 2029 {AR|p. 6}, Calquence enters price negotiation in 2027 {AR|p. 33}, and the Group aims for net zero by 2045 {AR|p. 42}. Demand pressure is favourable and price and regulatory pressure is unfavourable. Political factors are ambivalent: geopolitics raises risk but rewards local investment.</p></div>
-
-<h4 id="s3-3-2">Porter's five forces: specific external environment</h4>
-<p class="rv">The sector analysed is innovative prescription medicines. Each force is rated strong, moderate or weak {PLAN|p. 21}, and the evidence follows the determinants listed in the course material {PLAN|pp. 22–24}. The ratings are the group's analysis.</p>
-<div class="porter rv">
-  <div class="pf a"><h4>New entrants <span class="tag ok">Weak</span></h4><div class="meter s1"><i></i><i></i><i></i></div>High capital, time and regulatory barriers.</div>
-  <div class="pf b"><h4>Suppliers <span class="tag warn">Moderate</span></h4><div class="meter s2"><i></i><i></i><i></i></div>Mostly external API manufacturing; concentrated capacity.</div>
-  <div class="pf c"><h4>Rivalry</h4><div class="meter s3"><i></i><i></i><i></i></div><span class="tag bad" style="align-self:center">Strong</span><p style="margin:8px 0 0">Large rivals, high fixed costs, innovation-led.</p></div>
-  <div class="pf d"><h4>Buyers <span class="tag bad">Strong</span></h4><div class="meter s3"><i></i><i></i><i></i></div>Consolidated payers and price negotiation.</div>
-  <div class="pf e"><h4>Substitutes <span class="tag bad">Strong</span></h4><div class="meter s3"><i></i><i></i><i></i></div>Generics and biosimilars, product by product, over time.</div>
+<h4 id="s3-3-1">The wider environment: PESTEL</h4>
+<p class="rv">The picture outside AstraZeneca is mixed. Demand is on the company's side: people live longer, chronic diseases and cancer keep growing, and health spending keeps rising. Price and regulation work against it: health budgets are tight, the US now negotiates prices, and governments want to limit patent protection. The course material asks us to rate the impact of each factor and to look at how factors interact {PLAN|p. 19}; Figure 8 sums this up.</p>
+<div class="legend-s rv"><span style="--c:var(--ok)">Opportunity</span><span style="--c:var(--bad)">Threat</span><span style="--c:var(--muted)">Neutral or mixed</span><span>Impact: <span class="imp">●●●</span> high · <span class="imp">●●<i>●</i></span> medium · <span class="imp">●<i>●●</i></span> low</span></div>
+<div class="pest rv">
+  <div class="pt"><h5><span class="L">P</span>Political</h5><ul>
+    <li class="t"><b>US–China rivalry and tariffs <span class="imp">●●●</span></b>Economic nationalism and trade controls may raise costs or cut revenue {AR|pp. 6, 49}.</li>
+    <li class="o"><b>Rewards for producing locally <span class="imp">●●<i>●</i></span></b>Three-year tariff exemption in the US and a $50bn US investment plan {AR|pp. 4, 7, 32–33}.</li>
+    <li class="n"><b>Taxation <span class="imp">●<i>●●</i></span></b>$2,845m of income tax paid; tax rate of 18%, 18–22% expected in 2026 {AR|pp. 59, 64}.</li>
+  </ul></div>
+  <div class="pt"><h5><span class="L">E</span>Economic</h5><ul>
+    <li class="t"><b>Tight health budgets <span class="imp">●●●</span></b>Downward pressure on prices and consolidated payers {AR|pp. 7, 32}.</li>
+    <li class="o"><b>A growing market <span class="imp">●●●</span></b>Health spending +7.1% a year to 2029; pharma sales +10% in 2025 {AR|pp. 6–7}.</li>
+    <li class="o"><b>Shift to emerging markets <span class="imp">●●<i>●</i></span></b>China, India and Indonesia gain economic weight {AR|p. 6}.</li>
+    <li class="n"><b>Rates, currency and capital <span class="imp">●<i>●●</i></span></b>$4,875m of undrawn credit lines; currency should help 2026 revenue slightly {AR|pp. 49, 61, 64}.</li>
+  </ul></div>
+  <div class="pt"><h5><span class="L">S</span>Social</h5><ul>
+    <li class="o"><b>Ageing population <span class="imp">●●●</span></b>People aged 65+ will triple by 2100 {AR|pp. 6–7}.</li>
+    <li class="o"><b>Rising disease burden <span class="imp">●●●</span></b>1.4 billion people with hypertension; over 30 million new cancer diagnoses expected by 2040 {AR|pp. 7, 13, 17}.</li>
+    <li class="n"><b>Talent <span class="imp">●<i>●●</i></span></b>5,100 internal promotions in 2025 {AR|p. 39}.</li>
+  </ul></div>
+  <div class="pt"><h5><span class="L">T</span>Technological</h5><ul>
+    <li class="o"><b>Artificial intelligence <span class="imp">●●<i>●</i></span></b>Worth $4–7bn a year to pharma, with new risks {AR|p. 7}.</li>
+    <li class="o"><b>Access to new science <span class="imp">●●<i>●</i></span></b>Over 100 Phase III studies and 1,000+ collaborations {AR|pp. 3, 37}.</li>
+  </ul></div>
+  <div class="pt"><h5><span class="L">E</span>Environmental</h5><ul>
+    <li class="t"><b>Climate <span class="imp">●●<i>●</i></span></b>Extreme weather threatens sites and suppliers; net zero target by 2045 {AR|pp. 7, 42, 44}.</li>
+    <li class="t"><b>Water, waste and nature <span class="imp">●<i>●●</i></span></b>Active ingredients are the main water-pollution impact {AR|pp. 33, 45}.</li>
+  </ul></div>
+  <div class="pt"><h5><span class="L">L</span>Legal</h5><ul>
+    <li class="t"><b>US price negotiation (IRA) <span class="imp">●●<i>●</i></span></b>Farxiga in 2026, Calquence in 2027; the AR calls the impact “manageable” {AR|p. 33}.</li>
+    <li class="t"><b>Limits on patents <span class="imp">●●●</span></b>Governments and payers push to limit IP protection {AR|p. 49}.</li>
+    <li class="t"><b>EU pharma reform <span class="imp">●●<i>●</i></span></b>8 years of data protection + 1 of market protection; generics on “day one” {EU}.</li>
+    <li class="t"><b>Approvals and data rules <span class="imp">●●<i>●</i></span></b>Approval delays can postpone launches; more rules on data and AI {AR|p. 48}.</li>
+  </ul></div>
 </div>
-<p class="cap"><b>Figure 8.</b> The five forces in the innovative pharmaceutical sector.</p>
-<div class="tw rv"><table>
-  <thead><tr><th>ID</th><th>Force</th><th>Evidence by determinant</th><th>Intensity</th></tr></thead>
+<p class="cap"><b>Figure 8.</b> PESTEL at a glance. Impact ratings are our own, except the IRA and currency effects, which the Annual Report assesses itself.</p>
+<details class="fold rv"><summary>See the full PESTEL table (Table 9)</summary><div class="in">
+<div class="tw"><table>
+  <thead><tr><th>Factor</th><th>Evidence</th><th>Class</th><th>Impact</th></tr></thead>
   <tbody>
-    <tr><td>Porter-R</td><td><b>Rivalry</b></td><td><i>Number and balance:</i> several large groups of similar size. In 2024 the top 10 earned between $44.47bn (Sanofi) and $64.17bn (Merck &amp; Co.), and AstraZeneca was 5th with $54.07bn, behind Merck &amp; Co., Pfizer, J&amp;J and AbbVie {P50}. <i>Fixed costs:</i> R&amp;D of $14,232m a year {AR|p. 55} and a manufacturing network of 31 sites {AR|p. 33}. <i>Differentiation:</i> products protected by patents and leading positions until exclusivity ends {AR|pp. 9, 56}. <i>Growth:</i> the sector is growing, with spending up 7.1% a year to 2029 and sales up 10.0% in 2025 {AR|p. 6}, which eases rivalry. More than 100 Phase III studies are ongoing {AR|p. 3}.</td><td><span class="tag bad">Strong</span></td></tr>
-    <tr><td>Porter-N</td><td><b>New entrants</b></td><td><i>Capital and time:</i> developing a medicine is estimated at $2.6bn (in 2013 dollars) {MULLARD}, and R&amp;D takes 5–15 years and needs regulatory approval {AR|p. 9}. <i>Scale:</i> sales in more than 125 countries with 47,400 commercial employees {AR|p. 32}, and more than 1,000 collaborations {AR|p. 37}. <i>Biotechs:</i> the Group strengthens its pipeline through acquisitions, licensing and collaborations {AR|p. 48}, for example EsoBiotec {AR|p. 37}. <i>Condition:</i> the AR warns that limits on intellectual-property protection would lead to “accelerated and intensified competition” {AR|p. 49}. <i>Exit barriers:</i> the Group operates specialised manufacturing sites, and the AR records the closure of one tablet plant (Bangalore, May 2025) {AR|p. 33}.</td><td><span class="tag ok">Weak</span> (conditional on IP)</td></tr>
-    <tr><td>Porter-S</td><td><b>Suppliers</b></td><td><i>Concentration:</i> most API manufacturing is externally sourced, complemented by growing internal capability {AR|p. 33}. India accounts for 48% of active API Drug Master Files filed with the US FDA and China for 18% in 2024; the files reflect manufacturer location, not volume {USP}. <i>Substitutes:</i> some inputs have no easy alternative, such as horseshoe-crab blood reagents until a synthetic alternative was adopted in 2025 {AR|p. 45}. <i>Mitigation:</i> dual sourcing, multiple suppliers and stock monitoring {AR|p. 48}.</td><td><span class="tag warn">Moderate</span></td></tr>
-    <tr><td>Porter-B</td><td><b>Buyers</b></td><td><i>Concentration:</i> payers are mainly insurers and national budgets. Payer consolidation and restrictive reimbursement drive significant pricing pressure, and rebates apply {AR|p. 32}. In the US, three pharmacy benefit managers (CVS Caremark, Express Scripts and Optum Rx) processed about 80% of equivalent prescription claims in 2025 {FEIN}. Prices are negotiated under the IRA {AR|p. 33} and follow a four-tier policy based on national income {AR|p. 41}. Products are prescribed by physicians, who do not pay for them {AR|p. 32}. Risk of pricing pressure is a Principal Risk {AR|p. 48}.</td><td><span class="tag bad">Strong</span></td></tr>
-    <tr><td>Porter-Sub</td><td><b>Substitutes</b></td><td><i>Cost:</i> when exclusivity ends, generics enter at lower prices. Brilinta sales fell 38% to $823m after generic entry in the US and Europe {AR|pp. 18, 56}, and Symbicort eroded in the EU and Japan {AR|p. 20}. Farxiga still grew 10% in 2025 despite generic competition in some markets {AR|p. 56}. IQVIA estimates more than $90bn in sales set to lose exclusivity in 2025–2029 {IQVIA}. Generics are treated here as substitutes, because they replace the branded product with the same active ingredient at a lower price {PLAN|p. 24}.</td><td><span class="tag bad">Strong</span> over time, by product</td></tr>
+    <tr><td><b>Political</b>: geopolitics</td><td>Tension and strategic rivalry between the US and China, and rising economic nationalism {AR|p. 6}. Trade controls, tariffs and taxes may raise costs or reduce revenue {AR|p. 49}.</td><td><span class="tag bad">Threat</span></td><td>High</td></tr>
+    <tr><td><b>Political</b>: localisation and tariffs</td><td>Governments encourage companies to localise operations to reduce supply-chain risk {AR|p. 7}. The Group obtained a three-year exemption from Section 232 tariffs and plans to invest $50bn in US manufacturing and R&amp;D {AR|pp. 4, 32–33}.</td><td><span class="tag ok">Opportunity</span></td><td>Medium</td></tr>
+    <tr><td><b>Political</b>: taxation</td><td>The Group paid $2,845m of income tax in 2025. The Core tax rate was 18% and is guided to 18–22% in 2026 {AR|pp. 59, 64}.</td><td><span class="tag">Neutral</span></td><td>Low</td></tr>
+    <tr><td><b>Economic</b>: budgets and pricing</td><td>Healthcare budgets are under pressure, leading to downward pressure on pricing {AR|p. 7}. Payer consolidation and restrictive reimbursement drive significant pricing pressure {AR|p. 32}.</td><td><span class="tag bad">Threat</span></td><td>High</td></tr>
+    <tr><td><b>Economic</b>: market growth</td><td>Global healthcare spending is expected to grow 7.1% a year in 2025–2029, and global pharmaceutical sales grew 10.0% in 2025 {AR|p. 6}. Global GDP growth is forecast at 3.3% in 2026 and 3.2% in 2027 {AR|p. 7}.</td><td><span class="tag ok">Opportunity</span></td><td>High</td></tr>
+    <tr><td><b>Economic</b>: shift to emerging markets</td><td>Economic power is shifting from the G7 to large emerging markets such as China, India and Indonesia {AR|p. 6}.</td><td><span class="tag ok">Opportunity</span></td><td>Medium</td></tr>
+    <tr><td><b>Economic</b>: interest rates and capital</td><td>Borrowing under committed facilities is priced on SOFR plus a margin, and treasury manages interest-rate, currency and credit risk {AR|pp. 61, 64}. The Group holds $4,875m of undrawn committed facilities with no covenants {AR|p. 61}.</td><td><span class="tag">Neutral</span></td><td>Low</td></tr>
+    <tr><td><b>Economic</b>: currency</td><td>Significant changes in exchange rates may adversely affect the business {AR|p. 49}. At January 2026 rates, 2026 Total Revenue would gain a low single-digit percentage {AR|p. 64}.</td><td><span class="tag warn">Risk</span></td><td>Favourable in 2026 (AR)</td></tr>
+    <tr><td><b>Social</b>: ageing</td><td>The population aged 65 and over is set to triple by 2100, which raises demand for care {AR|pp. 6–7}.</td><td><span class="tag ok">Opportunity</span></td><td>High</td></tr>
+    <tr><td><b>Social</b>: disease burden</td><td>Non-communicable diseases are 75% of non-pandemic deaths. About 1.4 billion people have hypertension, over 30 million new cancer diagnoses are estimated by 2040, and fewer than 10% of rare diseases have an approved treatment {AR|pp. 7, 13, 17, 23}.</td><td><span class="tag ok">Opportunity</span></td><td>High</td></tr>
+    <tr><td><b>Social</b>: talent</td><td>The Group builds talent internally: 5,100 promotions and 2,760 external hires in its global hubs in 2025 {AR|p. 39}.</td><td><span class="tag">Neutral</span></td><td>Low</td></tr>
+    <tr><td><b>Technological</b>: artificial intelligence</td><td>Generative AI is estimated to create $4–7bn of value a year for pharma, and the AR notes that AI “will unlock value and bring new risks” {AR|p. 7}.</td><td><span class="tag ok">Opportunity</span> with risk</td><td>Medium</td></tr>
+    <tr><td><b>Technological</b>: R&amp;D capacity and collaboration</td><td>R&amp;D expense was $14,232m and more than 100 Phase III studies are ongoing {AR|pp. 3, 55}. More than 1,000 collaborations give access to technology {AR|p. 37}.</td><td><span class="tag ok">Opportunity</span></td><td>Medium</td></tr>
+    <tr><td><b>Environmental</b>: climate</td><td>The climate crisis worsens health inequities and strains health systems {AR|p. 7}. The Group has its own science-based targets, including net zero by 2045 {AR|p. 42}. Extreme weather threatens sites, suppliers and distribution routes {AR|p. 44}.</td><td><span class="tag bad">Threat</span></td><td>Medium</td></tr>
+    <tr><td><b>Environmental</b>: water, waste and nature</td><td>Operations cut water use by 24% and waste by 23% against 2015 {AR|p. 33}. The Group recognises the active ingredients in its products as its most material water-pollution impact {AR|p. 45}.</td><td><span class="tag bad">Threat</span></td><td>Low</td></tr>
+    <tr><td><b>Legal</b>: price regulation (IRA)</td><td>In the US, the Inflation Reduction Act subjects medicines to Medicare-negotiated prices. Farxiga was selected and Calquence takes effect in 2027. The AR expects the impact on Farxiga to be manageable {AR|p. 33}.</td><td><span class="tag bad">Threat</span></td><td>Manageable (AR)</td></tr>
+    <tr><td><b>Legal</b>: intellectual property</td><td>Governments and payers press to limit intellectual-property protection {AR|p. 49}.</td><td><span class="tag bad">Threat</span></td><td>High</td></tr>
+    <tr><td><b>Legal</b>: EU pharmaceutical reform</td><td>The December 2025 provisional agreement sets eight years of data protection plus one year of market protection (extendable by one year if two of three conditions are met), and a Bolar exemption so that generics can be available on day one after intellectual-property expiry {EU}.</td><td><span class="tag bad">Threat</span></td><td>Medium</td></tr>
+    <tr><td><b>Legal</b>: sector regulation</td><td>Delays in regulatory approvals could delay marketing and reduce revenue {AR|p. 48}. Products need approval from authorities such as the FDA and the EMA {AR|p. 20}.</td><td><span class="tag bad">Threat</span></td><td>Medium</td></tr>
+    <tr><td><b>Legal</b>: data and AI rules</td><td>A growing range of legislative and regulatory requirements covers data and AI {AR|p. 48}.</td><td><span class="tag bad">Threat</span></td><td>Low</td></tr>
   </tbody></table></div>
-<p class="cap"><b>Table 10.</b> Porter's five forces. Intensity is the group's analysis.</p>
-<div class="callout analysis rv"><div class="h">Analysis</div><p>The sector is attractive for incumbents because entry barriers are very high, but the profitability of each product is temporary. While protected, buyer power weighs most; after the patent expires, generics weigh most. Success therefore depends on <b>continuously renewing the portfolio</b>. Two ratings need care: if generics were counted as new entrants, that force would rise; and the “weak” entry threat depends on intellectual property staying protected {AR|p. 49}.</p></div>
+<p class="cap"><b>Table 9.</b> PESTEL analysis. Inflation, education levels and government stability are left out because the Annual Report does not treat them as business factors.</p>
+</div></details>
+<div class="takeaway rv"><b class="t">What this means</b>The factors do not act alone. US tariffs, the pricing agreement and local manufacturing come as one package: a tariff exemption in exchange for prices aligned with other wealthy countries and medicines made in the US {AR|pp. 4, 32–33}. In 2026 the IRA price for Farxiga arrives in the same year it loses US exclusivity, although the AR expects the impact to be manageable {AR|p. 33}. Ageing pushes demand up while tight budgets hold prices down, which is why the Group uses tiered pricing {AR|pp. 6–7, 41}. Looking ahead, health spending keeps growing to 2029, Calquence enters price negotiation in 2027 and the net zero target runs to 2045 {AR|pp. 6, 33, 42}.</div>
 
-<h4 id="s3-3-3">Value chain: internal environment</h4>
-<p class="rv">The course material splits the chain into primary and support activities and says that managing them determines the cost structure and profit {PLAN|p. 25}. It also asks for what the organisation does well and less well, with attention to HR policies and organisational culture {PLAN|p. 26}.</p>
+<h4 id="s3-3-2">The sector: Porter's five forces</h4>
+<p class="rv">Here we look at the market for innovative prescription medicines. Each force is rated strong, moderate or weak {PLAN|p. 21}, using the factors that the course material lists for each one {PLAN|pp. 22–24}.</p>
+<div class="porter rv">
+  <div class="pf a"><h4>New entrants <span class="tag ok">Weak</span></h4><div class="meter s1"><i></i><i></i><i></i></div>
+    <span class="kf">$2.6bn</span>to bring one medicine to market (2013 estimate) {MULLARD}
+    <ul><li>5–15 years of R&amp;D plus regulatory approval {AR|p. 9}</li><li>Big players buy promising biotechs, e.g. EsoBiotec {AR|pp. 37, 48}</li><li>Weak only while patents hold {AR|p. 49}</li></ul></div>
+  <div class="pf b"><h4>Suppliers <span class="tag warn">Moderate</span></h4><div class="meter s2"><i></i><i></i><i></i></div>
+    <span class="kf">48% · 18%</span>of active API files at the FDA come from India and China (2024) {USP}
+    <ul><li>Most API manufacturing is outsourced {AR|p. 33}</li><li>Dual sourcing and safety stocks {AR|p. 48}</li></ul></div>
+  <div class="pf c"><h4>Rivalry</h4><div class="meter s3"><i></i><i></i><i></i></div><span class="tag bad" style="align-self:center">Strong</span>
+    <span class="kf">5th</span>largest pharma company in 2024 ($54.07bn), behind Merck, Pfizer, J&amp;J and AbbVie {P50}
+    <ul style="text-align:left"><li>High fixed costs: $14.2bn of R&amp;D a year {AR|p. 55}</li><li>100+ Phase III studies running {AR|p. 3}</li><li>A growing market eases the pressure {AR|p. 6}</li></ul></div>
+  <div class="pf d"><h4>Buyers <span class="tag bad">Strong</span></h4><div class="meter s3"><i></i><i></i><i></i></div>
+    <span class="kf">80%</span>of US prescription claims handled by three PBMs (2025) {FEIN}
+    <ul><li>Consolidated payers and rebates {AR|p. 32}</li><li>Medicare price negotiation {AR|p. 33}</li><li>Doctors prescribe, but others pay {AR|p. 32}</li></ul></div>
+  <div class="pf e"><h4>Substitutes <span class="tag bad">Strong</span> <small>over time</small></h4><div class="meter s3"><i></i><i></i><i></i></div>
+    <span class="kf">−38%</span>Brilinta sales after generics entered the US and Europe {AR|pp. 18, 56}
+    <ul><li>Symbicort eroding in the EU and Japan {AR|p. 20}</li><li>$90bn+ of sector sales lose exclusivity in 2025–2029 {IQVIA}</li></ul></div>
+</div>
+<p class="cap"><b>Figure 9.</b> The five forces in the innovative pharmaceutical sector, with one key figure per force. Ratings are our own.</p>
+<details class="fold rv"><summary>See the full Porter table (Table 10)</summary><div class="in">
+<div class="tw"><table>
+  <thead><tr><th>Force</th><th>Evidence</th><th>Intensity</th></tr></thead>
+  <tbody>
+    <tr><td><b>Rivalry</b></td><td><i>Number and balance:</i> several large groups of similar size. In 2024 the top 10 earned between $44.47bn (Sanofi) and $64.17bn (Merck &amp; Co.), and AstraZeneca was 5th with $54.07bn, behind Merck &amp; Co., Pfizer, J&amp;J and AbbVie {P50}. <i>Fixed costs:</i> R&amp;D of $14,232m a year {AR|p. 55} and a manufacturing network of 31 sites {AR|p. 33}. <i>Differentiation:</i> products protected by patents and leading positions until exclusivity ends {AR|pp. 9, 56}. <i>Growth:</i> the sector is growing, with spending up 7.1% a year to 2029 and sales up 10.0% in 2025 {AR|p. 6}, which eases rivalry. More than 100 Phase III studies are ongoing {AR|p. 3}.</td><td><span class="tag bad">Strong</span></td></tr>
+    <tr><td><b>New entrants</b></td><td><i>Capital and time:</i> developing a medicine is estimated at $2.6bn (in 2013 dollars) {MULLARD}, and R&amp;D takes 5–15 years and needs regulatory approval {AR|p. 9}. <i>Scale:</i> sales in more than 125 countries with 47,400 commercial employees {AR|p. 32}, and more than 1,000 collaborations {AR|p. 37}. <i>Biotechs:</i> the Group strengthens its pipeline through acquisitions, licensing and collaborations {AR|p. 48}, for example EsoBiotec {AR|p. 37}. <i>Condition:</i> the AR warns that limits on intellectual-property protection would lead to “accelerated and intensified competition” {AR|p. 49}. <i>Exit barriers:</i> the Group operates specialised manufacturing sites, and the AR records the closure of one tablet plant (Bangalore, May 2025) {AR|p. 33}.</td><td><span class="tag ok">Weak</span> (conditional on IP)</td></tr>
+    <tr><td><b>Suppliers</b></td><td><i>Concentration:</i> most API manufacturing is externally sourced, complemented by growing internal capability {AR|p. 33}. India accounts for 48% of active API Drug Master Files filed with the US FDA and China for 18% in 2024; the files reflect manufacturer location, not volume {USP}. <i>Substitutes:</i> some inputs have no easy alternative, such as horseshoe-crab blood reagents until a synthetic alternative was adopted in 2025 {AR|p. 45}. <i>Mitigation:</i> dual sourcing, multiple suppliers and stock monitoring {AR|p. 48}.</td><td><span class="tag warn">Moderate</span></td></tr>
+    <tr><td><b>Buyers</b></td><td><i>Concentration:</i> payers are mainly insurers and national budgets. Payer consolidation and restrictive reimbursement drive significant pricing pressure, and rebates apply {AR|p. 32}. In the US, three pharmacy benefit managers (CVS Caremark, Express Scripts and Optum Rx) processed about 80% of equivalent prescription claims in 2025 {FEIN}. Prices are negotiated under the IRA {AR|p. 33} and follow a four-tier policy based on national income {AR|p. 41}. Products are prescribed by physicians, who do not pay for them {AR|p. 32}. Pricing pressure is a Principal Risk {AR|p. 48}.</td><td><span class="tag bad">Strong</span></td></tr>
+    <tr><td><b>Substitutes</b></td><td><i>Cost:</i> when exclusivity ends, generics enter at lower prices. Brilinta sales fell 38% to $823m after generic entry in the US and Europe {AR|pp. 18, 56}, and Symbicort eroded in the EU and Japan {AR|p. 20}. Farxiga still grew 10% in 2025 despite generic competition in some markets {AR|p. 56}. IQVIA estimates more than $90bn in sales set to lose exclusivity in 2025–2029 {IQVIA}. Generics are treated here as substitutes, because they replace the branded product with the same active ingredient at a lower price {PLAN|p. 24}.</td><td><span class="tag bad">Strong</span> over time, by product</td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 10.</b> Porter's five forces. Intensity is our own rating.</p>
+</div></details>
+<div class="takeaway rv"><b class="t">What this means</b>For companies already inside, the sector is attractive: it is very hard to enter. But each product only earns well for a limited time. While a medicine is protected, the payers have the upper hand; once the patent expires, generics take over. So the real game is to keep renewing the portfolio. Two ratings depend on our choices: if generics were counted as new entrants, that force would be stronger, and the low threat of entry only holds while patents stay protected {AR|p. 49}.</div>
+
+<h4 id="s3-3-3">Inside the company: value chain</h4>
+<p class="rv">The value chain splits what AstraZeneca does into primary activities, which make and deliver the medicines, and support activities, which make the rest possible. The course material also links these activities to the cost structure and profit {PLAN|p. 25}, and asks what the company does well and less well, including its people and culture {PLAN|p. 26}.</p>
 <div class="vc rv">
   <div class="row-l">Support activities</div>
   <div class="sup">
-    <div class="st"><b>R&amp;D and technology <span class="tag ok">Strength</span></b>24% of revenue</div>
-    <div class="st"><b>Human resources and culture <span class="tag ok">Strength</span></b>86% positive</div>
-    <div class="st"><b>Financial management <span class="tag ok">Strength</span></b>Cash flow, net debt to watch</div>
-    <div class="st"><b>Physical resources <span class="tag ok">Strength</span></b>US investment plan</div>
-    <div class="st"><b>Procurement <span class="tag">Neutral</span></b>Dual sourcing</div>
-    <div class="st"><b>Administration and risk <span class="tag ok">Strength</span></b>Quarterly risk review</div>
+    <div class="st"><b>R&amp;D and technology <span class="tag ok">Strength</span></b><span class="kf">24% of revenue</span>197 projects; 90%+ of small-molecule discovery uses AI {AR|pp. 30, 36, 125}<span class="wk">20 projects stopped in 2025 {AR|p. 30}</span></div>
+    <div class="st"><b>People and culture <span class="tag ok">Strength</span></b><span class="kf">86%</span>call it a great place to work {AR|p. 38}<span class="wk">4,441 Code of Ethics breaches {AR|p. 34}</span></div>
+    <div class="st"><b>Finance <span class="tag ok">Strength</span></b><span class="kf">$14.6bn</span>operating cash flow, +23% {AR|p. 10}<span class="wk">Net debt $23.4bn {AR|p. 61}</span></div>
+    <div class="st"><b>Facilities <span class="tag ok">Strength</span></b><span class="kf">$6.5bn</span>for a new plant in Virginia and an expansion in Maryland {AR|pp. 4, 33}<span class="wk">Climate target gap: −88.1% vs −98% {AR|p. 42}</span></div>
   </div>
   <div class="row-l">Primary activities</div>
   <div class="pri">
-    <div class="st"><b>Inbound logistics</b><span class="tag warn">Neutral / risk</span><br>External APIs</div>
-    <div class="st"><b>Operations</b><span class="tag ok">Strength</span><br>&gt;99% supply</div>
-    <div class="st"><b>Outbound logistics</b><span class="tag">Neutral</span><br>Distribution 1.0% of revenue</div>
-    <div class="st"><b>Marketing and sales</b><span class="tag ok">Strength</span><br>Concentration risk</div>
-    <div class="st"><b>After-sales</b><span class="tag ok">Strength</span><br>Recalls to watch</div>
+    <div class="st"><b>Inbound logistics</b><span class="tag warn">Neutral / risk</span><span class="kf">Outsourced</span>most API manufacturing {AR|p. 33}<span class="wk">Record drug shortages in 2025</span></div>
+    <div class="st"><b>Operations</b><span class="tag ok">Strength</span><span class="kf">&gt;99%</span>supply performance, 31 sites {AR|pp. 4, 33}<span class="wk">10 product recalls {AR|p. 31}</span></div>
+    <div class="st"><b>Outbound logistics</b><span class="tag">Neutral</span><span class="kf">1.0%</span>of revenue spent on distribution {AR|p. 125}</div>
+    <div class="st"><b>Marketing and sales</b><span class="tag ok">Strength</span><span class="kf">47,400</span>sales staff; 16 medicines above $1bn {AR|pp. 4, 27}<span class="wk">5 products = 51% of revenue</span></div>
+    <div class="st"><b>After-sales</b><span class="tag ok">Strength</span><span class="kf">200+</span>partnerships with health systems {AR|p. 4}</div>
   </div>
 </div>
-<p class="cap"><b>Figure 9.</b> Value chain of AstraZeneca. Ratings are the group's analysis; evidence is in Table 11.</p>
-<div class="tw rv"><table>
-  <thead><tr><th>ID</th><th>Activity</th><th>Evidence</th><th>Weak points</th><th>Rating</th></tr></thead>
-  <tbody>
-    <tr><td>VC-I</td><td><i>Primary:</i> inbound logistics</td><td>Most API manufacturing is externally sourced, complemented by growing internal capability, and a supply chain finance programme supports external suppliers {AR|p. 33}.</td><td>Drug shortages reached record levels in 2025 {AR|p. 33}; failure to maintain supply is a Principal Risk {AR|p. 48}.</td><td><span class="tag warn">Neutral / risk</span></td></tr>
-    <tr><td>VC-O</td><td><i>Primary:</i> operations</td><td>31 operations sites in 15 countries (excluding clinical supply sites) and more than 99% supply performance {AR|pp. 4, 33}. 63 health-authority GMP and GDP inspections with zero critical findings {AR|p. 31}. The CEO review cites zero patient-level recalls and zero critical observations in 42 external inspections {AR|p. 4}.</td><td>10 product recalls {AR|p. 31}. The AR does not reconcile the 42 and 63 inspection counts.</td><td><span class="tag ok">Strength</span></td></tr>
-    <tr><td>VC-Out</td><td><i>Primary:</i> outbound logistics</td><td>Distribution expense was $579m, 1.0% of revenue (calculated) {AR|p. 125}. 217 on-time market launches are reported under Operations {AR|pp. 27, 33}.</td><td>The AR gives no delivery-performance data.</td><td><span class="tag">Neutral</span></td></tr>
-    <tr><td>VC-M</td><td><i>Primary:</i> marketing and sales</td><td>47,400 commercial employees {AR|p. 27}; 16 medicines above $1bn {AR|p. 4}; sales through wholly-owned marketing companies, distributors and local offices {AR|p. 32}.</td><td>Five products are 51% of revenue (calculated: $30,045m ÷ $58,739m) and Farxiga alone is 14.5% {AR|p. 56}. The US is 43% of revenue (calculated: $25,450m ÷ $58,739m) with price pressure {AR|p. 32}.</td><td><span class="tag ok">Strength</span> with concentration risk</td></tr>
-    <tr><td>VC-A</td><td><i>Primary:</i> after-sales</td><td>Pharmacovigilance across the product life cycle {AR|p. 31}; patient assistance programmes {AR|p. 41}; more than 200 partnerships with health systems in 50 countries {AR|p. 4}.</td><td>10 product recalls {AR|p. 31}.</td><td><span class="tag ok">Strength</span></td></tr>
-    <tr><td>VC-RD</td><td><i>Support:</i> R&amp;D and technology</td><td>R&amp;D expense of $14,232m, 24.2% of revenue (calculated) {AR|pp. 28, 125}; 197 pipeline projects {AR|p. 30}; over 90% of small-molecule discovery AI-enabled {AR|p. 36}.</td><td>20 projects discontinued in 2025, 11 for safety or efficacy {AR|p. 30}; Fasenra's Phase III COPD trial missed its primary endpoint {AR|p. 20}.</td><td><span class="tag ok">Strength</span></td></tr>
-    <tr><td>VC-HR</td><td><i>Support:</i> human resources and culture</td><td>86% say AstraZeneca is a great place to work (Pulse survey) {AR|pp. 5, 38}; 89% report learning or development {AR|p. 39}; over 50,000 employees took part in the AI programme {AR|pp. 5, 39}. The Group's five values are in {AR|p. 8}.</td><td>4,441 Code of Ethics breaches recorded and 434 people removed from role {AR|p. 34}. Turnover is not reported.</td><td><span class="tag ok">Strength</span></td></tr>
-    <tr><td>VC-F</td><td><i>Support:</i> financial management</td><td>Operating cash flow of $14,575m (+23%) {AR|p. 10}. Capital priorities: invest in the business and pipeline, keep an investment-grade rating, pursue business development, and pay a progressive dividend {AR|p. 10}.</td><td>Net debt of $23,374m, 1.6 times operating cash flow (calculated) {AR|p. 61}.</td><td><span class="tag ok">Strength</span>, leverage to monitor</td></tr>
-    <tr><td>VC-Ph</td><td><i>Support:</i> physical resources</td><td>A $4.5bn plant in Virginia and a $2bn expansion in Maryland {AR|pp. 4, 33}. Scope 1 and 2 emissions are 88.1% below 2015 {AR|p. 42}.</td><td>Against a target of −98% by 2026 {AR|p. 42}. The Bangalore tablet plant closed in May 2025 {AR|p. 33}.</td><td><span class="tag ok">Strength</span></td></tr>
-    <tr><td>VC-P</td><td><i>Support:</i> procurement</td><td>Dual sourcing, multiple suppliers and stock monitoring {AR|p. 48}.</td><td>The AR describes mitigation, not performance.</td><td><span class="tag">Neutral</span></td></tr>
-    <tr><td>VC-Adm</td><td><i>Support:</i> administration and risk</td><td>Each SET function assesses risk quarterly, feeding the Group Risk Report for the Board, the Audit Committee and the SET {AR|p. 47}.</td><td>—</td><td><span class="tag ok">Strength</span></td></tr>
-    <tr><td>VC-Cost</td><td><i>Cost structure and margin</i></td><td>2025, % of Total Revenue (calculated from {AR|p. 125}): cost of sales 18.1%, distribution 1.0%, R&amp;D 24.2%, selling, general and administrative 33.9%. Gross margin 81.9% and operating margin 23.4%.</td><td>—</td><td><span class="tag ok">Strength</span></td></tr>
-  </tbody></table></div>
-<p class="cap"><b>Table 11.</b> Value chain analysis. Ratings are the group's analysis.</p>
-<div class="callout limit rv"><div class="h">What the sources do not show</div><p>The course material asks to compare strengths and weaknesses with competitors {PLAN|p. 24}. The only peer comparison in the AR is the ten-year shareholder return: 307% against 197% for global pharma peers and 65% for European peers {AR|p. 90}. For costs, recalls, inspections or AI there is no peer data in the sources used, so the ratings are against the Group's own record and stated targets.</p></div>
-
-<h4 id="s3-3-4">VRIO: internal resources</h4>
-<p class="rv">For each resource the course material asks four questions: does it create value, is it rare in the sector, is it hard or costly to imitate, and is the organisation ready to capture the value. If every answer is positive, it is a competitive advantage {PLAN|p. 26}.</p>
-<div class="tw rv"><table>
-  <thead><tr><th>ID</th><th>Resource or capability</th><th>Evidence</th><th class="c2">V</th><th class="c2">R</th><th class="c2">I</th><th class="c2">O</th><th>Result</th></tr></thead>
-  <tbody>
-    <tr><td>V1</td><td>Pipeline and R&amp;D capacity</td><td>197 projects; 20 NME projects in pivotal trials or regulatory review {AR|p. 30}; 43 NME and major life-cycle approvals in four major markets in 2025 {AR|p. 28}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag ok">Competitive advantage</span></td></tr>
-    <tr><td>V2</td><td>Leadership in oncology</td><td>$25.6bn (+15%); five multi-blockbuster medicines {AR|pp. 4, 13}. Leadership claims are the Group's own {AR|pp. 12–14}.</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag ok">Competitive advantage</span></td></tr>
-    <tr><td>V3</td><td>Operational excellence and supply chain</td><td>&gt;99% supply performance and 217 on-time launches {AR|pp. 4, 27}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">Not a competitive advantage (fails I)</span></td></tr>
-    <tr><td>V4</td><td>Global presence and commercial network</td><td>Sales in over 125 countries; Emerging Markets $15.3bn, 26% of revenue {AR|pp. 2, 32–33}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">Not a competitive advantage (fails R, I)</span></td></tr>
-    <tr><td>V5</td><td>AI and data capabilities</td><td>Over 90% of small-molecule discovery AI-enabled {AR|p. 36}; Enterprise AI unit created in December 2025 {AR|p. 36}. The AR lists scaling AI as a Principal Risk {AR|p. 48}.</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">Not a competitive advantage (fails R, I)</span></td></tr>
-    <tr><td>V6</td><td>Partnership network</td><td>More than 1,000 collaborations worldwide {AR|p. 37}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">Not a competitive advantage (fails R, I)</span></td></tr>
-    <tr><td>V7</td><td>Patents on current products</td><td>Legal exclusivity blocks imitation while it lasts. US exclusivity for Farxiga is expected to end in 2026 {AR|pp. 9, 33}.</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag warn">Competitive advantage until expiry</span></td></tr>
-  </tbody></table></div>
-<p class="cap"><b>Table 12.</b> VRIO analysis: Value, Rarity, Imitability, Organisation. Result follows the rule of the course material {PLAN|p. 26}. The answers are the group's analysis, because the AR gives no comparison with competitors. The labels “sustained” and “temporary” advantage belong to Barney's extension of VRIO and are not used here.</p>
-<div class="callout analysis rv"><div class="h">Analysis</div><p>The resources that pass all four tests are the <b>ability to innovate</b> (pipeline and R&amp;D, leadership in oncology) and, only while they last, patents. Operations, global reach, AI and partnerships create value but are not a competitive advantage by this rule. AI is treated as widely available in the sector, in line with the PESTEL row Tec1. This agrees with the Porter result.</p></div>
-
-<h4 id="s3-3-5">SWOT matrix</h4>
-<p class="rv">Strengths and weaknesses are internal and describe the present. Opportunities and threats are external and describe the future {PLAN|p. 27}. The origin of each point is the table line it comes from (Tables 9 to 12), and the selection and wording are the group's analysis. Not every line becomes a SWOT point: from the PESTEL, the SWOT keeps the factors rated high or medium impact; from the other tables, it keeps the points that are most significant or that recur across tools. Lines such as taxation (Pol3), data and AI rules (Leg5) or procurement (VC-P) stay only in their tables.</p>
-<div class="swot rv">
-  <div class="sq S"><h4>Strengths</h4><div class="sub">internal · present</div><ul>
-    <li><b class="k">S1</b>Robust pipeline and high R&amp;D investment</li>
-    <li><b class="k">S2</b>Leadership in oncology</li>
-    <li><b class="k">S3</b>Global reach and broad portfolio</li>
-    <li><b class="k">S4</b>Operational excellence</li>
-    <li><b class="k">S5</b>Financial capacity</li>
-    <li><b class="k">S6</b>Advanced use of AI</li>
-  </ul></div>
-  <div class="sq W"><h4>Weaknesses</h4><div class="sub">internal · present</div><ul>
-    <li><b class="k">W1</b>Revenue concentration in five products</li>
-    <li><b class="k">W2</b>Dependence on the US market</li>
-    <li><b class="k">W3</b>Established portfolio already eroding</li>
-    <li><b class="k">W4</b>Slow growth in a large area and decline in a small one</li>
-    <li><b class="k">W5</b>Gap to the 2026 climate target</li>
-    <li><b class="k">W6</b>Pipeline setbacks</li>
-  </ul></div>
-  <div class="sq O"><h4>Opportunities</h4><div class="sub">external · future</div><ul>
-    <li><b class="k">O1</b>Rising demand: ageing and chronic disease</li>
-    <li><b class="k">O2</b>Growing healthcare spending</li>
-    <li><b class="k">O3</b>Growth of emerging markets</li>
-    <li><b class="k">O4</b>AI as a productivity lever in R&amp;D</li>
-    <li><b class="k">O5</b>Large unmet medical needs</li>
-    <li><b class="k">O6</b>US agreement supporting onshoring</li>
-  </ul></div>
-  <div class="sq T"><h4>Threats</h4><div class="sub">external · future</div><ul>
-    <li><b class="k">T1</b>Price pressure</li>
-    <li><b class="k">T2</b>Loss of exclusivity</li>
-    <li><b class="k">T3</b>Geopolitics and tariffs</li>
-    <li><b class="k">T4</b>Intense rivalry</li>
-    <li><b class="k">T5</b>Intellectual-property limits, EU reform and approval delays</li>
-    <li><b class="k">T6</b>Supply-chain and climate disruption</li>
-  </ul></div>
+<p class="cap"><b>Figure 10.</b> AstraZeneca's value chain: one key figure per activity and, in red, its weak point. Ratings are our own.</p>
+<div class="chart rv"><h4>Where each dollar of revenue goes (2025, % of Total Revenue)</h4>
+  <div class="bar"><span>Selling and admin</span><div class="tr"><div class="fi" data-w="100"></div></div><span class="v">33.9%</span></div>
+  <div class="bar"><span>R&amp;D</span><div class="tr"><div class="fi" data-w="71.4"></div></div><span class="v">24.2%</span></div>
+  <div class="bar"><span>Cost of sales</span><div class="tr"><div class="fi" data-w="53.4"></div></div><span class="v">18.1%</span></div>
+  <div class="bar"><span>Distribution</span><div class="tr"><div class="fi" data-w="2.9"></div></div><span class="v">1.0%</span></div>
+  <div class="bar"><span>Operating margin</span><div class="tr"><div class="fi alt" data-w="69"></div></div><span class="v">23.4%</span></div>
 </div>
-<p class="cap"><b>Figure 10.</b> SWOT matrix of AstraZeneca. Table 13 gives the evidence and origin of each point.</p>
-<div class="tw rv"><table>
-  <thead><tr><th>ID</th><th>Point and evidence</th><th>Origin (table line)</th></tr></thead>
+<p class="cap"><b>Figure 11.</b> Cost structure and margin, calculated from the income statement {AR|p. 125}. Gross margin is 81.9%.</p>
+<details class="fold rv"><summary>See the full value chain table (Table 11)</summary><div class="in">
+<div class="tw"><table>
+  <thead><tr><th>Activity</th><th>Evidence</th><th>Weak points</th><th>Rating</th></tr></thead>
   <tbody>
-    <tr><td><b>S1</b></td><td>Robust pipeline and high R&amp;D investment: $14.2bn (24.2% of revenue, calculated), 197 projects, 20 NMEs in pivotal trials or regulatory review {AR|pp. 28, 30, 125}</td><td>V1, VC-RD</td></tr>
-    <tr><td><b>S2</b></td><td>Leadership in oncology: 44% of Total Revenue, up 15%, with five multi-blockbuster medicines {AR|pp. 2, 4, 13}</td><td>V2</td></tr>
-    <tr><td><b>S3</b></td><td>Global reach and broad portfolio: sales in over 125 countries and 16 medicines above $1bn {AR|pp. 4, 32}</td><td>V4, VC-M</td></tr>
-    <tr><td><b>S4</b></td><td>Operational excellence: more than 99% supply performance, 217 on-time launches, zero critical findings in 63 inspections {AR|pp. 4, 27, 31}</td><td>V3, VC-O</td></tr>
-    <tr><td><b>S5</b></td><td>Financial capacity: operating cash flow of $14,575m (+23%); net debt of $23,374m {AR|pp. 10, 61}</td><td>VC-F</td></tr>
-    <tr><td><b>S6</b></td><td>Advanced use of AI: over 90% of small-molecule discovery is AI-enabled, and a dedicated Enterprise AI unit exists {AR|pp. 5, 36}</td><td>V5, VC-RD</td></tr>
-    <tr><td><b>W1</b></td><td>Revenue concentration: the five largest products are about 51% of Total Revenue (calculated: $30,045m ÷ $58,739m): Farxiga, Tagrisso, Imfinzi, Ultomiris and Calquence {AR|p. 56}</td><td>VC-M</td></tr>
-    <tr><td><b>W2</b></td><td>Dependence on the US market: 43% of Total Revenue, projected at about 50% by 2030 {AR|pp. 2, 4, 32}</td><td>VC-M</td></tr>
-    <tr><td><b>W3</b></td><td>Established portfolio already eroding: Brilinta −38% to $823m after generic entry, and generic erosion of Symbicort in the EU and Japan {AR|pp. 18, 20, 56}</td><td>Porter-Sub, VC-M</td></tr>
-    <tr><td><b>W4</b></td><td>Slow growth in a large area and decline in a small one: Cardiovascular, Renal &amp; Metabolism grew 3% to $12,764m (22% of revenue, calculated), and Vaccines &amp; Immune Therapies fell 13% to $1,268m {AR|pp. 4, 17, 56}</td><td>VC-M</td></tr>
-    <tr><td><b>W5</b></td><td>Gap to the 2026 climate target: Scope 1 and 2 emissions are 88.1% below 2015 against a target of 98%. The AR does not list climate as a Principal Risk {AR|pp. 42, 47}</td><td>VC-Ph</td></tr>
-    <tr><td><b>W6</b></td><td>Pipeline setbacks: 20 projects discontinued in 2025, 11 for safety or efficacy, and the Phase III COPD trial of Fasenra missed its primary endpoint {AR|pp. 20, 30}</td><td>VC-RD</td></tr>
-    <tr><td><b>O1</b></td><td>Rising demand: ageing and chronic disease {AR|pp. 6–7}</td><td>Soc1, Soc2</td></tr>
-    <tr><td><b>O2</b></td><td>Healthcare spending growing 7.1% a year in 2025–2029, and pharmaceutical sales up 10.0% in 2025 {AR|p. 6}</td><td>Eco2</td></tr>
-    <tr><td><b>O3</b></td><td>Growth of emerging markets: revenue of $15.3bn (+12%), and +19% outside China {AR|pp. 4, 33}</td><td>Eco3</td></tr>
-    <tr><td><b>O4</b></td><td>AI as a productivity lever in R&amp;D, estimated at $4–7bn a year for the sector, and access to new technology through more than 1,000 collaborations {AR|pp. 7, 37}</td><td>Tec1, Tec2</td></tr>
-    <tr><td><b>O5</b></td><td>Large unmet medical needs: hypertension, cancer and rare diseases {AR|pp. 13, 17, 23}</td><td>Soc2</td></tr>
-    <tr><td><b>O6</b></td><td>US agreement: a three-year tariff exemption that supports onshoring, alongside prices aligned with other wealthy countries {AR|pp. 4, 32–33}</td><td>Pol2</td></tr>
-    <tr><td><b>T1</b></td><td>Price pressure: tight health budgets, IRA negotiation (Farxiga in 2026, Calquence in 2027) and payer consolidation {AR|pp. 7, 32–33}{FEIN}</td><td>Eco1, Leg1, Porter-B</td></tr>
-    <tr><td><b>T2</b></td><td>Loss of exclusivity: Farxiga ($8,492m, 14.5% of Total Revenue, calculated) is expected to lose US exclusivity in 2026, the year its negotiated price takes effect. The AR expects the combined impact to be manageable {AR|pp. 33, 56}. IQVIA estimates more than $90bn of sector sales losing exclusivity in 2025–2029 {IQVIA}.</td><td>Porter-Sub, V7, Leg1</td></tr>
-    <tr><td><b>T3</b></td><td>Geopolitics, tariffs and US–China rivalry {AR|pp. 6, 49}</td><td>Pol1</td></tr>
-    <tr><td><b>T4</b></td><td>Intense rivalry among large pharma companies of similar size {P50}{AR|p. 3}</td><td>Porter-R</td></tr>
-    <tr><td><b>T5</b></td><td>Pressure to limit intellectual property, EU regulatory reform, and delays in regulatory approvals that could postpone launches {AR|pp. 48, 49}{EU}</td><td>Leg2, Leg3, Leg4</td></tr>
-    <tr><td><b>T6</b></td><td>Supply-chain disruption: record drug shortages in 2025, API manufacturing mostly external, API capacity concentrated in India and China, and extreme weather that threatens sites, suppliers and distribution routes {AR|pp. 7, 33, 44}{USP}</td><td>Porter-S, VC-I, Env1</td></tr>
+    <tr><td><i>Primary:</i> inbound logistics</td><td>Most API manufacturing is externally sourced, complemented by growing internal capability, and a supply chain finance programme supports external suppliers {AR|p. 33}.</td><td>Drug shortages reached record levels in 2025 {AR|p. 33}; failure to maintain supply is a Principal Risk {AR|p. 48}.</td><td><span class="tag warn">Neutral / risk</span></td></tr>
+    <tr><td><i>Primary:</i> operations</td><td>31 operations sites in 15 countries (excluding clinical supply sites) and more than 99% supply performance {AR|pp. 4, 33}. 63 health-authority GMP and GDP inspections with zero critical findings {AR|p. 31}. The CEO review cites zero patient-level recalls and zero critical observations in 42 external inspections {AR|p. 4}.</td><td>10 product recalls {AR|p. 31}. The AR does not reconcile the 42 and 63 inspection counts.</td><td><span class="tag ok">Strength</span></td></tr>
+    <tr><td><i>Primary:</i> outbound logistics</td><td>Distribution expense was $579m, 1.0% of revenue (calculated) {AR|p. 125}. 217 on-time market launches are reported under Operations {AR|pp. 27, 33}.</td><td>The AR gives no delivery-performance data.</td><td><span class="tag">Neutral</span></td></tr>
+    <tr><td><i>Primary:</i> marketing and sales</td><td>47,400 commercial employees {AR|p. 27}; 16 medicines above $1bn {AR|p. 4}; sales through wholly-owned marketing companies, distributors and local offices {AR|p. 32}.</td><td>Five products are 51% of revenue (calculated: $30,045m ÷ $58,739m) and Farxiga alone is 14.5% {AR|p. 56}. The US is 43% of revenue, with price pressure {AR|pp. 2, 32}.</td><td><span class="tag ok">Strength</span> with concentration risk</td></tr>
+    <tr><td><i>Primary:</i> after-sales</td><td>Pharmacovigilance across the product life cycle {AR|p. 31}; patient assistance programmes {AR|p. 41}; more than 200 partnerships with health systems in 50 countries {AR|p. 4}.</td><td>10 product recalls {AR|p. 31}.</td><td><span class="tag ok">Strength</span></td></tr>
+    <tr><td><i>Support:</i> R&amp;D and technology</td><td>R&amp;D expense of $14,232m, 24.2% of revenue (calculated) {AR|pp. 28, 125}; 197 pipeline projects {AR|p. 30}; over 90% of small-molecule discovery AI-enabled {AR|p. 36}.</td><td>20 projects discontinued in 2025, 11 for safety or efficacy {AR|p. 30}; Fasenra's Phase III COPD trial missed its primary endpoint {AR|p. 20}.</td><td><span class="tag ok">Strength</span></td></tr>
+    <tr><td><i>Support:</i> human resources and culture</td><td>86% say AstraZeneca is a great place to work (Pulse survey) {AR|pp. 5, 38}; 89% report learning or development {AR|p. 39}; over 50,000 employees took part in the AI programme {AR|pp. 5, 39}. The Group's five values are in {AR|p. 8}.</td><td>4,441 Code of Ethics breaches recorded and 434 people removed from role {AR|p. 34}. Turnover is not reported.</td><td><span class="tag ok">Strength</span></td></tr>
+    <tr><td><i>Support:</i> financial management</td><td>Operating cash flow of $14,575m (+23%) {AR|p. 10}. Capital priorities: invest in the business and pipeline, keep an investment-grade rating, pursue business development, and pay a progressive dividend {AR|p. 10}.</td><td>Net debt of $23,374m, 1.6 times operating cash flow (calculated) {AR|p. 61}.</td><td><span class="tag ok">Strength</span>, leverage to monitor</td></tr>
+    <tr><td><i>Support:</i> physical resources</td><td>A $4.5bn plant in Virginia and a $2bn expansion in Maryland {AR|pp. 4, 33}. Scope 1 and 2 emissions are 88.1% below 2015 {AR|p. 42}.</td><td>Against a target of −98% by 2026 {AR|p. 42}. The Bangalore tablet plant closed in May 2025 {AR|p. 33}.</td><td><span class="tag ok">Strength</span></td></tr>
+    <tr><td><i>Support:</i> procurement</td><td>Dual sourcing, multiple suppliers and stock monitoring {AR|p. 48}.</td><td>The AR describes mitigation, not performance.</td><td><span class="tag">Neutral</span></td></tr>
+    <tr><td><i>Support:</i> administration and risk</td><td>Each SET function assesses risk quarterly, feeding the Group Risk Report for the Board, the Audit Committee and the SET {AR|p. 47}.</td><td>—</td><td><span class="tag ok">Strength</span></td></tr>
+    <tr><td><i>Cost structure and margin</i></td><td>2025, % of Total Revenue (calculated from {AR|p. 125}): cost of sales 18.1%, distribution 1.0%, R&amp;D 24.2%, selling, general and administrative 33.9%. Gross margin 81.9% and operating margin 23.4%.</td><td>—</td><td><span class="tag ok">Strength</span></td></tr>
   </tbody></table></div>
-<p class="cap"><b>Table 13.</b> SWOT points with evidence and origin.</p>
+<p class="cap"><b>Table 11.</b> Value chain analysis. Ratings are our own.</p>
+</div></details>
+<div class="takeaway rv"><b class="t">What this means</b>Most of the chain works well: supply is reliable, research spending is high and the business generates plenty of cash. The weak spots sit at the edges: raw materials depend on outside suppliers, sales depend on a handful of products, and some research projects fail. The course material asks us to compare with competitors {PLAN|p. 24}, but the only peer comparison in the Annual Report is shareholder return over ten years: 307%, against 197% for global pharma peers and 65% for European peers {AR|p. 90}. For everything else we can only compare the Group with its own record and targets.</div>
 
-<h4 id="s3-3-6">Most important internal and external aspects</h4>
-<p class="rv">The points below are ranked by weight in revenue, time horizon (nearest first), whether the AR treats them as a priority or Principal Risk, and whether they can be quantified.</p>
-<div class="callout analysis rv"><div class="h">Analysis</div>
-<p><b>Internal situation.</b></p>
-<ol>
-  <li><b>Revenue concentration (W1, with S2 as its opposite face):</b> the five largest products are about 51% of revenue, Farxiga alone is 14.5% and oncology is 43.6% {AR|pp. 2, 56}.</li>
-  <li><b>The innovation engine (S1):</b> $14.2bn of R&amp;D, 197 projects and 20 NMEs in late stages, with 9 of the 20 NMEs targeted for 2030 already delivered {AR|pp. 10, 28, 30}. The AR says the success of its R&amp;D is crucial over the longer term {AR|p. 52}.</li>
-  <li><b>Capacity to execute and fund (S4 and S5):</b> more than 99% supply performance and operating cash flow of $14,575m support the $50bn US plan {AR|pp. 4, 10}, against net debt of $23,374m {AR|p. 61}.</li>
-</ol>
-<p><b>External situation.</b></p>
-<ol>
-  <li><b>Loss of exclusivity and IRA pricing for Farxiga in 2026 (T2 and T1):</b> the nearest and most quantifiable event {AR|pp. 33, 56}. Calquence follows in 2027 {AR|p. 33}.</li>
-  <li><b>US pricing and policy (T1, T3, O6):</b> the US is 43% of revenue and is projected at about 50% by 2030, and an October 2025 agreement aligns US prices with other wealthy countries {AR|pp. 2, 4, 32}.</li>
-  <li><b>Structural demand (O1, O2, O5):</b> healthcare spending grows 7.1% a year, and the disease burden keeps rising {AR|pp. 6, 7, 13, 17}. This is the counterweight to the two threats above.</li>
-</ol>
-<p><b>Link between the two.</b> Launching new medicines faster than old ones lose exclusivity is the critical success factor. Today one established product, Brilinta, has already lost 38% of its sales, and the largest, Farxiga, is about to lose US exclusivity {AR|pp. 33, 56}. The market grows in value, and the value of each product is increasingly limited in time and in price.</p></div>
+<h4 id="s3-3-4">Which resources give an edge: VRIO</h4>
+<p class="rv">VRIO asks four questions about each resource: does it create value, is it rare in the sector, is it hard or costly to copy, and is the company organised to use it? Only a resource that passes all four counts as a competitive advantage {PLAN|p. 26}. Because the Annual Report does not compare AstraZeneca with its rivals, the answers below are our own judgement.</p>
+<div class="tw rv"><table>
+  <thead><tr><th>Resource</th><th>Why</th><th class="c2">V</th><th class="c2">R</th><th class="c2">I</th><th class="c2">O</th><th>Result</th></tr></thead>
+  <tbody>
+    <tr><td><b>Pipeline and R&amp;D</b></td><td>197 projects; 20 new medicines in late stages or under review; 43 major approvals in 2025 in the US, EU, China and Japan {AR|pp. 28, 30}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag ok">Competitive advantage</span></td></tr>
+    <tr><td><b>Leadership in oncology</b></td><td>$25.6bn (+15%) and five medicines above $1bn; the leadership claims are the Group's own {AR|pp. 4, 12–14}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag ok">Competitive advantage</span></td></tr>
+    <tr><td><b>Patents on current products</b></td><td>The law blocks copies while they last; Farxiga loses US exclusivity in 2026 {AR|pp. 9, 33}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag warn">Advantage until expiry</span></td></tr>
+    <tr><td><b>Operational excellence</b></td><td>&gt;99% supply performance and 217 on-time launches {AR|pp. 4, 27}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">No: can be copied</span></td></tr>
+    <tr><td><b>Global presence</b></td><td>Sales in over 125 countries; Emerging Markets are 26% of revenue {AR|pp. 2, 32–33}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">No: rivals have it too</span></td></tr>
+    <tr><td><b>AI and data</b></td><td>90%+ of small-molecule discovery uses AI; Enterprise AI unit created in December 2025; scaling AI is listed as a Principal Risk {AR|pp. 36, 48}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">No: available to the whole sector</span></td></tr>
+    <tr><td><b>Partnership network</b></td><td>More than 1,000 collaborations worldwide {AR|p. 37}</td><td class="c2"><span class="pill y">Y</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill no">N</span></td><td class="c2"><span class="pill y">Y</span></td><td><span class="tag">No: rivals have it too</span></td></tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 12.</b> VRIO analysis: Value, Rarity, Imitability, Organisation. The result follows the course rule {PLAN|p. 26}.</p>
+<div class="takeaway rv"><b class="t">What this means</b>AstraZeneca's real edge is its <b>ability to innovate</b>: the pipeline, R&amp;D and its position in oncology. Patents also protect it, but only until they expire. Operations, global reach, AI and partnerships are valuable, yet competitors have or can build them too, so they do not set the company apart. This matches what Porter showed: success depends on renewing the portfolio.</div>
 
-<h4 id="s3-3-7">TOWS cross-matrix</h4>
-<p class="rv">The course material links internal and external factors with four questions: how can strengths seize opportunities (SO), how can strengths face threats (ST), how do weaknesses prevent seizing opportunities (WO), and how do weaknesses worsen threats (WT) {PLAN|pp. 27–28}.</p>
+<h4 id="s3-3-5">Putting it together: the SWOT</h4>
+<p class="rv">The SWOT gathers the most important points from the four tools. From the PESTEL we kept the factors with high or medium impact; from the other tools, the points that matter most or that come up more than once. Under each point, a grey label shows which tool it came from, so the origin of the information is always visible.</p>
+<div class="tw rv" style="background:transparent;border:0;box-shadow:none"><table class="swotT">
+  <thead><tr><th>Helpful</th><th>Harmful</th></tr></thead>
+  <tbody>
+  <tr>
+  <td class="S"><h5>Strengths</h5><div class="sub">inside the company · today</div><ul>
+    <li><span class="k">S1</span><b>Strong pipeline and R&amp;D</b>$14.2bn invested (24% of revenue), 197 projects, 20 new medicines in late stages {AR|pp. 28, 30, 125}<br><span class="orig">VRIO · Pipeline</span><span class="orig">Value chain · R&amp;D</span></li>
+    <li><span class="k">S2</span><b>Leadership in oncology</b>44% of revenue, growing 15% {AR|pp. 2, 4, 13}<br><span class="orig">VRIO · Oncology</span></li>
+    <li><span class="k">S3</span><b>Global reach, broad portfolio</b>Sales in 125+ countries; 16 medicines above $1bn {AR|pp. 4, 32}<br><span class="orig">VRIO · Global presence</span><span class="orig">Value chain · Sales</span></li>
+    <li><span class="k">S4</span><b>Reliable operations</b>&gt;99% supply, 217 on-time launches, zero critical findings in 63 inspections {AR|pp. 4, 27, 31}<br><span class="orig">VRIO · Operations</span><span class="orig">Value chain · Operations</span></li>
+    <li><span class="k">S5</span><b>Financial capacity</b>Operating cash flow of $14.6bn (+23%); net debt of $23.4bn {AR|pp. 10, 61}<br><span class="orig">Value chain · Finance</span></li>
+    <li><span class="k">S6</span><b>Advanced use of AI</b>90%+ of small-molecule discovery uses AI; dedicated AI unit {AR|pp. 5, 36}<br><span class="orig">VRIO · AI</span><span class="orig">Value chain · R&amp;D</span></li>
+  </ul></td>
+  <td class="W"><h5>Weaknesses</h5><div class="sub">inside the company · today</div><ul>
+    <li><span class="k">W1</span><b>Too much revenue from five products</b>Farxiga, Tagrisso, Imfinzi, Ultomiris and Calquence make about 51% of revenue (our calculation) {AR|p. 56}<br><span class="orig">Value chain · Sales</span></li>
+    <li><span class="k">W2</span><b>Heavy reliance on the US</b>43% of revenue, heading to about 50% by 2030 {AR|pp. 2, 4, 32}<br><span class="orig">Value chain · Sales</span></li>
+    <li><span class="k">W3</span><b>Older products already losing ground</b>Brilinta −38% after generics; Symbicort eroding in the EU and Japan {AR|pp. 18, 20, 56}<br><span class="orig">Porter · Substitutes</span><span class="orig">Value chain · Sales</span></li>
+    <li><span class="k">W4</span><b>Slow or negative growth in some areas</b>Cardiovascular, renal &amp; metabolism +3% ($12.8bn, 22% of revenue); vaccines −13% {AR|pp. 4, 17, 56}<br><span class="orig">Value chain · Sales</span></li>
+    <li><span class="k">W5</span><b>Behind on its 2026 climate target</b>−88.1% emissions against a −98% target; climate is not a Principal Risk in the AR {AR|pp. 42, 47}<br><span class="orig">Value chain · Facilities</span></li>
+    <li><span class="k">W6</span><b>Setbacks in the pipeline</b>20 projects stopped in 2025, 11 for safety or efficacy; Fasenra failed a Phase III COPD trial {AR|pp. 20, 30}<br><span class="orig">Value chain · R&amp;D</span></li>
+  </ul></td>
+  </tr>
+  <tr>
+  <td class="O"><h5>Opportunities</h5><div class="sub">outside the company · future</div><ul>
+    <li><span class="k">O1</span><b>Rising demand</b>Ageing and chronic disease {AR|pp. 6–7}<br><span class="orig">PESTEL · Social</span></li>
+    <li><span class="k">O2</span><b>Growing health spending</b>+7.1% a year to 2029; pharma sales +10% in 2025 {AR|p. 6}<br><span class="orig">PESTEL · Economic</span></li>
+    <li><span class="k">O3</span><b>Emerging markets</b>$15.3bn (+12%), +19% outside China {AR|pp. 4, 33}<br><span class="orig">PESTEL · Economic</span></li>
+    <li><span class="k">O4</span><b>AI and new technology</b>$4–7bn a year for the sector; access through 1,000+ collaborations {AR|pp. 7, 37}<br><span class="orig">PESTEL · Technological</span></li>
+    <li><span class="k">O5</span><b>Large unmet needs</b>Hypertension, cancer, and rare diseases where fewer than 10% have a treatment {AR|pp. 13, 17, 23}<br><span class="orig">PESTEL · Social</span></li>
+    <li><span class="k">O6</span><b>US deal that rewards local production</b>Three-year tariff exemption, alongside prices aligned with other wealthy countries {AR|pp. 4, 32–33}<br><span class="orig">PESTEL · Political</span></li>
+  </ul></td>
+  <td class="T"><h5>Threats</h5><div class="sub">outside the company · future</div><ul>
+    <li><span class="k">T1</span><b>Price pressure</b>Tight budgets, IRA negotiation (Farxiga 2026, Calquence 2027), consolidated payers {AR|pp. 7, 32–33}{FEIN}<br><span class="orig">PESTEL · Economic, Legal</span><span class="orig">Porter · Buyers</span></li>
+    <li><span class="k">T2</span><b>Patents running out</b>Farxiga (14.5% of revenue) loses US exclusivity in 2026; the AR expects this to be manageable. $90bn+ of sector sales at risk to 2029 {AR|pp. 33, 56}{IQVIA}<br><span class="orig">Porter · Substitutes</span><span class="orig">VRIO · Patents</span></li>
+    <li><span class="k">T3</span><b>Geopolitics and tariffs</b>US–China rivalry and trade controls {AR|pp. 6, 49}<br><span class="orig">PESTEL · Political</span></li>
+    <li><span class="k">T4</span><b>Intense rivalry</b>Large rivals of similar size {P50}{AR|p. 3}<br><span class="orig">Porter · Rivalry</span></li>
+    <li><span class="k">T5</span><b>Weaker patents, new EU rules, approval delays</b>{AR|pp. 48, 49}{EU}<br><span class="orig">PESTEL · Legal</span></li>
+    <li><span class="k">T6</span><b>Supply and climate disruption</b>Record drug shortages, outsourced APIs concentrated in India and China, extreme weather {AR|pp. 7, 33, 44}{USP}<br><span class="orig">Porter · Suppliers</span><span class="orig">PESTEL · Environmental</span></li>
+  </ul></td>
+  </tr>
+  </tbody></table></div>
+<p class="cap"><b>Table 13.</b> SWOT matrix of AstraZeneca, with the source tool of each point.</p>
+
+<h4 id="s3-3-6">What matters most</h4>
+<p class="rv">Not all 24 points weigh the same. We ranked them by their weight in revenue, how soon they hit, whether the Annual Report treats them as a priority or Principal Risk, and whether they can be measured.</p>
+<div class="kgrid rv">
+  <div class="kcol"><h5>Inside the company</h5>
+    <div class="kitem"><span class="n">1</span><div><span class="big">51%</span> of revenue from five products, 14.5% from Farxiga alone; the other side of the strong oncology portfolio {AR|pp. 2, 56}</div></div>
+    <div class="kitem"><span class="n">2</span><div><span class="big">9 of 20</span> new medicines promised for 2030 already delivered, backed by $14.2bn of R&amp;D. The AR calls R&amp;D success crucial {AR|pp. 10, 28, 52}</div></div>
+    <div class="kitem"><span class="n">3</span><div><span class="big">$14.6bn</span> of operating cash flow and &gt;99% supply fund and deliver the $50bn US plan, against $23.4bn of net debt {AR|pp. 4, 10, 61}</div></div>
+  </div>
+  <div class="kcol"><h5>Outside the company</h5>
+    <div class="kitem"><span class="n">1</span><div><span class="big">2026</span> Farxiga loses US exclusivity and gets a negotiated price in the same year; Calquence follows in 2027 {AR|pp. 33, 56}</div></div>
+    <div class="kitem"><span class="n">2</span><div><span class="big">43% → 50%</span> share of revenue from the US by 2030, with prices now aligned with other wealthy countries {AR|pp. 2, 4, 32}</div></div>
+    <div class="kitem"><span class="n">3</span><div><span class="big">+7.1%</span> a year in health spending and a growing disease burden: the counterweight to the two threats above {AR|pp. 6, 7, 13, 17}</div></div>
+  </div>
+</div>
+<div class="takeaway rv"><b class="t">The link between the two</b>Everything comes down to one race: launching new medicines faster than old ones lose protection. Brilinta has already lost 38% of its sales and Farxiga, the biggest product, is about to lose US exclusivity {AR|pp. 33, 56}. The market keeps growing in value, but each product earns for a shorter time and at a lower price.</div>
+
+<h4 id="s3-3-7">Crossing the factors: TOWS</h4>
+<p class="rv">The course material suggests four questions to link the inside with the outside {PLAN|pp. 27–28}. Each cell answers one of them.</p>
 <div class="tows rv">
   <div></div><div class="hd">Opportunities</div><div class="hd">Threats</div>
   <div class="hd">Strengths</div>
-  <div class="q"><b>SO · grow</b>Use the pipeline and oncology leadership (S1, S2) to answer growing demand and unmet needs (O1, O5), and AI (S6) to speed up R&amp;D (O4).</div>
-  <div class="q"><b>ST · defend</b>Use global reach (S3) to cut the impact of tariffs and geopolitics (T3), and renew the portfolio (S1) before exclusivity is lost (T2). Use financial capacity (S5) to fund US manufacturing and acquisitions.</div>
+  <div class="q"><b>Grow (SO)</b>Use the pipeline and oncology (S1, S2) to meet growing demand and unmet needs (O1, O5), and AI (S6) to speed up research (O4).</div>
+  <div class="q"><b>Defend (ST)</b>Use global reach (S3) against tariffs and geopolitics (T3), renew the portfolio (S1) before patents expire (T2), and use cash (S5) to fund US plants and acquisitions.</div>
   <div class="hd">Weaknesses</div>
-  <div class="q"><b>WO · correct</b>Reduce revenue concentration (W1) with new areas of large need such as hypertension (O5), where baxdrostat has two positive Phase III results {AR|p. 17}. Emerging markets (O3) add growth but are driven by the same lead products {AR|p. 56}.</div>
-  <div class="q"><b>WT · avoid</b>Concentration and eroding products (W1, W3), added to price pressure and loss of exclusivity (T1, T2), are the most dangerous combination, and so is dependence on the US (W2) with price and policy pressure (T1, T3). They call for active life-cycle management and diversification.</div>
+  <div class="q"><b>Fix (WO)</b>Reduce dependence on five products (W1) by entering areas of large need such as hypertension (O5), where baxdrostat has two positive Phase III results {AR|p. 17}. Emerging markets (O3) add growth, but with the same lead products {AR|p. 56}.</div>
+  <div class="q"><b>Avoid (WT)</b>Concentration and fading products (W1, W3) combined with price pressure and expiring patents (T1, T2) are the most dangerous mix, and so is US reliance (W2) under price and policy pressure (T1, T3).</div>
 </div>
-<p class="cap"><b>Figure 11.</b> TOWS matrix (group's analysis).</p>
+<p class="cap"><b>Figure 12.</b> TOWS matrix (our analysis).</p>
 
 <h4 id="s3-3-8">Proposed strategy</h4>
-<p class="rv">The course material asks to identify several alternatives, evaluate them and choose {PLAN|pp. 3, 7, 29}. It does not give a list of generic strategies, and the AR does not rule any alternative out. The alternatives below are therefore the levers that the AR itself lists, and the choice between them is the group's analysis.</p>
-<div class="tw rv"><table>
-  <thead><tr><th>Lever listed in the AR</th><th>What the AR says</th><th>Fit with the TOWS</th><th>Decision</th></tr></thead>
-  <tbody>
-    <tr><td>Organic growth through R&amp;D and life-cycle management</td><td>12 first approvals for life-cycle projects {AR|p. 4}; success of R&amp;D is crucial {AR|p. 52}</td><td>Answers S1, S2 → O1, O5, T2</td><td><span class="tag ok">Core</span></td></tr>
-    <tr><td>Acquisitions, licences and collaborations</td><td>EsoBiotec, up to $1bn {AR|p. 37}; “strengthen pipeline” is a listed mitigation {AR|p. 48}</td><td>Answers T2, W1, W3</td><td><span class="tag ok">Complement</span></td></tr>
-    <tr><td>Shareholder remuneration</td><td>Progressive dividend, $3.20 a share {AR|pp. 3, 10}</td><td>Does not address any weakness or threat</td><td><span class="tag">Kept as capital policy, not as growth strategy</span></td></tr>
-  </tbody></table></div>
-<p class="cap"><b>Table 14.</b> Alternatives considered, from the levers listed in the AR.</p>
-<div class="callout analysis rv"><div class="h">Analysis · strategy proposed by the group</div>
-<p><b>Growth through innovation, with accelerated renewal of the portfolio, geographic balance and secure supply.</b> It combines the SO (grow) and ST (defend) quadrants:</p>
-<ol>
-  <li><b>Concentrate R&amp;D investment on the therapy areas where the AR claims or seeks leadership</b> (oncology, cardiovascular, renal and metabolic, respiratory and immunology, and rare diseases), using AI to cut development time. <i>Basis:</i> S1, S2, S6 → O1, O4, O5. It also answers W4 through late-stage programmes such as baxdrostat {AR|p. 17}.</li>
-  <li><b>Replace the revenue that will lose exclusivity</b> with new medicines and new indications, reinforcing the pipeline through acquisitions, licences and collaborations {AR|pp. 37, 48}. <i>Basis:</i> S1, S5 → T2, W1, W3.</li>
-  <li><b>Reinforce growth in emerging markets</b> (revenue of $15.3bn, +12%; +19% outside China {AR|pp. 4, 33}) and keep local manufacturing where governments encourage it, as in the US, China and Singapore {AR|pp. 4, 5, 32, 37}. <i>Basis:</i> S3 → O3, O6, T3. It sits in tension with the US reaching about 50% of revenue by 2030 {AR|p. 4}.</li>
-  <li><b>Demonstrate the economic value of the medicines</b> to payers, with tiered pricing and outcome-based agreements. <i>Basis:</i> answer to T1.</li>
-  <li><b>Secure supply and deliver the climate plan:</b> keep supply performance above 99% {AR|p. 4}, expand capacity {AR|p. 33} and close the gap to the 98% Scope 1 and 2 target {AR|p. 42}. <i>Basis:</i> S4 → T6, W5.</li>
-</ol>
-<p>W2 (US dependence) and W6 (pipeline setbacks) are recognised as risks and have no dedicated action. T4 and T5 are outside the Group's control, and the strategy answers them indirectly by renewing the portfolio.</p></div>
+<p class="rv">The course material asks for several alternatives to be weighed before one is chosen {PLAN|pp. 3, 7, 29}. It does not offer a list of generic strategies, and the Annual Report does not reject any option, so we compared the three levers the report itself describes.</p>
+<div class="alts rv">
+  <div class="alt core"><span class="tag ok">Core</span><h5>Organic growth through R&amp;D</h5>New medicines and new uses of existing ones; 12 first life-cycle approvals in 2025 {AR|pp. 4, 52}. Answers S1, S2 → O1, O5, T2.</div>
+  <div class="alt comp"><span class="tag teal">Complement</span><h5>Acquisitions, licences and partnerships</h5>For example EsoBiotec, up to $1bn {AR|pp. 37, 48}. Answers T2, W1, W3.</div>
+  <div class="alt keep"><span class="tag">Kept as policy</span><h5>Paying shareholders</h5>Progressive dividend of $3.20 a share {AR|pp. 3, 10}. Important, but it does not fix any weakness or threat.</div>
+</div>
+<p class="cap"><b>Figure 13.</b> Alternatives considered.</p>
+<p class="rv">Our proposal is <b>growth through innovation, with faster renewal of the portfolio, better geographic balance and secure supply</b>. It mixes the “grow” and “defend” cells of the TOWS in five actions:</p>
+<div class="acts rv">
+  <div class="act"><div><b class="h">Focus R&amp;D where the company leads or wants to lead</b>Oncology, cardiovascular, renal and metabolic, respiratory and immunology, and rare diseases, using AI to cut development time. Late-stage medicines such as baxdrostat also address slow growth in cardiovascular {AR|p. 17}. <span class="orig">S1, S2, S6 → O1, O4, O5 · W4</span></div></div>
+  <div class="act"><div><b class="h">Replace the revenue that patents will take away</b>With new medicines and new indications, topped up with acquisitions, licences and partnerships {AR|pp. 37, 48}. <span class="orig">S1, S5 → T2, W1, W3</span></div></div>
+  <div class="act"><div><b class="h">Grow in emerging markets and produce locally where it pays</b>Emerging markets bring $15.3bn and grow 12% {AR|pp. 4, 33}; local plants in the US, China and Singapore {AR|pp. 4, 5, 32, 37}. This pulls against the US share rising to about 50% by 2030 {AR|p. 4}. <span class="orig">S3 → O3, O6, T3</span></div></div>
+  <div class="act"><div><b class="h">Show payers what the medicines are worth</b>Tiered prices and outcome-based agreements, which the Group already uses {AR|pp. 41, 48}. <span class="orig">→ T1</span></div></div>
+  <div class="act"><div><b class="h">Secure supply and deliver the climate plan</b>Keep supply above 99% {AR|p. 4}, add capacity {AR|p. 33} and close the gap to the −98% emissions target {AR|p. 42}. <span class="orig">S4 → T6, W5</span></div></div>
+</div>
 <div class="flow rv">
-  <div class="f">Pipeline + R&amp;D + AI<small>S1, S6</small></div><div class="ar">→</div>
-  <div class="f">New medicines and indications<small>+ acquisitions, licences</small></div><div class="ar">→</div>
-  <div class="f">Replace revenue losing exclusivity<small>T2, W1, W3</small></div><div class="ar">→</div>
+  <div class="f">Pipeline + R&amp;D + AI</div><div class="ar">→</div>
+  <div class="f">New medicines, acquisitions and licences</div><div class="ar">→</div>
+  <div class="f">Replace revenue losing protection</div><div class="ar">→</div>
   <div class="f g">Ambition 2030<small>≥20 new medicines · $80bn</small></div>
 </div>
 <div class="flow rv" style="margin-top:-4px">
-  <div class="f">Global presence + local production<small>S3</small></div><div class="ar">→</div>
-  <div class="f">Emerging markets and resilience to tariffs<small>O3, T3</small></div><div class="ar">→</div>
-  <div class="f">Value for payers · secure supply · climate plan<small>T1, T6, W5</small></div><div class="ar">→</div>
+  <div class="f">Global presence + local plants</div><div class="ar">→</div>
+  <div class="f">Emerging markets, fewer tariff risks</div><div class="ar">→</div>
+  <div class="f">Value for payers, secure supply, climate plan</div><div class="ar">→</div>
   <div class="f g">Sustainable growth</div>
 </div>
-<p class="cap"><b>Figure 12.</b> How the five actions lead to the Ambition 2030.</p>
-<p class="rv">The proposal is consistent with the strategy the Group declares, <i>Growth Through Innovation</i>, with its three priorities {AR|pp. 2, 10, 11}, and with the mitigations the AR lists for its main risks {AR|p. 48}. Actions 1 and 2 are close to the declared priorities. Action 4 already reflects practices the AR describes: tiered pricing and value-based agreements {AR|pp. 41, 48}. Action 3 puts more weight on emerging markets than the AR does, since the AR projects the US at about 50% of revenue by 2030 {AR|p. 4}. The group's own contribution is the explicit link from SWOT to TOWS to action, and the choice between levers.</p>
+<p class="cap"><b>Figure 14.</b> How the five actions lead to the Ambition 2030.</p>
+<p class="rv">Two weaknesses stay without a dedicated action: US reliance (W2) and pipeline setbacks (W6), which we treat as risks to watch. Rivalry and patent rules (T4, T5) are outside the company's control, and the strategy answers them indirectly by renewing the portfolio.</p>
+<p class="rv">How does this compare with what AstraZeneca already says? Its declared strategy, <i>Growth Through Innovation</i>, has three priorities {AR|pp. 2, 10, 11}, and the Annual Report lists similar mitigations for its main risks {AR|p. 48}. Actions 1 and 2 are close to that strategy, and action 4 describes something the Group already does. Action 3 puts more weight on emerging markets than the company does. What we add is the explicit path from SWOT to TOWS to action, and the choice between levers.</p>
 <div class="tw rv"><table>
-  <thead><tr><th>Objective</th><th>Indicator</th><th class="n">Starting point</th><th>Declared target</th></tr></thead>
+  <thead><tr><th>Goal</th><th>Indicator</th><th class="n">Today</th><th>Declared target</th></tr></thead>
   <tbody>
-    <tr><td>Renew the portfolio</td><td>New molecular entities approved since Oct 2022</td><td class="n">9</td><td>≥ 20 by 2030 {AR|p. 10}</td></tr>
+    <tr><td>Renew the portfolio</td><td>New medicines approved since Oct 2022</td><td class="n">9</td><td>≥ 20 by 2030 {AR|p. 10}</td></tr>
     <tr><td>Grow</td><td>Total Revenue</td><td class="n">$58.7bn (2025)</td><td>$80bn by 2030 {AR|p. 10}</td></tr>
-    <tr><td>R&amp;D productivity</td><td>Regulatory events per year</td><td class="n">97 (2025)</td><td>2025 scorecard target 54, with 69 counted; 2026 target not disclosed {AR|pp. 91, 102}</td></tr>
-    <tr><td>R&amp;D productivity</td><td>Pipeline progression events</td><td class="n">38 (2025)</td><td>2025 scorecard target 29, with 36 counted {AR|pp. 11, 91}</td></tr>
-    <tr><td>Financial capacity</td><td>Cash flow (Group scorecard measure)</td><td class="n">$11.9bn (2025)</td><td>2025 scorecard target $11.3bn {AR|p. 91}</td></tr>
-    <tr><td>Sustainability</td><td>Scope 1 and 2 reduction vs 2015</td><td class="n">−88.1%</td><td>−98% by 2026 {AR|p. 42}</td></tr>
-    <tr><td>Sustainability</td><td>Scope 3 reduction vs 2019</td><td class="n">—</td><td>−50% by 2030, −90% by 2045; net zero by 2045 {AR|p. 42}</td></tr>
+    <tr><td>R&amp;D productivity</td><td>Regulatory events per year</td><td class="n">97 (2025)</td><td>2025 target 54, with 69 counted; 2026 not disclosed {AR|pp. 91, 102}</td></tr>
+    <tr><td>R&amp;D productivity</td><td>Pipeline progression events</td><td class="n">38 (2025)</td><td>2025 target 29, with 36 counted {AR|pp. 11, 91}</td></tr>
+    <tr><td>Financial capacity</td><td>Cash flow (Group scorecard measure)</td><td class="n">$11.9bn (2025)</td><td>2025 target $11.3bn {AR|p. 91}</td></tr>
+    <tr><td>Sustainability</td><td>Scope 1 and 2 emissions vs 2015</td><td class="n">−88.1%</td><td>−98% by 2026 {AR|p. 42}</td></tr>
+    <tr><td>Sustainability</td><td>Scope 3 emissions vs 2019</td><td class="n">—</td><td>−50% by 2030, −90% by 2045; net zero by 2045 {AR|p. 42}</td></tr>
   </tbody></table></div>
-<p class="cap"><b>Table 15.</b> Suggested monitoring indicators. The targets are declared by the Group; the choice of indicators is the group's analysis. The AR gives no target for revenue concentration or for slow-growth areas. The scorecard cash-flow measure is operating cash flow less capital expenditure, plus proceeds from disposals of intangible assets {AR|p. 91}; it is therefore lower than the operating cash flow of $14,575m used in S5.</p>
-
-<div class="review rv"><b>Still open in JC's section</b><ul>
-  <li><b>Defaults applied, to confirm:</b> generics stay as substitutes; entry threat is “weak, conditional on IP”; suppliers stay “moderate”; barriers to exit are included; emotional marketing and brand image are omitted as not relevant to prescription medicines; localisation is an opportunity; Table 11 cites both 42 and 63 inspections; peer comparison is limited to the shareholder-return sentence; the optional VRIO rows (internal API capacity, vaccines franchise) were not added because the AR gives no evidence on rarity or imitability.</li>
-  <li><b>Aligned with SN:</b> Ambition 2030 is treated as the vision (3.1) and its numerical targets as the strategic objective (3.2); Table 15 monitors the same targets.</li>
-</ul></div>
+<p class="cap"><b>Table 14.</b> Indicators to follow the strategy. Targets are declared by the Group; the choice of indicators is ours. The Annual Report sets no target for revenue concentration or for the slow-growth areas. The scorecard cash-flow measure is operating cash flow less capital expenditure, plus proceeds from disposals of intangible assets {AR|p. 91}, which is why it is lower than the $14.6bn in S5.</p>
 
 <!-- ===== NEXT DELIVERY (hidden): sections 3.4 and 4 to 9. To show them again, delete this line and the matching 'END NEXT DELIVERY' line below. =====
 <h3 id="s3-4"><span class="num">3.4</span>Complementary themes</h3>
@@ -1186,6 +1271,7 @@ footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px sol
   $$('.stat .n').forEach(count);
   if(reduce){$$('.bar .fi').forEach(function(b){b.style.width=b.dataset.w+'%';});}
 
+  addEventListener('beforeprint',function(){$$('details.fold').forEach(function(d){d.open=true;});});
   /* ---------- organisational chart ---------- */
   var org=$('.org'), osc=$('.orgscroll');
   function fit(){ org.style.zoom=1; var w=org.scrollWidth, c=osc.clientWidth-20; org.style.zoom=w>c?Math.max(.4,c/w):1; }

@@ -90,6 +90,7 @@
   $$('.stat .n').forEach(count);
   if(reduce){$$('.bar .fi').forEach(function(b){b.style.width=b.dataset.w+'%';});}
 
+  addEventListener('beforeprint',function(){$$('details.fold').forEach(function(d){d.open=true;});});
   /* ---------- organisational chart ---------- */
   var org=$('.org'), osc=$('.orgscroll');
   function fit(){ org.style.zoom=1; var w=org.scrollWidth, c=osc.clientWidth-20; org.style.zoom=w>c?Math.max(.4,c/w):1; }
