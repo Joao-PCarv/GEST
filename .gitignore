@@ -1,1 +1,10 @@
 .DS_Store
+.print.html
+latex/*.aux
+latex/*.bbl
+latex/*.blg
+latex/*.log
+latex/*.out
+latex/*.pdf
+latex/*.synctex.gz
+latex/*.toc

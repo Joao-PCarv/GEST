@@ -1,0 +1,199 @@
+%!TEX program = xelatex
+% =====================================================================
+%  AstraZeneca PLC --- Management Report
+%  Gestão, 2026/27 1.º semestre · Licenciatura em Engenharia Informática
+%  Instituto Superior de Engenharia do Porto
+%
+%  Compila com pdfLaTeX, XeLaTeX ou LuaLaTeX. No Overleaf nao e preciso
+%  configurar nada: o compilador por omissao serve.
+% =====================================================================
+\documentclass[11pt,a4paper]{report}
+
+% Compila com pdfLaTeX, XeLaTeX ou LuaLaTeX --- nao e preciso configurar nada.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else
+  \usepackage{fontspec}
+\fi
+\usepackage[portuguese,main=english]{babel}
+\usepackage{libertinus}  % deteta o motor sozinho: OTF no XeTeX, Type1 no pdfTeX
+
+\usepackage[a4paper,top=2.6cm,bottom=2.4cm,left=2.6cm,right=2.6cm]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs,longtable,tabularx,xltabular,array,multirow}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{tikz}\usetikzlibrary{arrows.meta,positioning,chains}
+\usepackage[edges]{forest}  % organograma desenhado em LaTeX
+\usepackage{graphicx}  % rotatebox nas tabelas
+\usepackage{etoolbox}
+\usepackage{needspace}  % evita cabecalho de tabela orfao
+\usepackage{xurl}      % deixa os URLs da bibliografia quebrar de linha
+\usepackage{pdflscape}  % pagina em paisagem para o organograma
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+
+% ---- cores da identidade do relatorio --------------------------------
+\definecolor{azplum}{HTML}{830051}
+\definecolor{azteal}{HTML}{00677F}
+\definecolor{azwarn}{HTML}{B36B00}
+\definecolor{cgood}{HTML}{2C7A4B}
+\definecolor{cwarn}{HTML}{B36B00}
+\definecolor{cbad}{HTML}{B3261E}
+\definecolor{cneut}{HTML}{5C5965}
+\definecolor{orgok}{HTML}{2C7A4B}
+\definecolor{orggrp}{HTML}{00677F}
+\definecolor{orgdiff}{HTML}{B3261E}
+\definecolor{orgna}{HTML}{B36B00}
+\definecolor{azline}{HTML}{D8D4DC}
+\definecolor{azmuted}{HTML}{5C5965}
+
+% ---- titulos ---------------------------------------------------------
+\titleformat{\chapter}[hang]
+  {\sffamily\LARGE\bfseries\color{azplum}}{\thechapter\hspace{12pt}}{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titleformat{\section}
+  {\sffamily\large\bfseries\color{azplum}}{\thesection}{10pt}{}
+\titleformat{\subsection}
+  {\sffamily\normalsize\bfseries}{\thesubsection}{9pt}{}
+\titleformat{\subsubsection}[runin]
+  {\sffamily\normalsize\bfseries}{}{0pt}{}[.\hspace{6pt}]
+
+% ---- tabelas e legendas ---------------------------------------------
+\captionsetup{font=small,labelfont={bf,sf},labelsep=period,skip=6pt}
+\captionsetup[table]{position=above}  % numa longtable a legenda vive no cabecalho
+\renewcommand{\arraystretch}{1.22}
+\setlength{\tabcolsep}{5pt}
+\AtBeginEnvironment{xltabular}{\small}
+\AtBeginEnvironment{tabularx}{\small}
+\AtBeginEnvironment{tabular}{\small}
+\newcolumntype{N}[1]{>{\raggedright\arraybackslash\hyphenpenalty=10000\exhyphenpenalty=10000}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% ---- caixas de analise e de limite das fontes ------------------------
+\newmdenv[linecolor=azteal,linewidth=0pt,leftline=true,
+  innerleftmargin=10pt,innerrightmargin=8pt,innertopmargin=7pt,innerbottommargin=7pt,
+  backgroundcolor=azteal!5,skipabove=10pt,skipbelow=10pt,nobreak=true]{analysisbox}
+\newmdenv[linecolor=azwarn,linewidth=0pt,leftline=true,
+  innerleftmargin=10pt,innerrightmargin=8pt,innertopmargin=7pt,innerbottommargin=7pt,
+  backgroundcolor=azwarn!5,skipabove=10pt,skipbelow=10pt,nobreak=true]{limitbox}
+
+\newcommand{\boxlabel}[2]{{\sffamily\footnotesize\bfseries\color{#1}\MakeUppercase{#2}}\par\vspace{3pt}}
+\newenvironment{analysis}{\begin{analysisbox}\boxlabel{azteal}{Analysis}}{\end{analysisbox}}
+\newenvironment{sourceslimit}{\begin{limitbox}\boxlabel{azwarn}{What the sources do not show}}{\end{limitbox}}
+
+% ---- organograma ------------------------------------------------------
+\forestset{
+  declare toks={corpo}{},
+  cx/.style={
+    draw=#1, line width=0.7pt, rounded corners=2.5pt, fill=#1!6,
+    align=left, inner xsep=5pt, inner ysep=3.5pt, anchor=west,
+    font=\sffamily\scriptsize},
+  ok/.style={cx=orgok}, grp/.style={cx=orggrp, dashed},
+  dif/.style={cx=orgdiff}, na/.style={cx=orgna},
+}
+\newcommand{\nd}[2]{\textbf{#1}\ifx\relax#2\relax\else\\[1pt]{\color{azmuted}\scriptsize #2}\fi}
+
+% ---- badge: rotulo curto com significado -----------------------------
+\newcommand{\badge}[2]{%
+  \tikz[baseline=(b.base)]{
+    \node[inner xsep=4pt, inner ysep=1.6pt, rounded corners=2.5pt,
+          draw=#1, line width=0.5pt, fill=#1!8, text=#1,
+          font=\sffamily\fontsize{7.4}{8}\selectfont\bfseries] (b) {\MakeUppercase{#2}};}}
+\newcommand{\bgood}[1]{\badge{cgood}{#1}}
+\newcommand{\bwarn}[1]{\badge{cwarn}{#1}}
+\newcommand{\bbad}[1]{\badge{cbad}{#1}}
+\newcommand{\bneut}[1]{\badge{cneut}{#1}}
+
+% ---- caixas de fluxo -------------------------------------------------
+\tikzset{
+  fl/.style={draw=azline, line width=0.7pt, rounded corners=3pt, fill=azplum!4,
+             align=center, inner sep=5pt, font=\sffamily\scriptsize, text width=2.45cm},
+  fle/.style={draw=azplum, line width=0.8pt, rounded corners=3pt, fill=azplum!10,
+              align=center, inner sep=5pt, font=\sffamily\scriptsize, text width=2.45cm},
+  se/.style={-{Stealth[length=4pt]}, draw=azplum, line width=0.7pt},
+}
+
+% ---- barra proporcional, desenhada em LaTeX puro ---------------------
+\newlength{\barmax}\setlength{\barmax}{2.9cm}
+\newcommand{\barra}[1]{\textcolor{azplum}{\rule[-0.6pt]{#1\barmax}{6.5pt}}}
+\newcommand{\barrab}[1]{\textcolor{azteal}{\rule[-0.6pt]{#1\barmax}{6.5pt}}}
+% alinha o numero a direita e a barra a seguir, com largura fixa
+\newcolumntype{B}{>{\raggedright\arraybackslash}p{\barmax}}
+
+% ---- figura a toda a largura, com legenda ----------------------------
+\newcommand{\figura}[3]{%
+  \begin{figure}[htbp]\centering
+  \includegraphics[width=#2\linewidth]{figuras/#1}
+  \caption{#3}\end{figure}}
+
+% ---- cabecalho e rodape ---------------------------------------------
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{azline}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[L]{\sffamily\footnotesize\color{azmuted}AstraZeneca PLC}
+\fancyhead[R]{\sffamily\footnotesize\color{azmuted}\nouppercase{\leftmark}}
+\fancyfoot[C]{\sffamily\footnotesize\color{azmuted}\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\sffamily\footnotesize\color{azmuted}\thepage}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\begin{document}
+
+% =====================================================================
+%  FOLHA DE ROSTO
+% =====================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\noindent\includegraphics[height=30pt]{figuras/isep-logo}\\[14pt]
+{\sffamily\large\bfseries Instituto Superior de Engenharia do Porto}\\[2pt]
+{\sffamily\normalsize\color{azmuted} Licenciatura em Engenharia Informática}
+
+\vfill
+{\sffamily\footnotesize\bfseries\color{azplum}\MakeUppercase{Gestão\ \ ·\ \ 2026/27, 1.º semestre}}\\[12pt]
+{\sffamily\fontsize{34}{38}\selectfont\bfseries AstraZeneca PLC}\\[10pt]
+{\large\color{azmuted} Organisation profile, structure and strategic analysis\\ of a global pharmaceutical company.}
+
+\vfill
+\begin{tabular}{@{}ll@{}}
+\sffamily\bfseries Nuno Barbosa   & \sffamily\color{azmuted}1232318 \\[3pt]
+\sffamily\bfseries Daniel Cardoso & \sffamily\color{azmuted}1232315 \\[3pt]
+\sffamily\bfseries Sérgio Neves   & \sffamily\color{azmuted}1240541 \\[3pt]
+\sffamily\bfseries João Carvalho  & \sffamily\color{azmuted}1232324 \\[3pt]
+\sffamily\bfseries José Alves     & \sffamily\color{azmuted}1230630 \\
+\end{tabular}
+
+\vspace{34pt}
+\noindent{\color{azline}\rule{\linewidth}{0.6pt}}\\[6pt]
+{\sffamily\footnotesize\color{azmuted}\textbf{Entrega:} 1.º relatório intercalar \hspace{22pt} \textbf{Data:} 17 de outubro de 2026}
+\end{titlepage}
+
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+\renewcommand{\contentsname}{Contents}
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{secoes/01-introducao}
+\input{secoes/02-organizacao}
+\input{secoes/03-planeamento}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\renewcommand{\bibname}{References}
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

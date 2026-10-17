@@ -47,6 +47,27 @@ a{color:var(--accent)}
 .menu-btn{display:inline-block}
 
 /* hero */
+.printonly{display:none}
+.printonly-inline{display:none}
+.printonly table{font-size:12px}
+p.note{font-size:15px;color:var(--muted);border-left:3px solid var(--line);padding-left:14px;margin:18px 0 26px}
+.cover{background:var(--surface);border-bottom:1px solid var(--line);padding:56px 24px 48px}
+.cover-in{max-width:var(--maxw);margin:0 auto;display:grid;gap:34px}
+.cover .brand{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cover .brand img{height:62px;width:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cover .brand img{background:#fff;border-radius:8px;padding:7px 11px}}
+:root[data-theme="dark"] .cover .brand img{background:#fff;border-radius:8px;padding:7px 11px}
+.cover .inst{font:600 15px/1.35 -apple-system,sans-serif;color:var(--ink)}
+.cover .inst span{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
+.cover .uc{font:600 13px/1 -apple-system,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.cover h1{font-size:clamp(32px,5vw,54px);line-height:1.06;letter-spacing:-.02em;margin:10px 0 12px;font-weight:750}
+.cover .sub{font-size:18px;color:var(--muted);max-width:620px;margin:0}
+.cover .who{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.cover .who .b{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
+.cover .who .b b{font-size:14.5px;font-weight:600}
+.cover .who .b span{font-size:14.5px;color:var(--muted)}
+.cover .foot{display:flex;gap:28px;flex-wrap:wrap;font:13.5px/1.4 -apple-system,sans-serif;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+.cover .foot b{color:var(--ink)}
 .hero{position:relative;overflow:hidden;padding:84px 24px 64px;color:#fff;background:radial-gradient(1200px 500px at 80% -10%,#b0116f55,transparent),linear-gradient(135deg,#5b0038 0%,#830051 55%,#a3205f 100%)}
 .hero::after{content:"";position:absolute;inset:auto -10% -60% auto;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,#f0ab0033,transparent 65%)}
 .hero-in{max-width:1080px;margin:0 auto;position:relative;z-index:1}
@@ -104,10 +125,6 @@ sup.u{font:inherit;font-size:.7em}
 .pending .who{display:inline-block;font:700 12px/1 -apple-system,sans-serif;padding:6px 10px;border-radius:999px;background:var(--warn-soft);color:var(--warn);margin-bottom:10px}
 .pending .who.next{background:var(--teal-soft);color:var(--teal)}
 .pending ul{margin-top:8px}
-body.hide-review .review{display:none!important}
-.review{border:1px solid var(--bad);background:var(--bad-soft);border-radius:12px;padding:12px 16px;margin:18px 0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.review::before{content:"REVIEW NOTE";display:block;font-weight:800;font-size:11px;letter-spacing:.12em;color:var(--bad);margin-bottom:4px}
-.review ul{margin:6px 0 0}
 .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
 .tag.ok{background:var(--ok-soft);color:var(--ok)}
 .tag.warn{background:var(--warn-soft);color:var(--warn)}
@@ -136,11 +153,6 @@ figure{margin:24px 0}
 figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
 figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.45}
 figcaption b{color:var(--ink)}
-details.fold{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin:14px 0;padding:0}
-details.fold summary{cursor:pointer;padding:12px 16px;font:600 14px/1.3 -apple-system,sans-serif;list-style:none}
-details.fold summary::before{content:"＋";color:var(--accent);margin-right:8px}
-details.fold[open] summary::before{content:"－"}
-details.fold>.in{padding:0 16px 16px}
 
 /* bars + donut */
 .chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 12px;margin:18px 0 6px}
@@ -206,7 +218,7 @@ details.fold>.in{padding:0 16px 16px}
 #orgctl button{font:600 12px/1 -apple-system,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 10px;border-radius:999px;cursor:pointer}
 #orginfo{margin:6px 14px 10px;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,var(--accent) 6%,var(--surface));font:14px/1.5 -apple-system,sans-serif;min-height:48px}
 
-/* swot, tows, porter, value chain */
+/* swot, crossings, porter, value chain */
 .swot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
 .sq{border-radius:var(--radius);padding:16px 18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
 .sq h4{margin:0 0 4px;font-size:15px;color:inherit}
@@ -262,7 +274,7 @@ footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px sol
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bar .fi,.donut circle{transition:none}html{scroll-behavior:auto}}
 
-/* ---- JC section 3.3: readable visuals ---- */
+/* ---- section 3.3: readable visuals ---- */
 .takeaway{border-left:4px solid var(--accent);padding:4px 0 4px 16px;margin:18px 0 22px;font-size:16.5px}
 .takeaway b.t{display:block;font:700 11.5px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
 .pest{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 8px}
@@ -273,6 +285,9 @@ footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px sol
 .pt li{margin:0 0 9px;padding-left:12px;border-left:3px solid var(--line)}
 .pt li.o{border-left-color:var(--ok)} .pt li.t{border-left-color:var(--bad)} .pt li.n{border-left-color:var(--muted)}
 .pt li b{display:block;font-size:13.5px}
+tr.grp td{background:color-mix(in srgb,var(--accent) 9%,transparent);font:700 13px/1.2 -apple-system,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);padding-top:11px;padding-bottom:11px}
+tr.grp .L{display:inline-flex;width:22px;height:22px;border-radius:6px;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:800;font-size:12px;margin-right:9px;vertical-align:-5px}
+tbody tr.grp:hover td{background:color-mix(in srgb,var(--accent) 9%,transparent)}
 .imp{letter-spacing:2px;color:var(--accent);font-size:11px;white-space:nowrap}
 .imp i{font-style:normal;color:var(--line)}
 .legend-s{font:12.5px/1.4 -apple-system,sans-serif;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 6px}
@@ -282,6 +297,7 @@ footer{max-width:var(--maxw);margin:60px 0 0;padding-top:20px;border-top:1px sol
 .pf li{margin:3px 0}
 .vc .st .kf{display:block;font-size:17px;font-weight:800;color:var(--accent);margin:4px 0 2px}
 .vc .st .wk{display:block;color:var(--bad);font-size:12px;margin-top:4px}
+.orig.par{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
 .orig{display:inline-block;font:600 11px/1 -apple-system,sans-serif;padding:4px 7px;border-radius:999px;background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--muted);margin:4px 4px 0 0;white-space:nowrap}
 table.swotT{border-collapse:separate;border-spacing:12px;margin:6px -12px;width:calc(100% + 24px);background:transparent;font-size:14px}
 table.swotT th{background:transparent;border:0;padding:0 4px;font:700 11.5px/1 -apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;white-space:normal}
@@ -329,13 +345,21 @@ table.swotT tbody tr:hover{background:transparent}
 }
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
-  .topbar,aside.toc,#progress,.review,.menu-btn,#orgctl,#orginfo{display:none!important}
+  .topbar,aside.toc,#progress,.menu-btn,#orgctl,#orginfo{display:none!important}
   body:not(.toc-off) .hero{margin-left:0}
   .wrap,body.toc-off .wrap{display:block;padding:0}
   .hero{background:#830051!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:36px 24px}
   .rv{opacity:1!important;transform:none!important}
   .bar .fi{width:var(--w)!important}
   h1.part,h2{break-after:avoid} .card,.callout,figure,.tw,.chart{break-inside:avoid}
+  .cover{break-after:page;border:0;padding-top:0}
+  .orgscroll{overflow:visible;break-inside:avoid}
+  .orgbox{break-inside:avoid}
+  .org{zoom:1!important;transform:scale(.82);transform-origin:top left;width:122%}
+  .printonly{display:block;break-before:page}
+  .printonly-inline{display:inline}
+  .screenonly{display:none}
+  #orginfo{display:none!important}
   .part-label{margin-top:28px}
 }
 </style>
@@ -345,25 +369,49 @@ table.swotT tbody tr:hover{background:transparent}
 <div class="topbar">
   <button class="menu-btn" id="menuBtn" aria-label="Open contents">☰ Contents</button>
   <span class="brand">AstraZeneca · Management Report</span><span class="sp"></span>
-  <button id="revBtn" aria-pressed="false" title="Show or hide the review notes for the group">Review notes</button>
   <button id="themeBtn" aria-label="Toggle dark mode">◐ Theme</button>
 </div>
 
+<section class="cover">
+  <div class="cover-in">
+    <div class="brand">
+      <img src="assets/ISEP.svg" alt="Instituto Superior de Engenharia do Porto">
+      <div class="inst">Instituto Superior de Engenharia do Porto
+        <span>Licenciatura em Engenharia Inform&aacute;tica</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="uc">Gest&atilde;o &middot; 2026/27, 1.&ordm; semestre</div>
+      <h1>AstraZeneca PLC</h1>
+      <p class="sub">Organisation profile, structure and strategic analysis of a global pharmaceutical company.</p>
+    </div>
+
+    <div class="who">
+      <div class="b"><b>Nuno Barbosa,</b> <span>1232318</span></div>
+      <div class="b"><b>Daniel Cardoso,</b> <span>1232315</span></div>
+      <div class="b"><b>S&eacute;rgio Neves,</b> <span>1240541</span></div>
+      <div class="b"><b>Jo&atilde;o Carvalho,</b> <span>1232324</span></div>
+      <div class="b"><b>Jos&eacute; Alves,</b> <span>1230630</span></div>
+    </div>
+
+    <div class="foot">
+      <span><b>Entrega:</b> 1.&ordm; relat&oacute;rio intercalar</span>
+      <span><b>Data:</b> 17 de outubro de 2026</span>
+    </div>
+  </div>
+</section>
+
 <header class="hero">
   <div class="hero-in">
-    <div class="kicker">Management · Group work · Draft v0.1</div>
-    <h1>AstraZeneca PLC</h1>
-    <p class="sub">Organisation profile, structure and strategic analysis of a global pharmaceutical company.</p>
-    <div class="meta">
-      <span><b>Group:</b> NB · DC · SN · JC</span>
-      <span><b>Course:</b> Management (Gestão), 2026/27 1st semester</span>
-      <span><b>Date:</b> 10 October 2026</span>
-    </div>
+    <div class="kicker">At a glance</div>
+    <h1>AstraZeneca in numbers</h1>
+    <p class="sub">The figures that frame the analysis. All of them come from the Annual Report 2025.</p>
     <div class="stats">
-      <div class="stat"><div class="n" data-count="58.7" data-dec="1" data-pre="$" data-suf="bn">$58.7bn</div><div class="l">Total Revenue in 2025 (+9%)</div><div class="s">Annual Report 2025, p. 125</div></div>
-      <div class="stat"><div class="n" data-count="96100">96,100</div><div class="l">Employees at the end of 2025</div><div class="s">Annual Report 2025, p. 27</div></div>
-      <div class="stat"><div class="n" data-count="80" data-pre=">">&gt;80</div><div class="l">Countries with an active presence; sales in &gt;125</div><div class="s">Annual Report 2025, p. 32</div></div>
-      <div class="stat"><div class="n" data-count="197">197</div><div class="l">Projects in the development pipeline</div><div class="s">Annual Report 2025, p. 2</div></div>
+      <div class="stat"><div class="n" data-count="58.7" data-dec="1" data-pre="$" data-suf="bn">$58.7bn</div><div class="l">Total Revenue in 2025 (+9%)</div><div class="s">[1, p. 125]</div></div>
+      <div class="stat"><div class="n" data-count="96100">96,100</div><div class="l">Employees at the end of 2025</div><div class="s">[1, p. 27]</div></div>
+      <div class="stat"><div class="n" data-count="80" data-pre=">">&gt;80</div><div class="l">Countries with an active presence; sales in &gt;125</div><div class="s">[1, p. 32]</div></div>
+      <div class="stat"><div class="n" data-count="197">197</div><div class="l">Projects in the development pipeline</div><div class="s">[1, p. 2]</div></div>
     </div>
   </div>
 </header>
