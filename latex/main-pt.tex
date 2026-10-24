@@ -24,6 +24,7 @@
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{float}
 \usepackage{booktabs,longtable,tabularx,xltabular,array,multirow}
 \usepackage{caption}
 \usepackage{enumitem}
@@ -57,7 +58,9 @@
 % ---- titulos ---------------------------------------------------------
 \titleformat{\chapter}[hang]
   {\sffamily\LARGE\bfseries\color{azplum}}{\thechapter\hspace{12pt}}{0pt}{}
-\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+% PDF continuo: os capitulos nao comecam em pagina nova
+\titleclass{\chapter}{straight}
+\titlespacing*{\chapter}{0pt}{30pt}{18pt}
 \titleformat{\section}
   {\sffamily\large\bfseries\color{azplum}}{\thesection}{10pt}{}
 \titleformat{\subsection}
@@ -100,6 +103,16 @@
   dif/.style={cx=orgdiff}, na/.style={cx=orgna},
 }
 \newcommand{\nd}[2]{\textbf{#1}\ifx\relax#2\relax\else\\[1pt]{\color{azmuted}\scriptsize #2}\fi}
+% organograma vertical (igual ao HTML): Conselho em cima, SET e ramos por baixo
+\usetikzlibrary{positioning}
+\tikzset{
+  org/.style={draw=orgok, line width=0.7pt, rounded corners=2.5pt, fill=orgok!6,
+    align=center, font=\sffamily\scriptsize, inner xsep=3pt, inner ysep=3.5pt,
+    text width=#1, anchor=north, execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  org/.default=2.3cm,
+  orgtop/.style={org=4.4cm, draw=azplum, fill=azplum!14, text=azplum},
+  orglink/.style={draw=azline!70!black, line width=0.6pt},
+}
 
 % ---- badge: rotulo curto com significado -----------------------------
 \newcommand{\badge}[2]{%
@@ -130,7 +143,7 @@
 
 % ---- figura a toda a largura, com legenda ----------------------------
 \newcommand{\figura}[3]{%
-  \begin{figure}[htbp]\centering
+  \begin{figure}[H]\centering
   \includegraphics[width=#2\linewidth]{figuras/#1}
   \caption{#3}\end{figure}}
 
@@ -189,7 +202,6 @@
 \input{secoes-pt/02-organizacao}
 \input{secoes-pt/03-planeamento}
 
-\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Referências}
 \renewcommand{\bibname}{Referências}

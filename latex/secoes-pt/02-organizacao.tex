@@ -2,129 +2,94 @@
 
 \section{Organograma}
 
-O organograma foi desenhado a partir da página de liderança da AstraZeneca \cite{LEAD}. Mostra o Conselho de Administração na Tabela~\ref{tab:conselho} e o Chief Executive Officer (CEO), a Senior Executive Team (SET) e as unidades abaixo deles na Figura~\ref{fig:unidades}. A fonte de cada caixa é indicada na Tabela~\ref{tab:fontes-organograma}.
+O organograma foi desenhado a partir da página de liderança da AstraZeneca \cite{LEAD}. Mostra o Conselho de Administração, o Chief Executive Officer (CEO) e a Senior Executive Team (SET) na Figura~\ref{fig:unidades}. A fonte de cada caixa é indicada na Tabela~\ref{tab:fontes-organograma}.
 
-\begin{table}[htbp]\centering
-\caption{Conselho de Administração: 14 administradores e cinco comissões (Auditoria, Remunerações, Nomeações e Governação, Ciência, Sustentabilidade) \cite[pp.~67--68]{AR}.}
-\label{tab:conselho}
-\begin{tabular}{@{}llc@{}}
-\toprule
-\textbf{Administrador} & \textbf{Cargo} & \textbf{No AR} \\
-\midrule
-Michel Demaré      & Presidente não executivo              & \textcolor{orgok}{sim} \\
-Philip Broadley    & Administrador Independente Sénior     & \textcolor{orgok}{sim} \\
-Euan Ashley        & Administrador não executivo           & \textcolor{orgok}{sim} \\
-Birgit Conix       & Administradora não executiva          & \textcolor{orgok}{sim} \\
-Karen Knudsen      & Administradora não executiva          & \textcolor{orgok}{sim} \\
-Diana Layfield     & Administradora não executiva          & \textcolor{orgok}{sim} \\
-Anna Manz          & Administradora não executiva          & \textcolor{orgok}{sim} \\
-Sheri McCoy        & Administradora não executiva          & \textcolor{orgok}{sim} \\
-Tony Mok           & Administrador não executivo           & \textcolor{orgok}{sim} \\
-Marcus Wallenberg  & Administrador não executivo           & \textcolor{orgok}{sim} \\
-Wan Ling Martello  & Apenas no organograma                 & \textcolor{orgdiff}{não} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[htbp]\centering
+\begin{figure}[H]\centering
 \resizebox{\linewidth}{!}{%
-\begin{forest}
-  forked edges,
-  for tree={grow'=east, parent anchor=east, child anchor=west,
-            edge={draw=azline, line width=0.6pt}, l sep=9pt, s sep=2.5pt},
-  [{\nd{Pascal Soriot}{Presidente Executivo}}, ok
-    [{\nd{Senior Executive Team}{10 membros}}, ok
-      [{\nd{Financeira}{CFO: Aradhana Sarin}}, na]
-      [{\nd{R\&D Therapeuticals}{agrupamento}}, grp
-        [{\nd{Oncologia}{}}, grp
-          [{\nd{D. Fredrickson}{EVP, Unidade de Negócio de Oncologia}}, dif]
-          [{\nd{S. Galbraith}{EVP, I\&D de Oncologia}}, dif]
-        ]
-        [{\nd{BioPharma}{}}, grp
-          [{\nd{S. Barr}{EVP, I\&D BioPharma}}, ok]
-          [{\nd{R. Dobber}{EVP, BioPharma BU}}, ok]
-        ]
-        [{\nd{Doenças Raras}{}}, grp
-          [{\nd{M. Dunoyer}{CEO Alexion \& Diretor de Estratégia}}, ok]
-        ]
-        [{\nd{Vacinas \& Terapias Imunitárias}{}}, dif
-          [{\nd{R. Dobber}{também em BioPharma}}, ok]
-        ]
-      ]
-      [{\nd{Comercial}{agrupamento}}, grp
-        [{\nd{I. Reic}{EVP, Internacional}}, ok]
-        [{\nd{Marketing Global}{}}, na]
-        [{\nd{Reino Unido}{}}, na]
-        [{\nd{Cone Sul}{}}, na]
-      ]
-      [{\nd{Operações}{agrupamento}}, grp
-        [{\nd{P. Cheng}{EVP Operações Globais, IT \& CSO}}, ok]
-        [{\nd{J. Pott}{CHRO, Compliance \& Diretor Jurídico}}, ok]
-      ]
-    ]
-  ]
-\end{forest}}
+\begin{tikzpicture}
+  \node[orgtop] (b) at (0,0) {\nd{Conselho de Administração}{14 administradores · 5 comissões}};
+  \node[org=2.45cm] (d0) at (-6.75,-1.30) {\nd{M. Demaré}{Presidente}};
+  \node[org=2.45cm] (d1) at (-4.05,-1.30) {\nd{P. Broadley}{Independente sénior}};
+  \node[org=2.45cm] (d2) at (-1.35,-1.30) {\nd{E. Ashley}{}};
+  \node[org=2.45cm] (d3) at (1.35,-1.30) {\nd{B. Conix}{}};
+  \node[org=2.45cm] (d4) at (4.05,-1.30) {\nd{K. Knudsen}{}};
+  \node[org=2.45cm] (d5) at (6.75,-1.30) {\nd{D. Layfield}{}};
+  \node[org=2.45cm] (d6) at (-6.75,-2.6) {\nd{A. Manz}{}};
+  \node[org=2.45cm] (d7) at (-4.05,-2.6) {\nd{S. McCoy}{}};
+  \node[org=2.45cm] (d8) at (-1.35,-2.6) {\nd{T. Mok}{}};
+  \node[org=2.45cm] (d9) at (1.35,-2.6) {\nd{M. Wallenberg}{}};
+  \node[org=2.45cm] (d10) at (4.05,-2.6) {\nd{R. Haas}{}};
+  \node[org=2.45cm] (d11) at (6.75,-2.6) {\nd{W. L. Martello}{}};
+  \node[org=3.2cm] (ceo) at (0,-3.5) {\nd{Pascal Soriot}{Chief Executive Officer}};
+  \node[org=3.2cm] (set) at (0,-4.7) {\nd{Senior Executive Team}{10 membros}};
+  \node[org=1.80cm] (c0) at (-7.88,-6.2) {\nd{Aradhana Sarin}{CFO}};
+  \node[org=2.10cm] (c1) at (-5.41,-6.2) {\nd{Oncologia}{}};
+  \node[org=2.10cm, below=6pt of c1] (c10) {\nd{D. Fredrickson}{EVP, Oncology Haematology Business Unit}};
+  \draw[orglink] (c1.south) -- (c10.north);
+  \node[org=2.10cm, below=6pt of c10] (c11) {\nd{S. Galbraith}{EVP, Oncology Haematology R\&D}};
+  \node[org=2.55cm] (c2) at (-2.57,-6.2) {\nd{BioPharmaceuticals}{}};
+  \node[org=2.55cm, below=6pt of c2] (c20) {\nd{S. Barr}{EVP, BioPharma R\&D}};
+  \draw[orglink] (c2.south) -- (c20.north);
+  \node[org=2.55cm, below=6pt of c20] (c21) {\nd{R. Dobber}{EVP, BioPharma BU}};
+  \node[org=2.10cm] (c3) at (0.27,-6.2) {\nd{Rare Disease}{}};
+  \node[org=2.10cm, below=6pt of c3] (c30) {\nd{M. Dunoyer}{CEO Alexion e Chief Strategy Officer}};
+  \draw[orglink] (c3.south) -- (c30.north);
+  \node[org=1.90cm] (c4) at (2.79,-6.2) {\nd{I. Reic}{EVP, International}};
+  \node[org=2.00cm] (c5) at (5.26,-6.2) {\nd{P. Cheng}{EVP Global Operations, IT e CSO}};
+  \node[org=2.00cm] (c6) at (7.78,-6.2) {\nd{J. Pott}{CHRO, Compliance e General Counsel}};
+  \coordinate (bus) at (0,-5.85);
+  \draw[orglink] (b.south) -- (ceo.north);
+  \draw[orglink] (ceo.south) -- (set.north);
+  \draw[orglink] (set.south) -- (bus);
+  \draw[orglink] (c0.north |- bus) -- (c6.north |- bus);
+  \draw[orglink] (c0.north |- bus) -- (c0.north);
+  \draw[orglink] (c1.north |- bus) -- (c1.north);
+  \draw[orglink] (c2.north |- bus) -- (c2.north);
+  \draw[orglink] (c3.north |- bus) -- (c3.north);
+  \draw[orglink] (c4.north |- bus) -- (c4.north);
+  \draw[orglink] (c5.north |- bus) -- (c5.north);
+  \draw[orglink] (c6.north |- bus) -- (c6.north);
+\end{tikzpicture}}
 
-\medskip
-{\sffamily\scriptsize
-\textcolor{orgok}{\rule{7pt}{7pt}}~Corresponde ao AR \quad
-\textcolor{orggrp}{\rule{7pt}{7pt}}~Agrupamento acrescentado para leitura \quad
-\textcolor{orgdiff}{\rule{7pt}{7pt}}~Diverge do AR \quad
-\textcolor{orgna}{\rule{7pt}{7pt}}~Não verificável no AR}
-
-\caption{Do Chief Executive Officer até à Senior Executive Team e às unidades abaixo dela. Desenhado para este relatório a partir de \cite{LEAD}; a fonte de cada caixa é indicada na Tabela~\ref{tab:fontes-organograma}.}
+\caption{Organograma da AstraZeneca, redesenhado para este relatório. Fonte: elaboração dos autores, com base em \cite{LEAD}. Todas as caixas constam do AR \cite[pp.~67--70]{AR}, exceto a alteração no Conselho feita depois da sua publicação \cite{AGM26,MART}; a fonte de cada caixa é indicada na Tabela~\ref{tab:fontes-organograma}.}
 \label{fig:unidades}
 \end{figure}
 
-\begin{xltabular}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.9cm}Y@{}}
-\caption{Fontes de cada caixa da Tabela~\ref{tab:conselho} e da Figura~\ref{fig:unidades}.}\label{tab:fontes-organograma}\\*
+\begin{xltabular}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.4cm}Y@{}}
+\caption{Fonte de cada caixa da Figura~\ref{fig:unidades}.}\label{tab:fontes-organograma}\\*
 \toprule
-\textbf{Caixa} & \textbf{Estado} & \textbf{Fonte e notas} \\*
+\textbf{Caixa} & \textbf{Fonte e notas} \\*
 \midrule
 \endfirsthead
 \toprule
-\textbf{Caixa} & \textbf{Estado} & \textbf{Fonte e notas} \\*
+\textbf{Caixa} & \textbf{Fonte e notas} \\*
 \midrule
 \endhead
 \bottomrule
 \endfoot
-Conselho de Administração & Corresponde ao AR & O Conselho tem 14 administradores e cinco comissões (Auditoria, Remunerações, Nomeações e Governação, Ciência, Sustentabilidade). As matérias não reservadas ao Conselho são delegadas no CEO ou numa das comissões. \cite[pp.~67--68]{AR} \\
-Michel Demaré & Corresponde ao AR & Presidente não executivo do Conselho. \cite[p.~68]{AR} \\
-Philip Broadley & Corresponde ao AR & Administrador não executivo independente sénior. \cite[p.~68]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Euan Ashley, Birgit Conix, Karen Knudsen, Diana Layfield, Anna Manz, Sheri McCoy, Tony Mok e Marcus Wallenberg constam do AR como administradores não executivos. \cite[pp.~68--69]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Administradores não executivos confirmados & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Marcus Wallenberg & Corresponde ao AR & Consta do AR como administrador não executivo. \cite[pp.~68--69]{AR} \\
-Wan Ling Martello & Diverge do AR & Aparece neste organograma mas NÃO aparece na lista do Conselho do AR (verificado por pesquisa de texto). O AR lista ainda Rene Haas e Nazneen Rahman como administradores não executivos, que estão em falta no organograma. \cite[pp.~67--69]{AR} \\
-Pascal Soriot, CEO & Corresponde ao AR & Administrador executivo e Chief Executive Officer; membro da SET. \cite[pp.~68, 70]{AR} \\
-Senior Executive Team (SET) & Corresponde ao AR & A SET é o órgão através do qual o CEO exerce a autoridade delegada pelo Conselho. Tem 10 membros, cinco deles mulheres. \cite[pp.~39, 70]{AR} \\
-Caixa ``Financeira'' & Não verificável no AR & Caixa sem titular neste organograma. A CFO, Aradhana Sarin, é administradora executiva e membro da SET \cite[pp.~68, 70]{AR}, e no organograma está ligada ao Conselho e à SET. \\
-``R\&D Therapeuticals'' (caixa de agrupamento) & Agrupamento acrescentado para leitura & Caixa de agrupamento acrescentada para facilitar a leitura. O AR descreve três organizações de I\&D por área terapêutica (Oncologia, BioPharmaceuticals, Rare Disease) \cite[p.~26]{AR} mas não apresenta esta caixa como uma unidade. \\
-Oncologia & Agrupamento acrescentado para leitura & O AR lista a Oncologia como uma das três organizações de I\&D \cite[p.~26]{AR}. No organograma, os dois responsáveis de Oncologia ficam sob esta caixa. \\
-David Fredrickson & Diverge do AR & Título no AR: EVP, Oncology Haematology Business Unit. O organograma omite ``Haematology''. \cite[p.~70]{AR} \\
-Susan Galbraith & Diverge do AR & Título no AR: EVP, Oncology Haematology R\&D. O organograma omite ``Haematology''. \cite[p.~70]{AR} \\
-BioPharma & Agrupamento acrescentado para leitura & A BioPharmaceuticals é uma das três organizações de I\&D. \cite[p.~26]{AR} \\
-Sharon Barr & Corresponde ao AR & EVP, BioPharmaceuticals R\&D. \cite[p.~70]{AR} \\
-Ruud Dobber & Corresponde ao AR & EVP, BioPharmaceuticals Business Unit, responsável por CVRM, R\&I e Vacinas \& Terapias Imunitárias. Isto explica por que razão o organograma o liga às duas caixas. Uma só pessoa a cobrir duas áreas não é reporte dual. \cite[p.~70]{AR} \\
-Doenças Raras & Agrupamento acrescentado para leitura & A Rare Disease é uma das três organizações de I\&D. \cite[p.~26]{AR} \\
-Marc Dunoyer & Corresponde ao AR & CEO da Alexion e Diretor de Estratégia da AstraZeneca, membro da SET. Dois cargos oficiais ocupados por uma só pessoa. \cite[p.~70]{AR} \\
-Vacinas \& Terapias Imunitárias & Diverge do AR & No AR, isto faz parte da BioPharmaceuticals (área de Ruud Dobber) e não é uma organização de I\&D separada. \cite[pp.~26, 70]{AR} \\
-Ruud Dobber (segunda ligação) & Corresponde ao AR & A mesma pessoa que aparece em BioPharma. \cite[p.~70]{AR} \\
-``Comercial'' (caixa de agrupamento) & Agrupamento acrescentado para leitura & Caixa de agrupamento acrescentada para facilitar a leitura. O AR descreve três regiões comerciais: EUA, Europa-Canadá e Internacional; o Japão reporta em separado. Só a Internacional aparece no organograma. \cite[p.~32]{AR} \\
-Iskra Reic & Corresponde ao AR & EVP, Internacional: China, mercados asiáticos e da Eurásia, Médio Oriente \& África, América Latina, Austrália e Nova Zelândia. \cite[p.~70]{AR} \\
-Marketing Global & Não verificável no AR & Não foi encontrado no AR e é mantido apenas como agrupamento do organograma. \\
-Reino Unido & Não verificável no AR & Não é apresentado como unidade no AR. \\
-Cone Sul & Não verificável no AR & Não aparece no AR. \\
-Operações (caixa de agrupamento) & Agrupamento acrescentado para leitura & Caixa de agrupamento acrescentada para facilitar a leitura. No AR, Pam Cheng e Jeff Pott são membros distintos da SET. \cite[p.~70]{AR} \\
-Pam Cheng & Corresponde ao AR & EVP, Operações Globais, IT e Chief Sustainability Officer. \cite[p.~70]{AR} \\
-Jeff Pott & Corresponde ao AR & Chief Human Resources Officer, Chief Compliance Officer e Diretor Jurídico (o AR lista também a propriedade intelectual). \cite[p.~70]{AR} \\
+Conselho de Administração & O Conselho tem 14 administradores e cinco comissões (Auditoria, Remunerações, Nomeações e Governação, Ciência, Sustentabilidade). As matérias não reservadas ao Conselho são delegadas no CEO ou numa das comissões \cite[pp.~67--68]{AR}. Depois do AR, Nazneen Rahman saiu do Conselho na assembleia geral de 2026 \cite{AGM26} e Wan Ling Martello entrou a 1 de setembro de 2026 \cite{MART}, pelo que o Conselho continua a ter 14 administradores. \\
+Michel Demaré & Presidente não executivo do Conselho \cite[p.~68]{AR}. \\
+Philip Broadley & Administrador não executivo independente sénior \cite[p.~68]{AR}. \\
+Euan Ashley, Birgit Conix, Karen Knudsen, Diana Layfield, Anna Manz, Sheri McCoy, Tony Mok, Marcus Wallenberg & Constam do AR como administradores não executivos \cite[pp.~68--69]{AR}. \\
+Rene Haas & Administrador não executivo desde 1 de janeiro de 2025 \cite[pp.~68--69]{AR}. Reeleito na assembleia geral de 2026 com 97,97\% dos votos expressos \cite{AGM26}. \\
+Wan Ling Martello & Administradora não executiva desde 1 de setembro de 2026, membro da Comissão de Auditoria. Foi nomeada depois da publicação do AR (exercício de 2025), e por isso não consta dele \cite{MART}. \\
+Pascal Soriot, CEO & Administrador executivo e Chief Executive Officer; membro da SET \cite[pp.~68, 70]{AR}. \\
+Senior Executive Team (SET) & A SET é o órgão através do qual o CEO exerce a autoridade delegada pelo Conselho. Tem 10 membros, cinco deles mulheres \cite[pp.~39, 70]{AR}. \\
+Aradhana Sarin & Administradora executiva e Chief Financial Officer; membro da SET \cite[pp.~68, 70]{AR}. \\
+Oncologia & Uma das três organizações de I\&D indicadas no AR \cite[p.~26]{AR}. Os dois EVP abaixo têm ``Oncology Haematology'' no seu próprio título no AR \cite[p.~70]{AR}. \\
+David Fredrickson & Executive Vice President, Oncology Haematology Business Unit \cite[p.~70]{AR}. \\
+Susan Galbraith & Executive Vice President, Oncology Haematology R\&D \cite[p.~70]{AR}. \\
+BioPharmaceuticals & Uma das três organizações de I\&D indicadas no AR \cite[p.~26]{AR}. Os dois EVP abaixo têm ``BioPharmaceuticals'' no seu próprio título no AR \cite[p.~70]{AR}. \\
+Sharon Barr & EVP, BioPharmaceuticals R\&D \cite[p.~70]{AR}. \\
+Ruud Dobber & Executive Vice President, BioPharmaceuticals Business Unit, responsável em conjunto por CVRM, R\&I e Vacinas \& Terapias Imunitárias \cite[p.~70]{AR}. \\
+Rare Disease & Uma das três organizações de I\&D indicadas no AR \cite[p.~26]{AR}. A Alexion, adquirida em 2021, é o negócio de doenças raras da AstraZeneca \cite[Item~4.A]{F20}; é dirigida dentro da SET por Marc Dunoyer \cite[p.~70]{AR}. \\
+Marc Dunoyer & CEO da Alexion e Chief Strategy Officer da AstraZeneca, membro da SET. Dois cargos oficiais ocupados pela mesma pessoa \cite[p.~70]{AR}. \\
+Iskra Reic & EVP, International: China, mercados asiáticos e euroasiáticos, Médio Oriente e África, América Latina, Austrália e Nova Zelândia. A região Internacional é uma das três regiões comerciais do AR, e a única com um membro da SET próprio; as regiões EUA e Europa-Canadá não têm um responsável separado ao nível da SET no AR \cite[pp.~32, 70]{AR}. \\
+Pam Cheng & EVP, Global Operations, IT e Chief Sustainability Officer \cite[p.~70]{AR}. \\
+Jeff Pott & Chief Human Resources Officer, Chief Compliance Officer e General Counsel (o AR inclui também a propriedade intelectual) \cite[p.~70]{AR}. \\
 \end{xltabular}
 
-O Relatório e Contas confirma a cadeia Conselho $\rightarrow$ CEO $\rightarrow$ SET, os dez membros da SET e os respetivos títulos \cite[p.~70]{AR}, e a existência de três organizações de I\&D por área terapêutica e de três regiões comerciais \cite[pp.~26, 32]{AR}. As caixas ``R\&D Therapeuticals'', ``Comercial'', ``Operações'' e ``Financeira'' não são unidades do Grupo: agrupam o organograma para que possa ser lido de uma só vez. A análise que segue assenta nas unidades que o Relatório e Contas documenta.
+À exceção da alteração no Conselho indicada no fim deste parágrafo, cada caixa corresponde a um facto afirmado no AR: a cadeia Conselho $\rightarrow$ CEO $\rightarrow$ SET \cite[pp.~67, 70]{AR}; os dez membros da SET e os respetivos títulos \cite[p.~70]{AR}; e as três organizações de I\&D por área terapêutica indicadas no AR \cite[p.~26]{AR}. A Oncologia e a BioPharmaceuticals são confirmadas também pelas palavras dos títulos dos seus próprios EVP no AR \cite[p.~70]{AR}; a Rare Disease é confirmada através da Alexion, que o Form 20-F descreve como o negócio de doenças raras da AstraZeneca \cite[Item~4.A]{F20} e que Marc Dunoyer dirige como membro da SET \cite[p.~70]{AR}. O cargo de Iskra Reic, EVP International, corresponde a uma das três regiões comerciais do AR, e é a única com um membro da SET identificado: o AR não dá às regiões EUA e Europa-Canadá um responsável separado ao nível da SET \cite[pp.~32, 70]{AR}. Nenhuma caixa agrupa membros da SET sem relação entre si sob um título que o AR não usa. O Conselho é apresentado na composição de outubro de 2026: Nazneen Rahman, que consta do AR, saiu na assembleia geral de 2026 \cite{AGM26}, e Wan Ling Martello foi nomeada a 1 de setembro de 2026 \cite{MART}.
 
 \section{Análise da estrutura}
 
@@ -138,8 +103,8 @@ A AstraZeneca usa vários critérios ao mesmo tempo:
 
 \begin{itemize}
 \item \textbf{Por área terapêutica (produto):} três organizações de I\&D --- Oncologia, BioPharmaceuticals e Rare Disease \cite[p.~26]{AR} ---, com um EVP distinto para a I\&D e para a unidade de negócio na Oncologia e na BioPharmaceuticals \cite[p.~70]{AR}.
-\item \textbf{Por área geográfica:} três regiões comerciais (EUA, Europa-Canadá, Internacional), com o Japão a reportar em separado \cite[p.~32]{AR}.
-\item \textbf{Por função:} as Operações (fabrico e abastecimento, IT), a área financeira e os recursos humanos, compliance e jurídico são liderados por membros distintos da SET \cite[p.~70]{AR}.
+\item \textbf{Por área geográfica:} três regiões comerciais (EUA, Europa-Canadá, Internacional), com o Japão a reportar em separado \cite[p.~32]{AR}; só a região Internacional tem um membro da SET próprio, Iskra Reic \cite[p.~70]{AR}.
+\item \textbf{Por função:} as Operações (fabrico e abastecimento, IT), a área financeira e os recursos humanos, compliance e jurídico são liderados por membros distintos da SET \cite[p.~70]{AR}. O próprio site de recrutamento da AstraZeneca indica, de forma independente, as Operações como uma das suas áreas de negócio, abrangendo ``the development, manufacturing, testing and delivery of our medicines'' \cite{CAREERS}.
 \end{itemize}
 
 \begin{analysis}
@@ -147,7 +112,7 @@ A estrutura descreve-se melhor como \textbf{departamentalização múltipla (mis
 \end{analysis}
 
 \begin{sourceslimit}
-Não se pode chamar-lhe matricial. Uma matriz exige autoridade dual \cite[pp.~21--22]{ORG}, e nem o organograma nem o AR documentam alguém a reportar a dois gestores. A única ligação dupla do organograma --- Ruud Dobber em BioPharma e em Vacinas \& Terapias Imunitárias --- é uma só pessoa a cobrir duas áreas \cite[p.~70]{AR}. O AR diz também que o Grupo tem um único segmento reportável e que a descoberta, o desenvolvimento, o fabrico e a comercialização são geridos globalmente numa base altamente integrada \cite[p.~147]{AR}.
+Não se pode chamar-lhe matricial. Uma matriz exige autoridade dual \cite[pp.~21--22]{ORG}, e nem o organograma nem o AR documentam alguém a reportar a dois gestores: o cargo único de Ruud Dobber, EVP da BioPharmaceuticals Business Unit, cobre em conjunto CVRM, R\&I e Vacinas \& Terapias Imunitárias \cite[p.~70]{AR}, o que é uma só pessoa a cobrir várias áreas, e não reporte duplo. O AR diz também que o Grupo tem um único segmento reportável e que a descoberta, o desenvolvimento, o fabrico e a comercialização são geridos globalmente numa base altamente integrada \cite[p.~147]{AR}.
 \end{sourceslimit}
 
 \subsection{Capacidade de adaptação à mudança}
@@ -157,10 +122,10 @@ O material da unidade curricular liga a função organização à gestão da mud
 O AR documenta uma mudança deliberada e prolongada no tempo:
 
 \begin{itemize}
-\item Depois de adquirir a Alexion em 2021, o Grupo lançou o Post Alexion Acquisition Group Review, um programa global de reestruturação para integrar sistemas, estrutura e processos. Custou \$237m em 2025 e \$3,414m em termos acumulados \cite[p.~142]{AR}, com um custo total previsto de \$4.0bn \cite[p.~59]{AR}.
+\item Depois de adquirir a Alexion em 2021, o Grupo lançou o Post Alexion Acquisition Group Review, um programa global de reestruturação para integrar sistemas, estrutura e processos. Custou \$232m em 2025 (de \$237m de custos totais de reestruturação) e \$3,414m em termos acumulados \cite[p.~142]{AR}, com um custo total previsto de \$4.0bn \cite[p.~59]{AR}.
 \item ``Enable an agile organisation'' é uma das áreas de foco estratégico, ao lado de ``Transform R\&D ways of working'' \cite[p.~11]{AR}.
 \item Em dezembro de 2025, o Grupo criou uma unidade dedicada de Enterprise AI para acelerar a Ambition 2030 \cite[p.~36]{AR}.
-\item Marc Dunoyer lidera a Alexion dentro da SET \cite[p.~70]{AR}, e Sharon Barr e a CFO, Aradhana Sarin, trabalharam anteriormente na Alexion \cite[pp.~68, 70]{AR}.
+\item Marc Dunoyer lidera a Alexion dentro da SET \cite[p.~70]{AR}. Antes do cargo atual, a CFO, Aradhana Sarin, foi Chief Financial Officer da Alexion \cite{SARIN21}, e Sharon Barr foi SVP e Head of Research and Product Development da Alexion \cite{BARR23}; ambos os factos são confirmados pelos anúncios de nomeação da própria AstraZeneca, e não só pelo AR.
 \end{itemize}
 
 \begin{analysis}
@@ -205,21 +170,21 @@ O AR não descreve autonomia para as unidades abaixo da SET, nem autonomia regio
 
 O material da unidade curricular relaciona os níveis com a amplitude de controlo: quanto maior a amplitude, menos níveis e mais achatada a estrutura; amplitudes menores dão mais níveis e uma estrutura alta \cite[pp.~8--9]{ORG}. Nomeia também três níveis de gestão: estratégico, tático e operacional \cite[p.~7]{ORG}.
 
-\begin{table}[htbp]\centering
+\begin{table}[H]\centering
 \caption{Níveis contados na Figura~\ref{fig:unidades}, incluindo o Conselho como nível~1.}
 \label{tab:niveis}
-\begin{tabularx}{\linewidth}{@{}llY@{}}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm}cY@{}}
 \toprule
 \textbf{Ramo} & \textbf{Níveis} & \textbf{Cadeia} \\
 \midrule
-Operações & 5 & Conselho $\rightarrow$ CEO $\rightarrow$ SET $\rightarrow$ Operações $\rightarrow$ executivo (4 abaixo do Conselho) \\
+CFO, Internacional, Operações Globais e RH/Jurídico & 4 & Conselho $\rightarrow$ CEO $\rightarrow$ SET $\rightarrow$ membro da SET (3 abaixo do Conselho) \\
 \addlinespace
-I\&D e Comercial & 6 & Um nível a mais, por causa das caixas de agrupamento R\&D Therapeuticals e Comercial (5 abaixo do Conselho) \\
+I\&D (Oncologia, BioPharmaceuticals, Rare Disease) & 5 & Conselho $\rightarrow$ CEO $\rightarrow$ SET $\rightarrow$ organização de I\&D $\rightarrow$ EVP (4 abaixo do Conselho), porque o próprio AR indica estas três organizações \cite[p.~26]{AR} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 \begin{sourceslimit}
-A contagem refere-se ao \textbf{organograma analisado}, que cobre apenas o topo da empresa. O AR não divulga os níveis abaixo da SET nem as amplitudes de controlo, pelo que não se pode concluir se a estrutura no seu todo é alta ou achatada. Outras contagens de níveis que aparecem no ficheiro de pesquisa (6 a 9 níveis) não têm fonte no AR e não são usadas.
+A contagem refere-se ao \textbf{organograma analisado}, que cobre apenas o topo da empresa. O AR não divulga os níveis abaixo da SET nem as amplitudes de controlo, pelo que não se pode concluir se a estrutura no seu todo é alta ou achatada. Outras contagens de níveis encontradas em fontes secundárias (6 a 9 níveis) não são sustentadas pelo AR e não são usadas.
 \end{sourceslimit}
 
 \subsection{Posições de linha e de staff}
@@ -247,7 +212,7 @@ Aradhana Sarin (CFO); Marc Dunoyer (Alexion, Diretor de Estratégia) & Área fin
 
 \section{Propostas de alteração à estrutura}
 
-Cada proposta abaixo assenta num facto do AR e nos compromissos descritos no material da unidade curricular. São propostas, não alterações anunciadas.
+Cada proposta abaixo assenta num facto afirmado no AR e nos compromissos descritos no material da unidade curricular.
 
 \subsection{Proposta 1 · Coordenação mais forte entre a I\&D e a unidade de negócio em cada área terapêutica}
 

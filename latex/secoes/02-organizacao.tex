@@ -2,129 +2,94 @@
 
 \section{Organisational chart}
 
-The chart was drawn from the leadership page of AstraZeneca \cite{LEAD}. It shows the Board of Directors in Table~\ref{tab:conselho}, and the Chief Executive Officer (CEO), the Senior Executive Team (SET) and the units below them in Figure~\ref{fig:unidades}. The source for each box is given in Table~\ref{tab:fontes-organograma}.
+The chart was drawn from the leadership page of AstraZeneca \cite{LEAD}. It shows the Board of Directors, the Chief Executive Officer (CEO) and the Senior Executive Team (SET) in Figure~\ref{fig:unidades}. The source for each box is given in Table~\ref{tab:fontes-organograma}.
 
-\begin{table}[htbp]\centering
-\caption{Board of Directors: 14 directors and five committees (Audit, Remuneration, Nomination and Governance, Science, Sustainability) \cite[pp.~67--68]{AR}.}
-\label{tab:conselho}
-\begin{tabular}{@{}llc@{}}
-\toprule
-\textbf{Director} & \textbf{Role} & \textbf{In the AR} \\
-\midrule
-Michel Demaré      & Non-Executive Chair           & \textcolor{orgok}{yes} \\
-Philip Broadley    & Senior Independent Director   & \textcolor{orgok}{yes} \\
-Euan Ashley        & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Birgit Conix       & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Karen Knudsen      & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Diana Layfield     & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Anna Manz          & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Sheri McCoy        & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Tony Mok           & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Marcus Wallenberg  & Non-Executive Director        & \textcolor{orgok}{yes} \\
-Wan Ling Martello  & In the chart only             & \textcolor{orgdiff}{no} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[htbp]\centering
+\begin{figure}[H]\centering
 \resizebox{\linewidth}{!}{%
-\begin{forest}
-  forked edges,
-  for tree={grow'=east, parent anchor=east, child anchor=west,
-            edge={draw=azline, line width=0.6pt}, l sep=9pt, s sep=2.5pt},
-  [{\nd{Pascal Soriot}{Chief Executive Officer}}, ok
-    [{\nd{Senior Executive Team}{10 members}}, ok
-      [{\nd{Financial}{CFO: Aradhana Sarin}}, na]
-      [{\nd{R\&D Therapeuticals}{grouping}}, grp
-        [{\nd{Oncology}{}}, grp
-          [{\nd{D. Fredrickson}{EVP, Oncology Business Unit}}, dif]
-          [{\nd{S. Galbraith}{EVP, Oncology R\&D}}, dif]
-        ]
-        [{\nd{BioPharma}{}}, grp
-          [{\nd{S. Barr}{EVP, BioPharma R\&D}}, ok]
-          [{\nd{R. Dobber}{EVP, BioPharma BU}}, ok]
-        ]
-        [{\nd{Rare Diseases}{}}, grp
-          [{\nd{M. Dunoyer}{CEO Alexion \& Chief Strategy Officer}}, ok]
-        ]
-        [{\nd{Vaccines \& Immune Therapies}{}}, dif
-          [{\nd{R. Dobber}{also under BioPharma}}, ok]
-        ]
-      ]
-      [{\nd{Commercial}{grouping}}, grp
-        [{\nd{I. Reic}{EVP, International}}, ok]
-        [{\nd{Global Marketing}{}}, na]
-        [{\nd{UK}{}}, na]
-        [{\nd{Southern Cone}{}}, na]
-      ]
-      [{\nd{Operations}{grouping}}, grp
-        [{\nd{P. Cheng}{EVP Global Operations, IT \& CSO}}, ok]
-        [{\nd{J. Pott}{CHRO, Compliance \& General Counsel}}, ok]
-      ]
-    ]
-  ]
-\end{forest}}
+\begin{tikzpicture}
+  \node[orgtop] (b) at (0,0) {\nd{Board of Directors}{14 directors · 5 committees}};
+  \node[org=2.45cm] (d0) at (-6.75,-1.30) {\nd{M. Demaré}{Chair}};
+  \node[org=2.45cm] (d1) at (-4.05,-1.30) {\nd{P. Broadley}{Senior Independent}};
+  \node[org=2.45cm] (d2) at (-1.35,-1.30) {\nd{E. Ashley}{}};
+  \node[org=2.45cm] (d3) at (1.35,-1.30) {\nd{B. Conix}{}};
+  \node[org=2.45cm] (d4) at (4.05,-1.30) {\nd{K. Knudsen}{}};
+  \node[org=2.45cm] (d5) at (6.75,-1.30) {\nd{D. Layfield}{}};
+  \node[org=2.45cm] (d6) at (-6.75,-2.6) {\nd{A. Manz}{}};
+  \node[org=2.45cm] (d7) at (-4.05,-2.6) {\nd{S. McCoy}{}};
+  \node[org=2.45cm] (d8) at (-1.35,-2.6) {\nd{T. Mok}{}};
+  \node[org=2.45cm] (d9) at (1.35,-2.6) {\nd{M. Wallenberg}{}};
+  \node[org=2.45cm] (d10) at (4.05,-2.6) {\nd{R. Haas}{}};
+  \node[org=2.45cm] (d11) at (6.75,-2.6) {\nd{W. L. Martello}{}};
+  \node[org=3.2cm] (ceo) at (0,-3.5) {\nd{Pascal Soriot}{Chief Executive Officer}};
+  \node[org=3.2cm] (set) at (0,-4.7) {\nd{Senior Executive Team}{10 members}};
+  \node[org=1.80cm] (c0) at (-7.88,-6.2) {\nd{Aradhana Sarin}{CFO}};
+  \node[org=2.10cm] (c1) at (-5.41,-6.2) {\nd{Oncology}{}};
+  \node[org=2.10cm, below=6pt of c1] (c10) {\nd{D. Fredrickson}{EVP, Oncology Haematology Business Unit}};
+  \draw[orglink] (c1.south) -- (c10.north);
+  \node[org=2.10cm, below=6pt of c10] (c11) {\nd{S. Galbraith}{EVP, Oncology Haematology R\&D}};
+  \node[org=2.55cm] (c2) at (-2.57,-6.2) {\nd{BioPharmaceuticals}{}};
+  \node[org=2.55cm, below=6pt of c2] (c20) {\nd{S. Barr}{EVP, BioPharma R\&D}};
+  \draw[orglink] (c2.south) -- (c20.north);
+  \node[org=2.55cm, below=6pt of c20] (c21) {\nd{R. Dobber}{EVP, BioPharma BU}};
+  \node[org=2.10cm] (c3) at (0.27,-6.2) {\nd{Rare Disease}{}};
+  \node[org=2.10cm, below=6pt of c3] (c30) {\nd{M. Dunoyer}{CEO Alexion \& Chief Strategy Officer}};
+  \draw[orglink] (c3.south) -- (c30.north);
+  \node[org=1.90cm] (c4) at (2.79,-6.2) {\nd{I. Reic}{EVP, International}};
+  \node[org=2.00cm] (c5) at (5.26,-6.2) {\nd{P. Cheng}{EVP Global Operations, IT \& CSO}};
+  \node[org=2.00cm] (c6) at (7.78,-6.2) {\nd{J. Pott}{CHRO, Compliance \& General Counsel}};
+  \coordinate (bus) at (0,-5.85);
+  \draw[orglink] (b.south) -- (ceo.north);
+  \draw[orglink] (ceo.south) -- (set.north);
+  \draw[orglink] (set.south) -- (bus);
+  \draw[orglink] (c0.north |- bus) -- (c6.north |- bus);
+  \draw[orglink] (c0.north |- bus) -- (c0.north);
+  \draw[orglink] (c1.north |- bus) -- (c1.north);
+  \draw[orglink] (c2.north |- bus) -- (c2.north);
+  \draw[orglink] (c3.north |- bus) -- (c3.north);
+  \draw[orglink] (c4.north |- bus) -- (c4.north);
+  \draw[orglink] (c5.north |- bus) -- (c5.north);
+  \draw[orglink] (c6.north |- bus) -- (c6.north);
+\end{tikzpicture}}
 
-\medskip
-{\sffamily\scriptsize
-\textcolor{orgok}{\rule{7pt}{7pt}}~Matches the AR \quad
-\textcolor{orggrp}{\rule{7pt}{7pt}}~Grouping added for readability \quad
-\textcolor{orgdiff}{\rule{7pt}{7pt}}~Differs from the AR \quad
-\textcolor{orgna}{\rule{7pt}{7pt}}~Not verifiable in the AR}
-
-\caption{From the Chief Executive Officer to the Senior Executive Team and the units below it. Drawn for this report from \cite{LEAD}; the source for each box is given in Table~\ref{tab:fontes-organograma}.}
+\caption{AstraZeneca organisational chart, redrawn for this report. Source: authors' elaboration, based on \cite{LEAD}. Every box is stated in the AR \cite[pp.~67--70]{AR}, except the Board change made after it was filed \cite{AGM26,MART}; the source for each box is given in Table~\ref{tab:fontes-organograma}.}
 \label{fig:unidades}
 \end{figure}
 
-\begin{xltabular}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.9cm}Y@{}}
-\caption{Sources for each box of Table~\ref{tab:conselho} and Figure~\ref{fig:unidades}.}\label{tab:fontes-organograma}\\*
+\begin{xltabular}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.4cm}Y@{}}
+\caption{Sources for each box of Figure~\ref{fig:unidades}.}\label{tab:fontes-organograma}\\*
 \toprule
-\textbf{Box} & \textbf{Status} & \textbf{Source and notes} \\*
+\textbf{Box} & \textbf{Source and notes} \\*
 \midrule
 \endfirsthead
 \toprule
-\textbf{Box} & \textbf{Status} & \textbf{Source and notes} \\*
+\textbf{Box} & \textbf{Source and notes} \\*
 \midrule
 \endhead
 \bottomrule
 \endfoot
-Board of Directors & Matches the AR & The Board has 14 directors and five committees (Audit, Remuneration, Nomination and Governance, Science, Sustainability). Matters not reserved to the Board are delegated to the CEO or to one of the committees. \cite[pp.~67--68]{AR} \\
-Michel Demaré & Matches the AR & Non-Executive Chair of the Board. \cite[p.~68]{AR} \\
-Philip Broadley & Matches the AR & Senior Independent Non-Executive Director. \cite[p.~68]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Euan Ashley, Birgit Conix, Karen Knudsen, Diana Layfield, Anna Manz, Sheri McCoy, Tony Mok and Marcus Wallenberg are listed as Non-Executive Directors in the AR. \cite[pp.~68--69]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Non-Executive Directors confirmed & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Marcus Wallenberg & Matches the AR & Listed as Non-Executive Director in the AR. \cite[pp.~68--69]{AR} \\
-Wan Ling Martello & Differs from the AR & Appears in this chart but does NOT appear in the AR's Board list (checked by text search). The AR also lists Rene Haas and Nazneen Rahman as Non-Executive Directors, who are missing from the chart. \cite[pp.~67--69]{AR} \\
-Pascal Soriot, CEO & Matches the AR & Executive Director and Chief Executive Officer; member of the SET. \cite[pp.~68, 70]{AR} \\
-Senior Executive Team (SET) & Matches the AR & The SET is the body through which the CEO exercises the authority delegated by the Board. It has 10 members, five of them women. \cite[pp.~39, 70]{AR} \\
-``Financial'' box & Not verifiable in the AR & Box with no holder in this chart. The CFO, Aradhana Sarin, is an Executive Director and a SET member \cite[pp.~68, 70]{AR}, and in the chart she is linked to the Board and the SET. \\
-``R\&D Therapeuticals'' (grouping box) & Grouping added for readability & Grouping box added for readability. The AR describes three therapy-area R\&D organisations (Oncology, BioPharmaceuticals, Rare Disease) \cite[p.~26]{AR} but does not show this box as a unit. \\
-Oncology & Grouping added for readability & The AR lists Oncology as one of three R\&D organisations \cite[p.~26]{AR}. In the chart both Oncology leaders sit under this box. \\
-David Fredrickson & Differs from the AR & AR title: EVP, Oncology Haematology Business Unit. The chart omits ``Haematology''. \cite[p.~70]{AR} \\
-Susan Galbraith & Differs from the AR & AR title: EVP, Oncology Haematology R\&D. The chart omits ``Haematology''. \cite[p.~70]{AR} \\
-BioPharma & Grouping added for readability & BioPharmaceuticals is one of the three R\&D organisations. \cite[p.~26]{AR} \\
-Sharon Barr & Matches the AR & EVP, BioPharmaceuticals R\&D. \cite[p.~70]{AR} \\
-Ruud Dobber & Matches the AR & EVP, BioPharmaceuticals Business Unit, responsible for CVRM, R\&I and Vaccines \& Immune Therapies. This explains why the chart links him to both boxes. One person covering two areas is not dual reporting. \cite[p.~70]{AR} \\
-Rare Diseases & Grouping added for readability & Rare Disease is one of the three R\&D organisations. \cite[p.~26]{AR} \\
-Marc Dunoyer & Matches the AR & CEO of Alexion and Chief Strategy Officer of AstraZeneca, a SET member. Two official posts held by one person. \cite[p.~70]{AR} \\
-Vaccines \& Immune Therapies & Differs from the AR & In the AR this is part of BioPharmaceuticals (Ruud Dobber's remit), not a separate R\&D organisation. \cite[pp.~26, 70]{AR} \\
-Ruud Dobber (second link) & Matches the AR & Same person as under BioPharma. \cite[p.~70]{AR} \\
-``Comercial'' (grouping box) & Grouping added for readability & Grouping box added for readability. The AR describes three commercial regions: US, Europe-Canada and International; Japan reports separately. Only International appears in the chart. \cite[p.~32]{AR} \\
-Iskra Reic & Matches the AR & EVP, International: China, Asian and Eurasian markets, Middle East \& Africa, Latin America, Australia and NZ. \cite[p.~70]{AR} \\
-Global Marketing & Not verifiable in the AR & Not found in the AR, and kept only as a grouping of the chart. \\
-UK & Not verifiable in the AR & Not shown as a unit in the AR. \\
-Southern Cone & Not verifiable in the AR & Does not appear in the AR. \\
-Operations (grouping box) & Grouping added for readability & Grouping box added for readability. In the AR, Pam Cheng and Jeff Pott are separate SET members. \cite[p.~70]{AR} \\
-Pam Cheng & Matches the AR & EVP, Global Operations, IT and Chief Sustainability Officer. \cite[p.~70]{AR} \\
-Jeff Pott & Matches the AR & Chief Human Resources Officer, Chief Compliance Officer and General Counsel (the AR also lists IP). \cite[p.~70]{AR} \\
+Board of Directors & The Board has 14 directors and five committees (Audit, Remuneration, Nomination and Governance, Science, Sustainability). Matters not reserved to the Board are delegated to the CEO or to one of the committees \cite[pp.~67--68]{AR}. Since the AR, Nazneen Rahman retired at the 2026 AGM \cite{AGM26} and Wan Ling Martello joined on 1 September 2026 \cite{MART}, so the Board still has 14 directors. \\
+Michel Demaré & Non-Executive Chair of the Board \cite[p.~68]{AR}. \\
+Philip Broadley & Senior Independent Non-Executive Director \cite[p.~68]{AR}. \\
+Euan Ashley, Birgit Conix, Karen Knudsen, Diana Layfield, Anna Manz, Sheri McCoy, Tony Mok, Marcus Wallenberg & Listed as Non-Executive Directors in the AR \cite[pp.~68--69]{AR}. \\
+Rene Haas & Non-Executive Director since 1 January 2025 \cite[pp.~68--69]{AR}. Re-elected at the 2026 AGM with 97.97\% of votes cast \cite{AGM26}. \\
+Wan Ling Martello & Non-Executive Director since 1 September 2026, joining the Audit Committee. Appointed after the AR (FY2025) was filed, which is why she is not listed in it \cite{MART}. \\
+Pascal Soriot, CEO & Executive Director and Chief Executive Officer; member of the SET \cite[pp.~68, 70]{AR}. \\
+Senior Executive Team (SET) & The SET is the body through which the CEO exercises the authority delegated by the Board. It has 10 members, five of them women \cite[pp.~39, 70]{AR}. \\
+Aradhana Sarin & Executive Director and Chief Financial Officer; a SET member \cite[pp.~68, 70]{AR}. \\
+Oncology & One of the three R\&D organisations named in the AR \cite[p.~26]{AR}. Both EVPs below carry ``Oncology Haematology'' in their own AR title \cite[p.~70]{AR}. \\
+David Fredrickson & Executive Vice President, Oncology Haematology Business Unit \cite[p.~70]{AR}. \\
+Susan Galbraith & Executive Vice President, Oncology Haematology R\&D \cite[p.~70]{AR}. \\
+BioPharmaceuticals & One of the three R\&D organisations named in the AR \cite[p.~26]{AR}. Both EVPs below carry ``BioPharmaceuticals'' in their own AR title \cite[p.~70]{AR}. \\
+Sharon Barr & EVP, BioPharmaceuticals R\&D \cite[p.~70]{AR}. \\
+Ruud Dobber & Executive Vice President, BioPharmaceuticals Business Unit, responsible for CVRM, R\&I and Vaccines \& Immune Therapies together \cite[p.~70]{AR}. \\
+Rare Disease & One of the three R\&D organisations named in the AR \cite[p.~26]{AR}. Alexion, acquired in 2021, is AstraZeneca's rare disease business \cite[Item~4.A]{F20}; it is run within the SET by Marc Dunoyer \cite[p.~70]{AR}. \\
+Marc Dunoyer & CEO of Alexion and Chief Strategy Officer of AstraZeneca, a SET member. Two official posts held by one person \cite[p.~70]{AR}. \\
+Iskra Reic & EVP, International: China, Asian and Eurasian markets, Middle East \& Africa, Latin America, Australia and NZ. International is one of the AR's three commercial regions, and the only one with its own named SET member; the US and Europe-Canada regions have no separate SET-level head in the AR \cite[pp.~32, 70]{AR}. \\
+Pam Cheng & EVP, Global Operations, IT and Chief Sustainability Officer \cite[p.~70]{AR}. \\
+Jeff Pott & Chief Human Resources Officer, Chief Compliance Officer and General Counsel (the AR also lists IP) \cite[p.~70]{AR}. \\
 \end{xltabular}
 
-The Annual Report confirms the chain Board $\rightarrow$ CEO $\rightarrow$ SET, the ten SET members and their titles \cite[p.~70]{AR}, and the existence of three therapy-area R\&D organisations and three commercial regions \cite[pp.~26, 32]{AR}. The boxes ``R\&D Therapeuticals'', ``Commercial'', ``Operations'' and ``Financial'' are not units of the Group: they group the chart so that it can be read at a glance. The analysis that follows rests on the units the Annual Report documents.
+Apart from the Board change noted at the end of this paragraph, every box corresponds to a fact stated in the AR: the chain Board $\rightarrow$ CEO $\rightarrow$ SET \cite[pp.~67, 70]{AR}; the ten SET members and their titles \cite[p.~70]{AR}; and the three therapy-area R\&D organisations stated in the AR \cite[p.~26]{AR}. Oncology and BioPharmaceuticals are confirmed further by the words of their own EVPs' AR titles \cite[p.~70]{AR}; Rare Disease is confirmed instead through Alexion, which the Form 20-F describes as AstraZeneca's rare disease business \cite[Item~4.A]{F20} and which Marc Dunoyer runs as a SET member \cite[p.~70]{AR}. Iskra Reic's EVP, International, is one of the AR's three commercial regions, and the only one with a named SET member: the AR does not give the US or Europe-Canada regions a separate SET-level head \cite[pp.~32, 70]{AR}. No box groups unrelated SET members under a heading the AR does not use. The Board is shown as it stands in October 2026: Nazneen Rahman, listed in the AR, retired at the 2026 AGM \cite{AGM26}, and Wan Ling Martello was appointed on 1 September 2026 \cite{MART}.
 
 \section{Analysis of the structure}
 
@@ -138,8 +103,8 @@ AstraZeneca uses several criteria at the same time:
 
 \begin{itemize}
 \item \textbf{By therapy area (product):} three R\&D organisations, Oncology, BioPharmaceuticals and Rare Disease \cite[p.~26]{AR}, with a separate EVP for R\&D and for the business unit in Oncology and in BioPharmaceuticals \cite[p.~70]{AR}.
-\item \textbf{By geography:} three commercial regions (US, Europe-Canada, International), with Japan reporting separately \cite[p.~32]{AR}.
-\item \textbf{By function:} Operations (manufacturing and supply, IT), finance, and human resources, compliance and legal are led by separate SET members \cite[p.~70]{AR}.
+\item \textbf{By geography:} three commercial regions (US, Europe-Canada, International), with Japan reporting separately \cite[p.~32]{AR}; only International has its own named SET member, Iskra Reic \cite[p.~70]{AR}.
+\item \textbf{By function:} Operations (manufacturing and supply, IT), finance, and human resources, compliance and legal are led by separate SET members \cite[p.~70]{AR}. AstraZeneca's own careers site independently names Operations as one of its business areas, covering ``the development, manufacturing, testing and delivery of our medicines'' \cite{CAREERS}.
 \end{itemize}
 
 \begin{analysis}
@@ -147,7 +112,7 @@ The structure is best described as \textbf{multiple (mixed) departmentalisation}
 \end{analysis}
 
 \begin{sourceslimit}
-It cannot be called a matrix. A matrix requires dual authority \cite[pp.~21--22]{ORG}, and neither the chart nor the AR documents anyone reporting to two managers. The only double link in the chart, Ruud Dobber under BioPharma and under Vaccines \& Immune Therapies, is one person covering two areas \cite[p.~70]{AR}. The AR also says the Group has one reportable segment and that discovery, development, manufacturing and commercialisation are managed globally on a highly integrated basis \cite[p.~147]{AR}.
+It cannot be called a matrix. A matrix requires dual authority \cite[pp.~21--22]{ORG}, and neither the chart nor the AR documents anyone reporting to two managers: Ruud Dobber's single role as EVP, BioPharmaceuticals Business Unit covers CVRM, R\&I and Vaccines \& Immune Therapies together \cite[p.~70]{AR}, which is one person covering several areas, not dual reporting. The AR also says the Group has one reportable segment and that discovery, development, manufacturing and commercialisation are managed globally on a highly integrated basis \cite[p.~147]{AR}.
 \end{sourceslimit}
 
 \subsection{Capacity to adapt to change}
@@ -157,10 +122,10 @@ The course material links the organising function to change management \cite[pp.
 The AR documents deliberate, long-running change:
 
 \begin{itemize}
-\item After acquiring Alexion in 2021, the Group launched the Post Alexion Acquisition Group Review, a global restructuring programme to integrate systems, structure and processes. It cost \$237m in 2025 and \$3,414m cumulatively \cite[p.~142]{AR}, with expected total costs of \$4.0bn \cite[p.~59]{AR}.
+\item After acquiring Alexion in 2021, the Group launched the Post Alexion Acquisition Group Review, a global restructuring programme to integrate systems, structure and processes. It cost \$232m in 2025 (of \$237m of total restructuring costs) and \$3,414m cumulatively \cite[p.~142]{AR}, with expected total costs of \$4.0bn \cite[p.~59]{AR}.
 \item ``Enable an agile organisation'' is one of the strategic focus areas, alongside ``Transform R\&D ways of working'' \cite[p.~11]{AR}.
 \item In December 2025 the Group created a dedicated Enterprise AI unit to accelerate Ambition 2030 \cite[p.~36]{AR}.
-\item Marc Dunoyer leads Alexion within the SET \cite[p.~70]{AR}, and Sharon Barr and the CFO, Aradhana Sarin, previously worked at Alexion \cite[pp.~68, 70]{AR}.
+\item Marc Dunoyer leads Alexion within the SET \cite[p.~70]{AR}. Before her current role, the CFO, Aradhana Sarin, was Alexion's Chief Financial Officer \cite{SARIN21}, and Sharon Barr was Alexion's SVP, Head of Research and Product Development \cite{BARR23}; both are confirmed by AstraZeneca's own appointment announcements, not only by the AR.
 \end{itemize}
 
 \begin{analysis}
@@ -205,21 +170,21 @@ The AR does not describe autonomy for units below the SET, nor regional pricing 
 
 The course material relates levels to span of control: the wider the span, the fewer the levels and the flatter the structure; narrower spans give more levels and a tall structure \cite[pp.~8--9]{ORG}. It also names three management levels: strategic, tactical and operational \cite[p.~7]{ORG}.
 
-\begin{table}[htbp]\centering
+\begin{table}[H]\centering
 \caption{Levels counted in Figure~\ref{fig:unidades}, including the Board as level~1.}
 \label{tab:niveis}
-\begin{tabularx}{\linewidth}{@{}llY@{}}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm}cY@{}}
 \toprule
 \textbf{Branch} & \textbf{Levels} & \textbf{Chain} \\
 \midrule
-Operations & 5 & Board $\rightarrow$ CEO $\rightarrow$ SET $\rightarrow$ Operations $\rightarrow$ executive (4 below the Board) \\
+CFO, International, Global Operations and HR/Legal & 4 & Board $\rightarrow$ CEO $\rightarrow$ SET $\rightarrow$ SET member (3 below the Board) \\
 \addlinespace
-R\&D and Commercial & 6 & One more, because of the R\&D Therapeuticals and Commercial grouping boxes (5 below the Board) \\
+R\&D (Oncology, BioPharmaceuticals, Rare Disease) & 5 & Board $\rightarrow$ CEO $\rightarrow$ SET $\rightarrow$ R\&D organisation $\rightarrow$ EVP (4 below the Board), because the AR itself names these three organisations \cite[p.~26]{AR} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 \begin{sourceslimit}
-The count refers to the \textbf{chart analysed}, which covers only the top of the company. The AR does not disclose levels below the SET nor spans of control, so it cannot be concluded whether the whole structure is tall or flat. Other level counts that appear in the research file (6 to 9 levels) have no source in the AR and are not used.
+The count refers to the \textbf{chart analysed}, which covers only the top of the company. The AR does not disclose levels below the SET nor spans of control, so it cannot be concluded whether the whole structure is tall or flat. Other level counts found in secondary sources (6 to 9 levels) are not supported by the AR and are not used.
 \end{sourceslimit}
 
 \subsection{Line and staff positions}
@@ -247,7 +212,7 @@ Aradhana Sarin (CFO); Marc Dunoyer (Alexion, Chief Strategy Officer) & Finance; 
 
 \section{Proposed changes to the structure}
 
-Each proposal below rests on a fact in the AR and on the trade-offs described in the course material. They are proposals, not announced changes.
+The proposals below each rest on a fact stated in the AR and on the trade-offs described in the course material.
 
 \subsection{Proposal 1 · Stronger coordination between R\&D and the business unit in each therapy area}
 
