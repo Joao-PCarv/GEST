@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>KPIs nos três níveis de gestão — AstraZeneca</title>
+  <style>
+html {
+color: #1a1a1a;
+color: light-dark(#1a1a1a, #fdfdfd);
+background-color: #fdfdfd;
+background-color: light-dark(#fdfdfd, #1a1a1a);
+color-scheme: light dark;
+}
+body {
+margin: 0 auto;
+max-width: 52em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+color-scheme: light only;
+}
+html, body, pre, code {
+background-color: transparent;
+}
+body, a, a:visited, blockquote {
+color: black;
+}
+pre, code {
+padding: 0;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a, a:visited {
+color: inherit;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid;
+border-color: #e6e6e6;
+border-color: light-dark(#e6e6e6, #4c4c4c);
+color: #606060;
+color: light-dark(#606060, #b6b6b6);
+}
+code {
+white-space: pre-wrap;
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid currentColor;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid currentColor;
+border-bottom: 1px solid currentColor;
+}
+th {
+border-top: 1px solid currentColor;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+/* ---- Tabela 4.1: mais larga que a coluna de texto, centrada na página ---- */
+.table-wrap {
+width: 1320px;
+max-width: calc(100vw - 40px);
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+margin: 1.2em 0 1.6em;
+overflow-x: auto;
+}
+table.kpi {
+display: table;
+table-layout: fixed;
+width: 100%;
+min-width: 780px;
+margin: 0;
+font-size: 0.82em;
+line-height: 1.35;
+hyphens: manual;
+}
+table.kpi th {
+text-align: left;
+vertical-align: bottom;
+padding: 0.45em 0.6em;
+background: #f3f2ee;
+background: light-dark(#f3f2ee, #2a2a28);
+border-bottom: 1px solid currentColor;
+}
+table.kpi td {
+vertical-align: top;
+padding: 0.4em 0.6em;
+border-bottom: 1px solid #e1e0d9;
+border-bottom: 1px solid light-dark(#e1e0d9, #44443f);
+}
+table.kpi td.nivel {
+border-left: 4px solid;
+background: #f7f6f2;
+background: light-dark(#f7f6f2, #232321);
+border-bottom: 1px solid currentColor;
+}
+table.kpi tr.est td.nivel { border-left-color: #256abf; }
+table.kpi tr.tat td.nivel { border-left-color: #eb6834; }
+table.kpi tr.ope td.nivel { border-left-color: #5a8f5a; }
+table.kpi td.fonte { white-space: nowrap; }
+table.kpi td.nivel, table.kpi td.estado { overflow-wrap: normal; word-break: normal; }
+table.kpi tr.first td { border-top: 1px solid currentColor; }
+@media (max-width: 600px) {
+.table-wrap { max-width: calc(100vw - 24px); }
+}
+@media print {
+@page { size: A4; margin: 15mm 14mm; }
+@page wide { size: A4 landscape; margin: 12mm 12mm; }
+.table-section { page: wide; }
+.table-wrap { width: 100%; max-width: none; left: 0; transform: none; overflow: visible; margin-top: 0.6em; }
+table.kpi { font-size: 0.72em; min-width: 0; }
+}
+
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">4.2 KPIs nos três níveis de
+gestão</h1>
+</header>
+
+<p>Um KPI (<em>key performance indicator</em>) é um dos indicadores mais
+importantes para acompanhar o desempenho, construído a partir de
+métricas de base {CG|p. 12}. O controlo deve ser aplicado ao nível
+estratégico (toda a organização), ao nível tático (departamentos ou
+conjuntos de equipas) e ao nível operacional (cada equipa) {CG|pp. 3–4}. A AstraZeneca afirma que mede a sua produtividade e o seu
+sucesso através de KPIs alinhados com as prioridades estratégicas.
+Afirma também que divulga as metas de remuneração apenas de forma
+agregada, para não revelar informação comercial sensível ao nível de
+cada KPI {AR|p. 10}. Tal como na Secção 3.2, o Grupo torna pública
+apenas parte do quadro. Cada KPI da Tabela 4.1 está classificado como
+<em>Declarado</em> (o Annual Report (AR) chama-lhe KPI ou métrica do
+scorecard do Grupo), <em>Reportado</em> (o AR dá o valor para uma
+unidade, sem lhe chamar KPI) ou <em>Proposto</em> (escolha dos autores,
+retirada da Tabela 3.2; não divulgado pelo Grupo). A coluna
+<em>Meta</em> indica o valor-alvo divulgado e se foi atingido; nas
+métricas do scorecard mostra também o limiar e o máximo.</p>
+<p>As métricas são medidas em bruto e os indicadores são calculados a
+partir delas {CG|p. 12}. Muitos valores reportados na Tabela 4.1 são
+contagens em bruto (por exemplo, 217 lançamentos, 63 inspeções, 5 100
+promoções) e só se tornam indicadores quando calculados face a uma base,
+como o crescimento face a 2024 ou a percentagem de abastecimento (&gt;
+99%). Os indicadores táticos e operacionais da Tabela 4.1 são reportados
+sem meta pública no AR, mas isso não significa que a empresa não tenha
+metas internas, como sugerem os KPIs por país {AR|p. 109}. Olhando só
+para o AR, é possível medir o resultado e não compará-lo com o objetivo,
+que é o que o ciclo de controlo exige {CG|p. 3}.</p>
+<div class="table-section"><h2 id="tabela-4.1.-exemplos-de-kpis-em-cada-nível-de-gestão.-valores-de-2025.">Tabela
+4.1. Exemplos de KPIs em cada nível de gestão. Valores de 2025.</h2><div class="table-wrap"><table class="kpi"><colgroup><col style="width: 13%"/><col style="width: 19%"/><col style="width: 22%"/><col style="width: 20%"/><col style="width: 10%"/><col style="width: 16%"/></colgroup><thead><tr><th scope="col">Nível</th><th scope="col">KPI</th><th scope="col">Valor 2025</th><th scope="col">Meta</th><th scope="col">Estado</th><th scope="col">Fonte</th></tr></thead><tbody><tr class="est first"><td class="nivel" rowspan="8"><strong>Estratégico</strong> (CEO e SET)</td><td>Novos medicamentos aprovados desde out. 2022</td><td>9</td><td>≥ 20 até 2030 (em curso)</td><td class="estado">Declarado</td><td class="fonte">{AR|p. 10}</td></tr><tr class="est"><td>Total Revenue</td><td>$58 739 M (+9%); scorecard: $59,0 mil M</td><td>$58,2 mil M (limiar $56,5 mil M; máximo $60,0 mil M): superada</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 11, 91, 99}</td></tr><tr class="est"><td>Core EPS</td><td>$9,16 (+12%); scorecard: $9,24</td><td>$9,10 (limiar $8,65; máximo $9,56): superada</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 1, 91, 99}</td></tr><tr class="est"><td>Cash flow</td><td>Reportado: $14 575 M (+23%); scorecard: $11,9 mil M</td><td>$11,3 mil M (limiar $9,6 mil M; máximo $13,0 mil M): superada</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 1, 10, 99}</td></tr><tr class="est"><td>Pipeline progression events</td><td>38 (36 no scorecard)</td><td>29 (limiar 15; máximo 44): superada</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 11, 91, 99}</td></tr><tr class="est"><td>Regulatory events</td><td>97 (69 no scorecard)</td><td>54 (limiar 38; máximo 70): superada</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 11, 91, 99}</td></tr><tr class="est"><td>Colaboradores que acreditam que a AstraZeneca é um ótimo local de
+trabalho</td><td>86% (2024: 84%)</td><td>Não divulgada no AR</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 11, 38, 218}</td></tr><tr class="est"><td>Redução das emissões de GEE Scope 1 e 2 face a 2015</td><td>−88,1%</td><td>−98% até 2026 (em curso)</td><td class="estado">Declarado</td><td class="fonte">{AR|pp. 11, 42}</td></tr><tr class="tat first"><td class="nivel" rowspan="14"><strong>Tático</strong> (áreas terapêuticas, regiões, funções)</td><td>Total Revenue por área terapêutica</td><td>Oncologia $25 619 M (+15%); BioPharmaceuticals $22 995 M (+5%; soma
+de CVRM, R&amp;I e V&amp;I); Doenças Raras $9 126 M (+4%)</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|pp. 4, 91}</td></tr><tr class="tat"><td>Total Revenue por região</td><td>EUA $25 450 M (+10%); Mercados Emergentes $15 303 M (+12%); Europa
+$12 739 M (+5%); Established RoW $5 247 M (+5%)</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|pp. 32, 33}</td></tr><tr class="tat"><td>Operações: desempenho de abastecimento</td><td>&gt; 99%</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 4}</td></tr><tr class="tat"><td>Operações: lançamentos no prazo</td><td>217 (2024: 202)</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|pp. 4, 27}</td></tr><tr class="tat"><td>Operações: inspeções de autoridades de saúde relativas a GMP e
+GDP</td><td>63 inspeções, zero resultados críticos</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 31}</td></tr><tr class="tat"><td>Operações: recolhas de produto</td><td>10, nenhuma ao nível do doente</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|pp. 4, 31}</td></tr><tr class="tat"><td>Função Operações: emissões Scope 1 e 2 face a 2015</td><td>−89%</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 33}</td></tr><tr class="tat"><td>Função Operações: consumo de água face a 2015</td><td>−24%</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 33}</td></tr><tr class="tat"><td>Função Operações: resíduos face a 2015</td><td>−23%</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 33}</td></tr><tr class="tat"><td>Pessoas: participantes em programas de desenvolvimento</td><td>5 800+</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 38}</td></tr><tr class="tat"><td>Pessoas: promoções</td><td>5 100</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 39}</td></tr><tr class="tat"><td>Pessoas: colaboradores que veem “oportunidade de desenvolvimento
+pessoal”</td><td>81%</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 38}</td></tr><tr class="tat"><td>Comercial: desempenho de cada país face aos KPIs, que o AR diz ter
+em conta no cálculo da quota do país no <em>bonus pool</em> dos
+colaboradores da organização comercial</td><td>Valores não divulgados</td><td>Não divulgada no AR</td><td class="estado">Declarado</td><td class="fonte">{AR|p. 109}</td></tr><tr class="tat"><td>Novos medicamentos oncológicos submetidos a aprovação
+regulamentar</td><td>—</td><td>≥ 3 até final de 2027</td><td class="estado">Proposto</td><td class="fonte">Tabela 3.2</td></tr><tr class="ope first"><td class="nivel" rowspan="3"><strong>Operacional</strong> (chefias de equipa)</td><td>Formação anual obrigatória do Código de Ética concluída</td><td>100% dos colaboradores ativos (a nível do Grupo)</td><td>Não divulgada no AR</td><td class="estado">Reportado</td><td class="fonte">{AR|p. 34}</td></tr><tr class="ope"><td>Resultados do inquérito Pulse da própria equipa, acessíveis a cada
+gestor</td><td>Valores não divulgados</td><td>Não divulgada no AR</td><td class="estado">Declarado</td><td class="fonte">{AR|p. 39}</td></tr><tr class="ope"><td>Documentos do ensaio revistos dentro do prazo; resultados
+críticos</td><td>—</td><td>≥ 98%; 0</td><td class="estado">Proposto</td><td class="fonte">Tabela 3.2</td></tr></tbody></table></div></div>
+
+<h3 id="adequação-a-cada-nível">Adequação a cada nível</h3>
+<p><strong>Estratégico.</strong> Estes KPIs descrevem o Grupo como um
+todo e correm ao longo de vários anos: a meta de 20 medicamentos e $80
+mil M é o objetivo estratégico da Tabela 3.2. Dependem de decisões que
+só a gestão de topo pode tomar, como o investimento em I&amp;D, o
+portfólio e as aquisições. Correspondem aos exemplos de monitorização
+estratégica das aulas, que são rácios de rendibilidade, inovação,
+produtividade e satisfação dos <em>stakeholders</em> {CG|p. 4}, e
+misturam indicadores financeiros e não financeiros, como deve fazer um
+sistema de controlo eficaz {CG|p. 8}. Estão ainda ligados às três
+prioridades da estratégia <em>Growth Through Innovation</em>: a receita
+pertence a <em>Growth and Therapy Area Leadership</em>, as duas
+contagens de eventos a <em>Science and Innovation</em>, e os KPIs de
+Pulse e emissões a <em>People and Sustainability</em> {AR|pp. 10–11}.
+Cada métrica do scorecard tem um limiar, uma meta e um máximo, com um
+pagamento definido {AR|p. 99}. Em 2025, as cinco métricas ficaram acima
+da meta e abaixo do máximo, o que resultou num resultado formulaico de
+147% do bónus-alvo {AR|p. 99}. É o ciclo de controlo das aulas: planear,
+medir, comparar com o objetivo, agir {CG|p. 3}. As mesmas medidas do
+scorecard definem um <em>bonus pool</em> para quase todos os
+colaboradores, o que liga o controlo às recompensas {AR|p. 109}, {CG|p. 8}.</p>
+<p><strong>Tático.</strong> Estes indicadores cobrem uma parte da
+empresa, como uma área terapêutica, uma região ou uma função, e não o
+todo. Os exemplos das aulas para este nível são o volume de vendas, as
+horas de formação e a produção total {CG|p. 4}. A receita por área
+terapêutica e por região é o equivalente ao volume de vendas. As quatro
+regiões somam os $58 739 M do KPI estratégico {AR|pp. 32, 33}. Os
+indicadores de Operações correspondem à produção concluída. O próprio AR
+liga-os ao nível acima, ao dizer que o crescimento da receita foi
+impulsionado pelas equipas de Operações, que fizeram 217 lançamentos no
+prazo {AR|p. 91}. Os indicadores de Pessoas correspondem à formação.
+Como estes indicadores não têm meta pública no AR, a comparação
+disponível é com o ano anterior ou, nas emissões, água e resíduos, com a
+base de 2015: as três áreas terapêuticas e as quatro regiões cresceram
+face a 2024, e os lançamentos no prazo passaram de 202 para 217 {AR|pp. 27, 32, 33, 91}. Isto mostra a evolução do desempenho, mas não
+permite dizer se o objetivo interno foi atingido. O horizonte é de médio
+prazo e a responsabilidade é dos gestores intermédios, que implementam a
+estratégia nas suas áreas {PLAN|pp. 5–7}. O KPI proposto (submissões em
+oncologia) é o objetivo tático da Tabela 3.2 e alimenta os
+<em>regulatory events</em> do Grupo, que incluem submissões e aprovações
+regionais {AR|p. 99}.</p>
+<p><strong>Operacional.</strong> Neste nível o KPI deve ser específico,
+rápido de medir e controlável pela equipa, por exemplo contactos feitos,
+tempo médio de reparação ou encomendas expedidas {CG|p. 4}, com um
+horizonte curto e um gestor de primeira linha responsável {PLAN|p. 7}. O
+AR não divulga nenhum KPI de equipa. Os elementos mais próximos são a
+conclusão da formação a nível do Grupo {AR|p. 34} e os resultados Pulse
+por equipa a que os gestores têm acesso {AR|p. 39}. O KPI proposto é o
+objetivo operacional da Tabela 3.2. Tem um paralelo no resultado do
+Grupo de zero resultados críticos nas 63 inspeções de autoridades de
+saúde relativas a GMP e GDP {AR|p. 31}, embora de domínio diferente:
+essas inspeções dizem respeito a fabrico e distribuição, e o AR não dá
+este indicador para a documentação clínica. Fecha também a cascata,
+porque documentação fiável alimenta as submissões (tático), que
+alimentam os <em>regulatory events</em> (estratégico).</p>
+<blockquote>
+<p><strong>Análise.</strong> O conjunto estratégico do Grupo assemelha-se
+às quatro perspetivas do Balanced Scorecard {CG|pp. 15–17}. Financeira:
+receita, EPS e cash flow. Processos internos: eventos de pipeline e
+regulamentares. Aprendizagem e crescimento: perceção dos colaboradores.
+Entre os sete KPIs do Annual Report {AR|pp. 10–11}, nenhum está centrado
+no doente. A Sustainability Statement do mesmo relatório acrescenta a
+métrica “people positively impacted”, com a meta de 1 000 milhões de
+pessoas até 2030 (das quais 400 milhões de grupos desfavorecidos), e 320
+milhões acumulados desde 2024 {AR|pp. 41, 217, 218}, mas o AR não a
+inclui nos sete KPIs {AR|p. 11}, nem no scorecard usado no bónus anual
+{AR|p. 99}.</p>
+</blockquote>
+<blockquote>
+<p><strong>Limites da fonte.</strong> O AR chama “Group scorecard” à sua
+ferramenta e não diz que segue o Balanced Scorecard. As metas de 2026
+são comercialmente sensíveis {AR|p. 102} e não é divulgado nenhum KPI ou
+meta ao nível de equipa. Os KPIs por país {AR|p. 109} e os resultados
+Pulse por equipa {AR|p. 39} são mencionados sem valores. O AR não diz
+que a receita por área terapêutica ou por região seja o KPI de um
+executivo concreto. O nível atribuído a cada KPI é a classificação dos
+autores, com os critérios das aulas. Os valores do scorecard para a
+receita e o Core EPS diferem dos reportados porque são fixados a taxas
+de câmbio de orçamento. O cash flow do scorecard é avaliado à taxa de
+câmbio real e corresponde ao fluxo de caixa líquido das atividades
+operacionais, menos o investimento em capital e mais o produto da venda
+de ativos intangíveis. Por isso difere dos $14 575 M reportados {AR|pp. 91, 99}.</p>
+</blockquote>
+
+</body>
+</html>
